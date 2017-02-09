@@ -70,6 +70,13 @@ paths:
         - Base
       operationId: base_read
 
+############
+#   LOGS   #
+############
+
+  /logs/{log_id}/:
+    $ref: '/logs/detail.yaml'
+
 ####################
 #   INSTITUTIONS   #
 ####################

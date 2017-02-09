@@ -1,0 +1,64 @@
+# Log Model Definition
+type: object
+title: Log
+required:
+  - id
+properties:
+  id:
+    description: 'The ID of the log.'
+    readOnly: true
+    type: string
+  date:
+    description: 'The date and time at which the log was created, as an iso8601 formatted timestamp.'
+    format: date-time
+    readOnly: true
+    type: string
+  action:
+    description: 'The type of action performed on the OSF. See description for full list of possible actions.'
+    readOnly: true
+    type: string
+  params:
+    description: 'The type of action performed on the OSF. See description for full list of possible actions.'
+    readOnly: true
+    type: string
+  links:
+    format: url
+    description: 'Links related to this log'
+    readOnly: true
+    type: string
+  node:
+    description: 'A relationship to the node associated with this log.'
+    readOnly: true
+    type: string
+  original_node:
+    description: 'A relationship to the original node that was associated with this log, in case this log was a remnant of when the original node was forked or registered.'
+    readOnly: true
+    type: string
+  user:
+    description: 'The user associated with this log'
+    readOnly: true
+    type: string
+  linked_node:
+    description: 'A node linked to this log'
+    readOnly: true
+    type: string
+  template_node:
+    description: 'Node used as a template for this log'
+    readOnly: true
+    type: string
+example:
+  data:
+    attributes: {}
+    relationships:
+      node:
+        data:
+          type: nodes
+          id: 6c2gz
+      user:
+        data:
+          type: users
+          id: hello
+      original_node:
+        data:
+          type: nodes
+          id: 6c2gz
