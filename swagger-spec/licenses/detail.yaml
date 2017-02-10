@@ -1,1 +1,46 @@
-# /licenses/{license_id}/
+parameters:
+  - in: path
+    type: string
+    required: true
+    name: license_id
+    description: 'The unique identifier of the license.'
+
+get:
+  summary: Retrieve a license
+  description: >-
+    Retrieves the details of a license.
+
+    #### Returns
+
+    Returns a dictionary with a `data` property containing the representation of the requested
+    license, if the request is successful.
+
+
+    If the request is unsuccessful, a dictionary with an `errors` property containing
+    information about the failure will be returned. Refer to the [list of error codes]()
+    to understand why this request may have failed.
+  tags:
+    - Licenses
+  operationId: licenses_read
+  x-response-schema: License
+  responses:
+    '200':
+      description: 'OK'
+      schema:
+        $ref: 'definition.yaml'
+      example:
+        data:
+          links:
+            self: https://api.osf.io/v2/licenses/563c1cf88c5e4a3877f9e968/
+          attributes:
+            text: |
+              Copyright (c) {{year}}, {{copyrightHolders}}
+              All rights reserved.
+
+              The full descriptive text of the License
+            required_fields:
+            - year
+            - copyrightHolders
+            name: BSD 2-Clause "Simplified" License
+          type: licenses
+          id: 563c1cf88c5e4a3877f9e968

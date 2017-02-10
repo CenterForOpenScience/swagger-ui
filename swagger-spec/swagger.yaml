@@ -83,6 +83,16 @@ paths:
   # /comments/{comment_id}/reports/{user_id}/:
   #   $ref: 'comments/report_detail.yaml'
 
+  #################
+  #    LICENSES   #
+  #################
+
+  /licenses/:
+    $ref: 'licenses/list.yaml'
+
+  /license/{license_id}/:
+    $ref: 'licenses/detail.yaml'
+
   ############
   #   LOGS   #
   ############
