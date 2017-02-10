@@ -48,12 +48,16 @@ properties:
     type: string
 example:
   data:
-    attributes: {}
+    attributes:
+      date: '{log datetime}'
+      action: '{action name}'
+    type: 'logs'
+    id: '{log id}'
     relationships:
       node:
         data:
           type: nodes
-          id: 6c2gz
+          id: '{node_id}'
       user:
         data:
           type: users
@@ -61,4 +65,4 @@ example:
       original_node:
         data:
           type: nodes
-          id: 6c2gz
+          id: '{node_id}'

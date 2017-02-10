@@ -16,7 +16,7 @@ SwaggerUi.Views.OperationView = Backbone.View.extend({
       "Introduction", "General API Usage", "Versioning",
       "Filtering and Embedding", "Pagination",
       "PUT/PATCH Requests", "Attribute Validation", "Entities",
-      "Entity Collections", "Errors", "OSF Enum Fields"
+      "Entity Collections", "Errors", "OSF Enum Fields", "Actions"
     ];
 
     opts = opts || {};

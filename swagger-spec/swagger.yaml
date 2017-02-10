@@ -75,7 +75,11 @@ paths:
 ############
 
   /logs/{log_id}/:
-    $ref: '/logs/detail.yaml'
+    $ref: 'logs/detail.yaml'
+
+  # this is a fake endpoint for sidebar documentation
+  /actions/:
+    $ref: 'logs/actions.yaml'
 
 ####################
 #   INSTITUTIONS   #
