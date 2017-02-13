@@ -55,9 +55,9 @@ paths:
   /osf_enum_fields/:
     $ref: 'introduction/osf_enum_fields.yaml'
 
-############
-#   BASE   #
-############
+  ############
+  #   BASE   #
+  ############
 
   /:
     get:
@@ -70,9 +70,9 @@ paths:
         - Base
       operationId: base_read
 
-####################
-#   INSTITUTIONS   #
-####################
+  ####################
+  #   INSTITUTIONS   #
+  ####################
 
   /institutions/:
     $ref: 'institutions/list.yaml'
@@ -92,9 +92,16 @@ paths:
   # /institutions/{institutions_id}/relationships/nodes/:
   #   $ref: 'institutions/nodes_relationships.yaml'
 
-#################
-#   PREPRINTS   #
-#################
+  #############
+  #   NODES   #
+  #############
+
+  /nodes/:
+    $ref: 'nodes/list.yaml'
+
+  #################
+  #   PREPRINTS   #
+  #################
 
   /preprints/:
     $ref: 'preprints/list.yaml'
