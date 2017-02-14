@@ -2,109 +2,39 @@
 get:
   summary: List all nodes
   description: >-
-    Nodes that represent projects and components. *Writeable*.
+
+    A paginated list of all public nodes, representing projects and components, on the OSF.
+    The returned nodes are sorted by their `date_modified`, with the most recently updated nodes appearing first.
+    Registrations cannot be accessed through this endpoint (use the registrations endpoints instead).
+
+    #### Returns
+
+    Returns JSON with a `data` and `links` property.
 
 
-    Paginated list of nodes ordered by their `date_modified`.  Each resource
-    contains the full representation of the
-
-    node, meaning additional requests to an individual node's detail view
-    are not necessary.  Registrations and withdrawn
-
-    registrations cannot be accessed through this endpoint (see registration
-    endpoints instead).
+    The `data` property contains an array of 10 nodes.
+    Each resource in the array is a separate node object and contains the full representation of the node, meaning additional requests to a node's detail view are not necessary.
 
 
-    <!--- Copied Spiel from NodeDetail -->
+    The `links` property contains a dictionary of links that can be used
+    for [pagination](http://jsonapi.org/format/1.0/#fetching-pagination).
 
 
-    On the front end, nodes are considered 'projects' or 'components'. The
-    difference between a project and a component
+    This request should never return an error.
 
-    is that a project is the top-level node, and components are children of
-    the project. There is also a [category
+    #### Filtering
 
-    field](/v2/#osf-node-categories) that includes 'project' as an option.
-    The categorization essentially determines
-
-    which icon is displayed by the node in the front-end UI and helps with
-    search organization. Top-level nodes may have
-
-    a category other than project, and children nodes may have a category of
-    project.
+    You can optionally request that the response only include nodes that match your filters by utilizing the `filter` query parameter, e.g.
+    https://api.osf.io/v2/nodes/?filter[title]=reproducibility.
 
 
-    ##Node Attributes
+    Nodes may be filtered by their `id`, `title`, `category`, `description`, `public`, `tags`, `date_created`, `date_modified`, `root`, `parent`, `preprint`, and `contributors`.
 
 
-    <!--- Copied Attributes from NodeDetail -->
+    Most fields are string fields and will be filtered using simple substring matching.
+    Public and preprint are boolean fields, and can be filtered using truthy values, such as **true**, **false**, **0** or **1**.
+    Note that quoting true or false in the query will cause the match to fail.
 
-
-    OSF Node entities have the "nodes" `type`.
-
-
-    name                            type               description
-
-    =================================================================================
-
-    title                           string             title of project or
-    component
-
-    description                     string             description of the
-    node
-
-    category                        string             node category, must
-    be one of the allowed values
-
-    date_created                    iso8601 timestamp  timestamp that the
-    node was created
-
-    date_modified                   iso8601 timestamp  timestamp when the
-    node was last updated
-
-    tags                            array of strings   list of tags that
-    describe the node
-
-    current_user_can_comment        boolean            Whether the current
-    user is allowed to post comments
-
-    current_user_permissions        array of strings   list of strings
-    representing the permissions for the current user on this node
-
-    registration                    boolean            is this a
-    registration? (always false - may be deprecated in future versions)
-
-    fork                            boolean            is this node a fork
-    of another node?
-
-    public                          boolean            has this node been
-    made publicly-visible?
-
-    preprint                        boolean            is this a preprint?
-
-    collection                      boolean            is this a collection?
-    (always false - may be deprecated in future versions)
-
-    node_license                    object             details of the
-    license applied to the node
-
-    year                        string             date range of the license
-
-    copyright_holders           array of strings   holders of the applied
-    license
-
-
-    ##Links
-
-
-    See the [JSON-API spec regarding
-    pagination](http://jsonapi.org/format/1.0/#fetching-pagination).
-
-
-    ##Actions
-
-
-    ###Creating New Nodes
   tags:
     - Nodes
   operationId: nodes_list
@@ -252,115 +182,46 @@ get:
 post:
   summary: Create a node
   description: >-
-    Nodes that represent projects and components. *Writeable*.
+    Creates a new node.
 
 
-    Paginated list of nodes ordered by their `date_modified`.  Each resource
-    contains the full representation of the
-
-    node, meaning additional requests to an individual node's detail view
-    are not necessary.  Registrations and withdrawn
-
-    registrations cannot be accessed through this endpoint (see registration
-    endpoints instead).
+    On the OSF, nodes are considered **projects** or **components**.
+    The difference between a project and a component is that a project is a top-level node, and a component is a child of a project.
 
 
-    <!--- Copied Spiel from NodeDetail -->
+    Additionally, nodes have a `category` property that includes **project** as an option.
+    The categorization determines what icon is displayed with the node on the OSF, and helps with search organization.
+    Projects (top-level nodes) may have a category other than project, and components (children) may have a category of **project**.
+
+    #### Required
+
+    Required fields for creating a node include:
 
 
-    On the front end, nodes are considered 'projects' or 'components'. The
-    difference between a project and a component
-
-    is that a project is the top-level node, and components are children of
-    the project. There is also a [category
-
-    field](/v2/#osf-node-categories) that includes 'project' as an option.
-    The categorization essentially determines
-
-    which icon is displayed by the node in the front-end UI and helps with
-    search organization. Top-level nodes may have
-
-    a category other than project, and children nodes may have a category of
-    project.
+    &nbsp;&nbsp;&nbsp;&nbsp`title`
 
 
-    ##Node Attributes
+    &nbsp;&nbsp;&nbsp;&nbsp`category`
 
 
-    <!--- Copied Attributes from NodeDetail -->
+    Note: nodes default to **private** unless the `public` field is explicitly set to **true** in the request payload.
+
+    #### Returns
+
+    Returns a dictionary with a `data` property containing the representation of the created
+    node, if the request is successful.
 
 
-    OSF Node entities have the "nodes" `type`.
+    If the request is unsuccessful, a dictionary with an `errors` property containing
+    information about the failure will be returned. Refer to the [list of error codes]()
+    to understand why this request may have failed.
 
-
-    name                            type               description
-
-    =================================================================================
-
-    title                           string             title of project or
-    component
-
-    description                     string             description of the
-    node
-
-    category                        string             node category, must
-    be one of the allowed values
-
-    date_created                    iso8601 timestamp  timestamp that the
-    node was created
-
-    date_modified                   iso8601 timestamp  timestamp when the
-    node was last updated
-
-    tags                            array of strings   list of tags that
-    describe the node
-
-    current_user_can_comment        boolean            Whether the current
-    user is allowed to post comments
-
-    current_user_permissions        array of strings   list of strings
-    representing the permissions for the current user on this node
-
-    registration                    boolean            is this a
-    registration? (always false - may be deprecated in future versions)
-
-    fork                            boolean            is this node a fork
-    of another node?
-
-    public                          boolean            has this node been
-    made publicly-visible?
-
-    preprint                        boolean            is this a preprint?
-
-    collection                      boolean            is this a collection?
-    (always false - may be deprecated in future versions)
-
-    node_license                    object             details of the
-    license applied to the node
-
-    year                        string             date range of the license
-
-    copyright_holders           array of strings   holders of the applied
-    license
-
-
-    ##Links
-
-
-    See the [JSON-API spec regarding
-    pagination](http://jsonapi.org/format/1.0/#fetching-pagination).
-
-
-    ##Actions
-
-
-    ###Creating New Nodes
   parameters:
-    - in: body
-      name: data
-      required: true
-      schema:
-        $ref: 'definition.yaml'
+  - in: body
+    name: body
+    required: true
+    schema:
+      $ref: 'definition.yaml'
   tags:
     - Nodes
   operationId: nodes_create

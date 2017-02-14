@@ -160,8 +160,7 @@ properties:
       node_links:
         type: string
         readOnly: true
-        deprecated: true
-        description: 'A link to the list of nodes that are linked to the current node. Deprecated as of verson 2.1. Use the linked_nodes link instead.'
+        description: 'A link to the list of nodes that are linked to the current node. This endpoint is deprecated as of verson 2.1; use the linked_nodes endpoint instead.'
       parent:
         type: string
         readOnly: true
@@ -207,6 +206,10 @@ properties:
         readOnly: true
         description: 'A link to the canonical API endpoint of this node.'
 
-
 example:
+  data:
+    type: 'nodes'
+    attributes:
+      title: 'An Excellent Project Title'
+      category: 'software'
 
