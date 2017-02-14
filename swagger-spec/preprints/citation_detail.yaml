@@ -22,7 +22,7 @@ get:
     '200':
       description: ''
       schema:
-        $ref: '/swagger-spec/citations/definition.yaml'
+        $ref: '../citations/definition.yaml'
       examples:
         application/json:
           data:

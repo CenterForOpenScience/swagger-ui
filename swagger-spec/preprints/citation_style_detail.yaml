@@ -27,7 +27,7 @@ get:
     '200':
       description: ''
       schema:
-        $ref: '/swagger-spec/citations/style_definition.yaml'
+        $ref: '../citations/style_definition.yaml'
       examples:
         application/json:
           data:

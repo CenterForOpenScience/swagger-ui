@@ -77,19 +77,19 @@ paths:
   /institutions/:
     $ref: 'institutions/list.yaml'
 
-  /institutions/{institutions_id}/:
+  /institutions/{institution_id}/:
     $ref: 'institutions/detail.yaml'
 
-  /institutions/{institutions_id}/users/:
+  /institutions/{institution_id}/users/:
     $ref: 'institutions/users_list.yaml'
 
-  /institutions/{institutions_id}/nodes/:
+  /institutions/{institution_id}/nodes/:
     $ref: 'institutions/nodes_list.yaml'
 
-  /institutions/{institutions_id}/registrations/:
+  /institutions/{institution_id}/registrations/:
     $ref: 'institutions/registrations_list.yaml'
 
-  # /institutions/{institutions_id}/relationships/nodes/:
+  # /institutions/{institution_id}/relationships/nodes/:
   #   $ref: 'institutions/nodes_relationships.yaml'
 
 #################
