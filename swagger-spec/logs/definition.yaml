@@ -5,64 +5,263 @@ required:
   - id
 properties:
   id:
-    description: 'The ID of the log.'
+    description: 'The identifier of the log.'
     readOnly: true
     type: string
-  date:
-    description: 'The date and time at which the log was created, as an iso8601 formatted timestamp.'
-    format: date-time
-    readOnly: true
+  type:
     type: string
-  action:
-    description: 'The type of action performed on the OSF. See description for full list of possible actions.'
     readOnly: true
-    type: string
-  params:
-    description: 'The type of action performed on the OSF. See description for full list of possible actions.'
+    description: 'The type identifier of the log (`logs`)'
+  attributes:
+    type: object
     readOnly: true
-    type: string
+    description: 'The properties of the log.'
+    properties:
+      date:
+        description: 'The date and time at which the log was created, as an iso8601 formatted timestamp.'
+        format: date-time
+        readOnly: true
+        type: string
+      action:
+        description: 'The type of action performed on the OSF. See actions section for full list of possible actions.'
+        readOnly: true
+        type: string
+      params:
+        description: 'The type of action performed on the OSF. See description for full list of possible actions.'
+        readOnly: true
+        type: object
+        properties:
+          addon:
+            description: 'The addon associated with the connected node.'
+            readOnly: true
+            type: string
+          bucket:
+            description: 'The Amazon s3 bucket connected to the connected node.'
+            readOnly: true
+            type: string
+          citation_name:
+            description: 'Name of citation associated with the connected node.'
+            readOnly: true
+            type: string
+          contributors:
+            description: 'List of contributors on the connected node involved in the action represented by this node log.'
+            readOnly: true
+            type: string
+          data_set:
+            description: 'The dataset associated with the connected node.'
+            readOnly: true
+            type: string
+          destination:
+            description: 'A dictionary with information about the destination for the move of the item on the node associated with this log. Details include the path, url, addon, node_url and node_title.'
+            readOnly: true
+            type: string
+          figshare_title:
+            description: 'Title of the fighshare project associated with this node log'
+            readOnly: true
+            type: string
+          forward_url:
+            description: 'URL that the connected node forwards to.'
+            readOnly: true
+            type: string
+          github_user:
+            description: 'The github user involved with the action represented by this node log.'
+            readOnly: true
+            type: string
+          github_repo: 
+            description: 'The github repository involved with the action represented by this node log.'
+            readOnly: true
+            type: string
+          file:
+            description: 'Dictionary with information about the file involved with the log.'
+            readOnly: true
+            type: string
+          filename:
+            description: 'Filename for the file associated with the log.'
+            readOnly: true
+            type: string
+          kind:
+            description: 'Kind of the object associated with the log.'
+            readOnly: true
+            type: string
+          folder:
+            description: 'Folder associated with the log.'
+            readOnly: true
+            type: string
+          folder_name:
+            description: 'Name of the folder associated with the log.'
+            readOnly: true
+            type: string
+          license:
+            description: 'License for the associated node.'
+            readOnly: true
+            type: string
+          identifiers:
+            description: 'Dictionary containing the DOI and ARK ID for a preprint associated with the log.'
+            readOnly: true
+            type: string
+          institution:
+            description: 'Dictionary containing the ID and Name of the institution associated with the log.'
+            readOnly: true
+            type: string
+          old_page:
+            description: 'Old name of wiki page for a wiki rename log action.'
+            readOnly: true
+            type: string
+          page:
+            description: 'Current name of wiki page for rename log action.'
+            readOnly: true
+            type: string
+          page_id:
+            description: 'Primary key of the wiki page associated with the log.'
+            readOnly: true
+            type: string
+          params_node:
+            description: 'Node that is refered to in the params of the log.'
+            readOnly: true
+            type: string
+          params_project:
+            description: 'Project that is refered to in the params of the log.'
+            readOnly: true
+            type: string
+          path:
+            description: 'Path for a file associated with the log.'
+            readOnly: true
+            type: string
+          pointer:
+            description: 'A dictionary with information about the node that is linked to the associated node.'
+            readOnly: true
+            type: string
+          preprint:
+            description: 'Preprint related to the associated node.'
+            readOnly: true
+            type: string
+          preprint_provider:
+            description: 'Preprint provider for the associated node.'
+            readOnly: true
+            type: string
+          previous_institution:
+            description: 'If a primary institution for the associated node is changed, this will show the previous institution.'
+            readOnly: true
+            type: string
+          source:
+            description: 'A dictionary with information about the source of a move related event for a log. Details include the path, url, addon, node_url and node_title.'
+            readOnly: true
+            type: string
+          study:
+            description: 'Dataverse study linked to the associated node.'
+            readOnly: true
+            type: string
+          tag:
+            description: 'Tag associated with the associated node.'
+            readOnly: true
+            type: string
+          tags:
+            description: 'Tags associated with the associated node.'
+            readOnly: true
+            type: string
+          target:
+            description: 'A dictionary containing details about the target of the log. Details include the path, url, addon, node_url and node_title.'
+            readOnly: true
+            type: string
+          template_node:
+            description: 'A dictionary containing information about the node that was used as a template for the associated node.'
+            readOnly: true
+            type: string
+          title_new:
+            description: 'The new title for the associated node.'
+            readOnly: true
+            type: string
+          title_original:
+            description: 'The original title for the associated node'
+            readOnly: true
+            type: string
+          updated_fields:
+            description: 'A dictionary containing all of the fields updated on the associated node.'
+            readOnly: true
+            type: string
+          urls:
+            description: 'Links to access information about the file associated with this log.'
+            readOnly: true
+            type: string
+          version:
+            description: 'Version of the wiki page associated with this log.'
+            readOnly: true
+            type: string
+          wiki:
+            description: 'A dictionary with information about the wiki page associated with the log.'
+            readOnly: true
+            type: string
   links:
-    format: url
     description: 'Links related to this log'
     readOnly: true
-    type: string
-  node:
-    description: 'A relationship to the node associated with this log.'
+    type: object
+    properties:
+      self:
+        type: string
+        format: URL
+        readOnly: true
+        description: 'A link to the detail page for the log.'
+  relationships:
+    type: object
     readOnly: true
-    type: string
-  original_node:
-    description: 'A relationship to the original node that was associated with this log, in case this log was a remnant of when the original node was forked or registered.'
-    readOnly: true
-    type: string
-  user:
-    description: 'The user associated with this log'
-    readOnly: true
-    type: string
-  linked_node:
-    description: 'A node linked to this log'
-    readOnly: true
-    type: string
-  template_node:
-    description: 'Node used as a template for this log'
-    readOnly: true
-    type: string
+    description: 'URLs to other entities or entity collections that have a relationship to the log.'
+    required:
+      - node
+    properties:
+      node:
+        description: 'A relationship to the node associated with this log.'
+        readOnly: true
+        type: string
+      original_node:
+        description: 'A relationship to the original node that was associated with this log, in case this log was a remnant of when the original node was forked or registered.'
+        readOnly: true
+        type: string
+      user:
+        description: 'The user associated with this log'
+        readOnly: true
+        type: string
+      linked_node:
+        description: 'A node linked to this log'
+        readOnly: true
+        type: string
+      template_node:
+        description: 'Node used as a template for this log'
+        readOnly: true
+        type: string
+
 example:
   data:
-    attributes:
-      date: '{log datetime}'
-      action: '{action name}'
-    type: 'logs'
-    id: '{log id}'
     relationships:
       node:
-        data:
-          type: nodes
-          id: '{node_id}'
-      user:
-        data:
-          type: users
-          id: hello
+        links:
+          related:
+            href: https://api.osf.io/v2/nodes/ezcuj/
+            meta: {}
       original_node:
-        data:
-          type: nodes
-          id: '{node_id}'
+        links:
+          related:
+            href: https://api.osf.io/v2/nodes/ezcuj/
+            meta: {}
+      user:
+        links:
+          related:
+            href: https://api.osf.io/v2/users/jk5cv/
+            meta: {}
+    links:
+      self: https://api.osf.io/v2/logs/4fc706a80b6e9118ef000122/
+    attributes:
+      date: '2012-05-31T05:50:32.083000'
+      action: contributor_added
+      params:
+        params_node:
+          id: ezcuj
+          title: 'Reproducibility Project: Psychology'
+        contributors:
+        - family_name: Nosek
+          middle_names: A.
+          given_name: Brian
+          full_name: Brian A. Nosek
+          active: true
+          id: cdi38
+    type: logs
+    id: 4fc706a80b6e9118ef000122
