@@ -2,57 +2,23 @@
 get:
   summary: Retrieve a Log
   description: >-
-    Details about a given Log. *Read-only*.
+    Retrieves the details of a log.
 
-    On the front end, logs show record and show actions done on the OSF. 
+    A log is permanent immutable record of a node's history. A log is created when a user
+    performs one of many actions. See the [Actions](#!/Logs/logs_actions) section for more details.
 
-    ##Log Attributes
+    ####Returns
 
-    OSF Log entities have the "logs" `type`.
-
-
-    name           type                   description
-
-    ----------------------------------------------------------------------------
-
-    date           iso8601 timestamp      timestamp of Log creation
-    action         string                 Log action (see list above)
+    Returns JSON with a `data` key containing the representation of the requested
+    log, if the request was successful.
 
 
-    ##Relationships
-
-
-    ###Node
-
-
-    The node this log is associated with.
-
-
-    ###Original Node
-
-
-    The original node that was associated with this log, in case this log was a remnant of when the original node was forked or registered.
-
-
-    ###User
-
-
-    The user who performed the logged action.
-
-
-    ##Links
-
-
-    See the [JSON-API spec regarding
-    pagination](http://jsonapi.org/format/1.0/#fetching-pagination).
-
-
-    ##Query Params
-
-    Logs may be filtered by their `action` and `date`.
+    If the request is unsuccessful, JSON with an `errors` key containing
+    information about the failure will be returned. Refer to the [list of error codes]()
+    to understand why this request may have failed.
 
   parameters:
-    - description: ''
+    - description: 'The unique identifier of the log you wish to retrieve.'
       required: true
       type: string
       name: log_id
