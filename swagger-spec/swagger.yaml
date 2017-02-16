@@ -208,3 +208,13 @@ paths:
 
   /preprint_providers/{preprint_provider_id}/licenses/:
     $ref: 'preprint_providers/licenses_list.yaml'
+
+  #################
+  #   WIKIS   #
+  #################
+
+  /{node_id}/wikis/:
+    $ref: 'wikis/list.yaml'
+
+  /{node_id}/wikis/{wiki_id}/:
+    $ref: 'wikis/detail.yaml'
