@@ -38,6 +38,7 @@ get:
   tags:
     - Nodes
   operationId: nodes_list
+  x-response-schema: Node
   responses:
     '200':
       description: OK
@@ -227,6 +228,7 @@ post:
   operationId: nodes_create
   consumes:
     - application/json
+  x-response-schema: Node
   responses:
     '201':
       description: 'Success'
