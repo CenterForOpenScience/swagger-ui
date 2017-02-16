@@ -190,6 +190,7 @@ paths:
   /preprints/{preprint_id}/citation/{style_id}/:
     $ref: 'preprints/citation_style_detail.yaml'
 
+
   ##########################
   #   PREPRINT PROVIDERS   #
   ##########################
@@ -209,9 +210,9 @@ paths:
   /preprint_providers/{preprint_provider_id}/licenses/:
     $ref: 'preprint_providers/licenses_list.yaml'
 
-  #################
+  #############
   #   WIKIS   #
-  #################
+  #############
 
   /{node_id}/wikis/:
     $ref: 'wikis/list.yaml'
