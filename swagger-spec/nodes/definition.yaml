@@ -73,6 +73,11 @@ properties:
         type: boolean
         readOnly: true
         description: 'Whether or not this node represents a fork of another node.'
+      forked_date:
+        type: string
+        format: date-time
+        readOnly: true
+        description: 'If this node is a fork of another node, the time at which the node was created, as an iso8601 formatted timestamp.'
       node_license:
         type: string
         readOnly: false

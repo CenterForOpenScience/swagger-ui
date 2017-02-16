@@ -126,6 +126,9 @@ paths:
   /nodes/{node_id}/children/:
     $ref: 'nodes/children_list.yaml'
 
+  /nodes/{node_id}/forks/:
+    $ref: 'nodes/forks_list.yaml'
+
   #################
   #   PREPRINTS   #
   #################

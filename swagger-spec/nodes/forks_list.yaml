@@ -1,1 +1,234 @@
-# /nodes/{node_id}/forks/
+parameters:
+- description: 'The unique identifier of the node.'
+  required: true
+  type: string
+  name: node_id
+  in: path
+
+post:
+  summary: Create a fork of this node
+  description: >-
+    Creates a fork of the given node.
+
+
+    TODO: explain what forks actually are... especially the difference between forks and templates
+
+
+    Forks are complete copies of projects that you can change without affecting the original project.
+
+
+    When creating a fork, your fork will only contain public components of the current node and components for which you are a contributor.
+    Private components that you do not have access to will not be forked.
+
+    #### Required
+
+    There are no required attributes when creating a fork, as all of the forked node's attributes will be copied from the current node.
+
+
+    The `title` field is optional, with the default title being "Fork of " prepended to the current node's title.
+
+    #### Returns
+
+    Returns a dictionary with a `data` property containing the complete representation of the forked node, if the request is successful.
+
+    If the request is unsuccessful, a dictionary with an `errors` property containing information about the failure will be returned.
+    Refer to the [list of error codes]() to understand why this request may have failed.
+
+  parameters:
+    - in: body
+      name: body
+      required: true
+      # TODO: body example specific to forks -- i.e. nothing required
+      schema:
+        $ref: definition.yaml
+  tags:
+    - Nodes
+  operationId: nodes_forks_create
+  consumes:
+    - application/json
+  x-response-schema: Node
+  responses:
+    '201':
+      description: 'Created'
+
+get:
+  summary: List all forks of this node
+  description: >-
+
+    A paginated list of the current node's forks.
+    The returned fork nodes are sorted by their `forked_date`, with the most recently forked nodes appearing first.
+
+
+    Forks are copies of projects that you can change without affecting the original project.
+
+    #### Returns
+
+    Returns JSON with a `data` and `links` property.
+
+
+    The `data` property contains a list of up to 10 forked nodes.
+    If the current node has zero forked nodes, the `data` property will contain an empty list.
+    Each resource in the array is a separate node object and contains the full representation of the forked node, meaning additional requests to the forked node's detail view are not necessary.
+
+
+    The `links` property contains a dictionary of links that can be used for [pagination](http://jsonapi.org/format/1.0/#fetching-pagination).
+
+
+    This request should never return an error.
+
+    #### Filtering
+
+    As forks are node objects, the same [filters that apply to nodes]() can be applied to forks.
+
+  tags:
+    - Nodes
+  operationId: nodes_forks_list
+  x-response-schema: Node
+  responses:
+    '200':
+      description: 'OK'
+      schema:
+        type: array
+        items:
+          $ref: definition.yaml
+      examples:
+        application/json:
+          data:
+          - relationships:
+              files:
+                links:
+                  related:
+                    href: https://api.osf.io/v2/nodes/95q3e/files/
+                    meta: {}
+              view_only_links:
+                links:
+                  related:
+                    href: https://api.osf.io/v2/nodes/95q3e/view_only_links/
+                    meta: {}
+              citation:
+                links:
+                  related:
+                    href: https://api.osf.io/v2/nodes/95q3e/citation/
+                    meta: {}
+              draft_registrations:
+                links:
+                  related:
+                    href: https://api.osf.io/v2/nodes/95q3e/draft_registrations/
+                    meta: {}
+              contributors:
+                links:
+                  related:
+                    href: https://api.osf.io/v2/nodes/95q3e/contributors/
+                    meta: {}
+              forks:
+                links:
+                  related:
+                    href: https://api.osf.io/v2/nodes/95q3e/forks/
+                    meta: {}
+              root:
+                links:
+                  related:
+                    href: https://api.osf.io/v2/nodes/95q3e/
+                    meta: {}
+              identifiers:
+                links:
+                  related:
+                    href: https://api.osf.io/v2/nodes/95q3e/identifiers/
+                    meta: {}
+              forked_from:
+                links:
+                  related:
+                    href: https://api.osf.io/v2/nodes/ezcuj/
+                    meta: {}
+              comments:
+                links:
+                  related:
+                    href: https://api.osf.io/v2/nodes/95q3e/comments/?filter%5Btarget%5D=95q3e
+                    meta: {}
+              registrations:
+                links:
+                  related:
+                    href: https://api.osf.io/v2/nodes/95q3e/registrations/
+                    meta: {}
+              node_links:
+                links:
+                  related:
+                    href: https://api.osf.io/v2/nodes/95q3e/node_links/
+                    meta: {}
+              linked_nodes:
+                links:
+                  self:
+                    href: https://api.osf.io/v2/nodes/95q3e/relationships/linked_nodes/
+                    meta: {}
+                  related:
+                    href: https://api.osf.io/v2/nodes/95q3e/linked_nodes/
+                    meta: {}
+              wikis:
+                links:
+                  related:
+                    href: https://api.osf.io/v2/nodes/95q3e/wikis/
+                    meta: {}
+              affiliated_institutions:
+                links:
+                  self:
+                    href: https://api.osf.io/v2/nodes/95q3e/relationships/institutions/
+                    meta: {}
+                  related:
+                    href: https://api.osf.io/v2/nodes/95q3e/institutions/
+                    meta: {}
+              children:
+                links:
+                  related:
+                    href: https://api.osf.io/v2/nodes/95q3e/children/
+                    meta: {}
+              preprints:
+                links:
+                  related:
+                    href: https://api.osf.io/v2/nodes/95q3e/preprints/
+                    meta: {}
+              logs:
+                links:
+                  related:
+                    href: https://api.osf.io/v2/nodes/95q3e/logs/
+                    meta: {}
+            links:
+              self: https://api.osf.io/v2/nodes/95q3e/
+              html: https://osf.io/95q3e/
+            attributes:
+              category: project
+              fork: true
+              preprint: false
+              description: ''
+              current_user_permissions:
+              - read
+              - write
+              - admin
+              date_modified: '2016-07-23T00:21:05.371000'
+              title: 'Fork of Reproducibility Project: Psychology'
+              forked_date: '2016-11-08T15:59:03.114000'
+              collection: false
+              registration: false
+              date_created: '2012-04-01T15:49:07.702000'
+              current_user_can_comment: true
+              node_license:
+              public: false
+              tags:
+              - replication
+              - reproducibility
+              - open science
+              - reproduction
+              - psychological science
+              - psychology
+              - metascience
+              - crowdsource
+            type: nodes
+            id: 95q3e
+          links:
+            first:
+            last:
+            prev:
+            next:
+            meta:
+              total: 2
+              per_page: 10
+
