@@ -21,9 +21,8 @@ get:
 
     #### Filtering
 
-    You can optionally request that the response only include institutions that
-    match your filters by utilizing the `filter` query parameter, e.g.
-    https://api.osf.io/v2/institutions/?filter[id]=cos.
+    You can optionally request that the response only include users that match your filters by utilizing the `filter` query parameter, e.g.
+    https://api.osf.io/v2/institutions/cos/users?filter[family_name]=Nosek.
 
 
     Users may be filtered by their `id`, `full_name`, `given_name`, `middle_names`, and `family_name`

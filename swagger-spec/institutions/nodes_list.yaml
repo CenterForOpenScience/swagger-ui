@@ -22,8 +22,7 @@ get:
 
     #### Filtering
 
-    You can optionally request that the response only include institutions that
-    match your filters by utilizing the `filter` query parameter, e.g.
+    You can optionally request that the response only include nodes that match your filters by utilizing the `filter` query parameter, e.g.
     https://api.osf.io/v2/institutions/cos/nodes?filter[title]=science.
 
 

@@ -31,6 +31,7 @@ get:
   tags:
     - Preprints
   operationId: preprints_list
+  x-response-schema: 'Preprint'
   responses:
     '200':
       description: OK
@@ -121,6 +122,8 @@ post:
   operationId: preprints_create
   consumes:
   - application/json
+  x-response-schema: 'Preprint'
   responses:
     '201':
       description: 'Success'
+

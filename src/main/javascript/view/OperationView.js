@@ -16,7 +16,7 @@ SwaggerUi.Views.OperationView = Backbone.View.extend({
       "Introduction", "General API Usage", "Versioning",
       "Filtering and Embedding", "Pagination",
       "PUT/PATCH Requests", "Attribute Validation", "Entities",
-      "Entity Collections", "Errors", "OSF Enum Fields"
+      "Entity Collections", "Errors", "OSF Enum Fields", "Actions"
     ];
 
     opts = opts || {};
@@ -24,9 +24,9 @@ SwaggerUi.Views.OperationView = Backbone.View.extend({
     this.auths = opts.auths;
     this.parentId = this.model.parentId;
     this.nickname = this.model.nickname;
-    this.name = this.model.parentId.replace(/s$/, '');
     this.model.encodedParentId = encodeURIComponent(this.parentId);
     this.model.endpoint = api_topics.indexOf(this.model.summary) == -1 ? true : false;
+    this.schemaName = this.model.vendorExtensions['x-response-schema'];
     return this;
   },
 
@@ -163,7 +163,7 @@ SwaggerUi.Views.OperationView = Backbone.View.extend({
             signature: value.getMockSignature(),
             type: "Response",
             id: this.parentId + '_' + this.nickname + '_succes',
-            name: this.name
+            schemaName: this.schemaName
           };
         }
       }
@@ -173,8 +173,7 @@ SwaggerUi.Views.OperationView = Backbone.View.extend({
         isParam: false,
         signature: this.model.responseClassSignature,
         type: "Response",
-        id: this.parentId + '_' + this.nickname,
-        name: this.name
+        id: this.parentId + '_' + this.nickname
       };
     }
 
@@ -200,8 +199,7 @@ SwaggerUi.Views.OperationView = Backbone.View.extend({
         router: this.router,
         tagName: 'div',
         type: "Response",
-        id: this.parentId + '_' + this.nickname + '_response',
-        name: this.name
+        id: this.parentId + '_' + this.nickname + '_response'
       });
       $('.model-signature', $(this.el)).append(responseSignatureView.render().el);
     } else {
@@ -253,10 +251,10 @@ SwaggerUi.Views.OperationView = Backbone.View.extend({
     var bodySample = {
       sampleJSON: param.sampleJSON,
       isParam: true,
-      signature: param.signature,
+      signature: this.model.method == 'put' || this.model.method == 'patch' ? '' : param.signature,
       type: "Body",
       id: this.parentId + '_' + this.nickname + '_body',
-      name: this.name
+      schemaName: this.schemaName
     };
     var signatureView = new SwaggerUi.Views.SignatureView({model: bodySample, tagName: 'div'});
     $('.model-signature', $(this.el)).append(signatureView.render().el);

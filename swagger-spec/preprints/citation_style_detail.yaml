@@ -23,6 +23,7 @@ get:
   tags:
     - Preprints
   operationId: preprints_citation_read
+  x-response-schema: 'Citation Style'
   responses:
     '200':
       description: ''

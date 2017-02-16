@@ -18,6 +18,7 @@ get:
   tags:
     - Preprints
   operationId: preprints_citation_list
+  x-response-schema: 'Citation'
   responses:
     '200':
       description: ''

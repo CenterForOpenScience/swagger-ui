@@ -9,21 +9,24 @@ get:
 
     JSON with keys for `data` and `links`.
 
+
     The `data` key contains an array of 10 institutions.
     Each resource in the array is a separate institution object.
+
+
     The `links` property contains JSON of links that can be used
     for [pagination](http://jsonapi.org/format/1.0/#fetching-pagination).
+
 
     This request should never return an error.
 
     #### Filtering
 
-    You can optionally request that the response only include institutions that
-    match your filters by utilizing the `filter` query parameter, e.g.
+    You can optionally request that the response only include institutions that match your filters by utilizing the `filter` query parameter, e.g.
     https://api.osf.io/v2/institutions/?filter[id]=cos.
 
-    Institutions may be filtered by their `id`, `name`, and `auth_url`
 
+    Institutions may be filtered by their `id`, `name`, and `auth_url`
   tags:
     - Institutions
   operationId: institutions_list

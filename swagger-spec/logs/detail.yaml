@@ -1,1 +1,33 @@
 # /logs/{log_id}/
+get:
+  summary: Retrieve a Log
+  description: >-
+    Retrieves the details of a log.
+
+    A log is permanent immutable record of a node's history. A log is created when a user
+    performs one of many actions. See the [Actions](#!/Logs/logs_actions) section for more details.
+
+    ####Returns
+
+    Returns JSON with a `data` key containing the representation of the requested
+    log, if the request was successful.
+
+
+    If the request is unsuccessful, JSON with an `errors` key containing
+    information about the failure will be returned. Refer to the [list of error codes]()
+    to understand why this request may have failed.
+
+  parameters:
+    - description: 'The unique identifier of the log you wish to retrieve.'
+      required: true
+      type: string
+      name: log_id
+      in: path
+  tags:
+    - Logs
+  operationId: logs_read
+  responses:
+    '200':
+      description: ''
+      schema:
+        $ref: 'definition.yaml'
