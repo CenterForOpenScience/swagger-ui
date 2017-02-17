@@ -15,6 +15,7 @@ var connect = require('gulp-connect');
 var header = require('gulp-header');
 var pkg = require('./package.json');
 var order = require('gulp-order');
+var run = require('gulp-run');
 var banner = ['/**',
   ' * <%= pkg.name %> - <%= pkg.description %>',
   ' * @version v<%= pkg.version %>',
@@ -108,13 +109,17 @@ gulp.task('copy', ['less'], function() {
     .pipe(gulp.dest('./dist'))
     .on('error', log);
 
-  // copy all files inside swagger-spec folder
-  gulp
-    .src(['./swagger-spec/**/*'])
-    .pipe(gulp.dest('./dist/swagger-spec/'))
-    .on('error', log);
-
 });
+
+gulp.task('bundle', ['clean', 'copy', 'validate'], function() {
+  return run('swagger bundle -r -o ./dist/swagger.json swagger-spec/swagger.yaml').exec()
+});
+
+gulp.task('validate', function() {
+  return run('swagger validate swagger-spec/swagger.yaml').exec()
+  .on('error', log);
+});
+
 
 /**
  * Watch for changes and recompile
@@ -141,5 +146,5 @@ function log(error) {
 }
 
 
-gulp.task('default', ['dist', 'copy']);
+gulp.task('default', ['dist', 'copy', 'bundle']);
 gulp.task('serve', ['connect', 'watch']);

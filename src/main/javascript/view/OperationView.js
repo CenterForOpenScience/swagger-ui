@@ -26,7 +26,7 @@ SwaggerUi.Views.OperationView = Backbone.View.extend({
     this.nickname = this.model.nickname;
     this.model.encodedParentId = encodeURIComponent(this.parentId);
     this.model.endpoint = api_topics.indexOf(this.model.summary) == -1 ? true : false;
-    this.schemaName = this.model.vendorExtensions['x-response-schema'];
+    this.schemaName = this.model.operation['x-response-schema'];
     return this;
   },
 
@@ -262,12 +262,13 @@ SwaggerUi.Views.OperationView = Backbone.View.extend({
 
 
   addParameter: function (param, consumes) {
+
     // Render a parameter
     param.consumes = consumes;
     // Copy this param JSON spec so that it will be available for JsonEditor
     if(param.schema){
-      $.extend(true, param.schema, this.model.definitions[param.type]);
-      param.schema.definitions = this.model.definitions;
+      // $.extend(true, param.schema, this.model.definitions[param.type]);
+      // param.schema.definitions = this.model.definitions;
       // This is required for JsonEditor to display the root properly
       if(!param.schema.type){
         param.schema.type = 'object';
