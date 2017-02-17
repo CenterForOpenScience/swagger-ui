@@ -70,6 +70,16 @@ paths:
         - Base
       operationId: base_read
 
+  #################
+  #   CITATIONS   #
+  #################
+
+  /citations/styles/:
+    $ref: 'citations/style_list.yaml'
+
+  /citations/styles/{style_id}/:
+      $ref: 'citations/style_detail.yaml'
+
   ################
   #   COMMENTS   #
   ################
