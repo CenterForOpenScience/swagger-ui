@@ -143,6 +143,9 @@ paths:
   /nodes/:
     $ref: 'nodes/list.yaml'
 
+  /nodes/{node_id}/:
+    $ref: 'nodes/detail.yaml'
+
   /nodes/{node_id}/children/:
     $ref: 'nodes/children_list.yaml'
 

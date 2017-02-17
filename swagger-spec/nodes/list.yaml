@@ -205,7 +205,7 @@ post:
     &nbsp;&nbsp;&nbsp;&nbsp`category`
 
 
-    Note: nodes default to **private** unless the `public` field is explicitly set to **true** in the request payload.
+    Note: Nodes default to **private** unless the `public` field is explicitly set to **true** in the request payload.
 
     #### Returns
 
