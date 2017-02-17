@@ -1,4 +1,4 @@
-# # /preprints/{preprint_id}/citation/
+# /preprints/{preprint_id}/citation/
 get:
   summary: 'Retrieve citation details'
   description: >-
@@ -18,12 +18,12 @@ get:
   tags:
     - Preprints
   operationId: preprints_citation_list
-  x-response-schema: 'Citation'
+  x-response-schema: 'Citation Detail'
   responses:
     '200':
       description: ''
       schema:
-        $ref: '../citations/definition.yaml'
+        $ref: '../nodes/citation_detail_definition.yaml'
       examples:
         application/json:
           data:

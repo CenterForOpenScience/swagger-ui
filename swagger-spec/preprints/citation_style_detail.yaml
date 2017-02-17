@@ -1,6 +1,6 @@
-# # /preprints/{preprint_id}/citation/{style_id}/
+# /preprints/{preprint_id}/citation/{style_id}/
 get:
-  summary: 'Retrieve a citation'
+  summary: 'Retrieve a styled citation'
   description: >-
     The citation for a preprint in a specific style.
 
@@ -10,7 +10,7 @@ get:
     citation, in the requested style.
 
   parameters:
-    - description: 'The unique identifier of the citation '
+    - description: 'The unique identifier of the citation style.'
       required: true
       type: string
       name: style_id
@@ -23,12 +23,12 @@ get:
   tags:
     - Preprints
   operationId: preprints_citation_read
-  x-response-schema: 'Citation Style'
+  x-response-schema: 'Styled Citation'
   responses:
     '200':
       description: ''
       schema:
-        $ref: '../citations/style_definition.yaml'
+        $ref: '../nodes/styled_citation_definition.yaml'
       examples:
         application/json:
           data:
