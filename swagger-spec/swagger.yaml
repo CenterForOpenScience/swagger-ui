@@ -165,6 +165,9 @@ paths:
   /nodes/{node_id}/forks/:
     $ref: 'nodes/forks_list.yaml'
 
+  /nodes/{node_id}/preprints/:
+    $ref: 'nodes/preprints_list.yaml'
+
   #################
   #   PREPRINTS   #
   #################
