@@ -220,6 +220,16 @@ paths:
     $ref: 'preprint_providers/licenses_list.yaml'
 
   #############
+  #   USERS   #
+  #############
+
+  /users/:
+    $ref: 'users/list.yaml'
+
+  /users/{user_id}/:
+    $ref: 'users/detail.yaml'
+
+  #############
   #   WIKIS   #
   #############
 
