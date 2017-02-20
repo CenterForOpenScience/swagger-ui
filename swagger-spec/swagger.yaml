@@ -219,3 +219,6 @@ paths:
 
   /{node_id}/wikis/{wiki_id}/:
     $ref: 'wikis/detail.yaml'
+
+  /{node_id}/wikis/{wiki_id}/content/:
+    $ref: 'wikis/content.yaml'
