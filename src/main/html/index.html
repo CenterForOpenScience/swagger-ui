@@ -65,6 +65,14 @@
                         // });
 
                     }
+                    // Scroll to the anchor specified in the URL
+                    $(document).ready(function() {
+                        setTimeout(function() {
+                            if (window.location.hash) {
+                                $(document).scrollTop($(window.location.hash).offset().top);
+                            }
+                        }, 700);
+                    });
 
                     $('pre code').each(function (i, e) {
                         hljs.highlightBlock(e)

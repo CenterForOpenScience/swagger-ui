@@ -2,15 +2,20 @@
     <li class='{{method}} operation' id='{{parentId}}_{{nickname}}'>
         <div class='content'>
             <div class='heading'>
-                <h2 class='operation-title'>{{summary}}</h2>
+                <div>
+                    <a href='#{{parentId}}_{{nickname}}'>
+                        <span class="glyphicon glyphicon-link"></span>
+                    </a>
+                    <h2 class='operation-title'>{{summary}}</h2>
+                </div>
 
                 {{#if endpoint}}
                     <h3>
                         <span class='http_method'>
-                            <a href='#!/{{encodedParentId}}/{{nickname}}'>{{method}}</a>
+                            <a href='#{{encodedParentId}}_{{nickname}}'>{{method}}</a>
                         </span>
                         <span class='path'>
-                            <a href='#!/{{encodedParentId}}/{{nickname}}'
+                            <a href='#{{encodedParentId}}_{{nickname}}'
                                class="{{#if deprecated}}deprecated{{/if}}">{{path}}</a>
                         </span>
                     </h3>
