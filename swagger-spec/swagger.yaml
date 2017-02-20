@@ -229,6 +229,18 @@ paths:
   /users/{user_id}/:
     $ref: 'users/detail.yaml'
 
+  /users/{user_id}/institutions/:
+    $ref: 'users/institutions_list.yaml'
+
+  /users/{user_id}/nodes/:
+    $ref: 'users/nodes_list.yaml'
+
+  /users/{user_id}/preprints/:
+    $ref: 'users/preprints_list.yaml'
+
+  /users/{user_id}/registrations/:
+    $ref: 'users/registrations_list.yaml'
+
   #############
   #   WIKIS   #
   #############
