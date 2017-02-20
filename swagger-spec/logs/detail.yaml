@@ -5,7 +5,7 @@ get:
     Retrieves the details of a log.
 
     A log is permanent immutable record of a node's history. A log is created when a user
-    performs one of many actions. See the [Actions](#!/Logs/logs_actions) section for more details.
+    performs one of many actions. See the [Actions](#Logs_logs_actions) section for more details.
 
     ####Returns
 
