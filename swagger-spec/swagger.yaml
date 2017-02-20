@@ -171,6 +171,9 @@ paths:
   /nodes/{node_id}/forks/:
     $ref: 'nodes/forks_list.yaml'
 
+  /nodes/{node_id}/wikis/:
+    $ref: 'nodes/wikis_list.yaml'
+
   /nodes/{node_id}/preprints/:
     $ref: 'nodes/preprints_list.yaml'
 
@@ -214,11 +217,8 @@ paths:
   #   WIKIS   #
   #############
 
-  /{node_id}/wikis/:
-    $ref: 'wikis/list.yaml'
-
-  /{node_id}/wikis/{wiki_id}/:
+  /wikis/{wiki_id}/:
     $ref: 'wikis/detail.yaml'
 
-  /{node_id}/wikis/{wiki_id}/content/:
+  /wikis/{wiki_id}/content/:
     $ref: 'wikis/content.yaml'

@@ -3,12 +3,6 @@ parameters:
     type: string
     required: true
     name: wiki_id
-    description: 'The unique identifier of the wiki.'
-  - in: path
-    type: string
-    required: true
-    name: node_id
-    description: 'The unique identifier of the node associated with the wiki.'
 
 get:
   summary: Retrieve the Content of a Wiki
