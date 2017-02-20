@@ -2469,3 +2469,15 @@ body {
     text-align: center;
     padding-top: 10px
 }
+
+.glyphicon-link {
+    float:left;
+    margin-left: -15px;
+    padding-top: 10px;
+    padding-right: 5px;
+    color: lightblue;
+}
+
+.glyphicon-link:hover {
+    color: #44c7f4;
+}
