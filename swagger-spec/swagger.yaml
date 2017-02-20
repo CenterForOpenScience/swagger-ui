@@ -171,6 +171,9 @@ paths:
   /nodes/{node_id}/contributors/:
     $ref: 'nodes/contributors_list.yaml'
 
+  /nodes/{node_id}/contributors/{user_id}/:
+    $ref: 'nodes/contributor_detail.yaml'
+
   /nodes/{node_id}/forks/:
     $ref: 'nodes/forks_list.yaml'
 
