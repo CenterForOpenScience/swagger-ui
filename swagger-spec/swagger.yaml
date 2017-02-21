@@ -54,6 +54,9 @@ paths:
   /errors/:
     $ref: 'introduction/errors.yaml'
 
+  /error_codes/:
+    $ref: 'introduction/error_codes.yaml'
+
   /pagination/:
     $ref: 'introduction/pagination.yaml'
 

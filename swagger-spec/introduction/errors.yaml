@@ -1,13 +1,13 @@
 get:
   summary: Errors
   description: >-
-    When a request fails for any reason, the OSF API will return an appropriate HTTP error code and include a descriptive error in the body of the response.
+    When a request fails for any reason, the OSF API will return an appropriate [HTTP response code](#error_codes) and include a descriptive error in the body of the response.
 
 
     The response body will be a JSON object with a key, `errors`, pointing to an array of error objects.
 
 
-    Generally, these error objects will consist of a `detail` key with a detailed error message and a `source` object that may contain a field `pointer` that is a
+    In general, these error objects will consist of a `detail` key with a detailed error message and a `source` object that may contain a field `pointer` that is a
     [JSON Pointer](https://tools.ietf.org/html/rfc6901) to the error-causing attribute.
 
 
