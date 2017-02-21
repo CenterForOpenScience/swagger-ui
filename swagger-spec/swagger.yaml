@@ -30,14 +30,20 @@ paths:
   /general_api_usage/:
     $ref: 'introduction/general_api_usage.yaml'
 
-  /versioning/:
-    $ref: 'introduction/versioning.yaml'
+  /entities/:
+    $ref: 'introduction/entities.yaml'
 
-  /filtering_and_embedding/:
-    $ref: 'introduction/filtering_and_embedding.yaml'
+  /entity_collections/:
+    $ref: 'introduction/entity_collections.yaml'
 
-  /pagination/:
-    $ref: 'introduction/pagination.yaml'
+  /osf_enum_fields/:
+    $ref: 'introduction/osf_enum_fields.yaml'
+
+  /filtering/:
+    $ref: 'introduction/filtering.yaml'
+
+  /embedding/:
+    $ref: 'introduction/embedding.yaml'
 
   /put_patch_requests/:
     $ref: 'introduction/put_patch_requests.yaml'
@@ -45,17 +51,14 @@ paths:
   /attribute_validation/:
     $ref: 'introduction/attribute_validation.yaml'
 
-  /entities/:
-    $ref: 'introduction/entities.yaml'
-
-  /entity_collections/:
-    $ref: 'introduction/entity_collections.yaml'
-
   /errors/:
     $ref: 'introduction/errors.yaml'
 
-  /osf_enum_fields/:
-    $ref: 'introduction/osf_enum_fields.yaml'
+  /pagination/:
+    $ref: 'introduction/pagination.yaml'
+
+  /versioning/:
+    $ref: 'introduction/versioning.yaml'
 
   ############
   #   BASE   #

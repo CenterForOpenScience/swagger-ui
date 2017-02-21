@@ -1,9 +1,9 @@
 get:
   description: >-
+    All entity collection endpoints respond to the `page` query parameter behavior as described in the [JSON-API pagination spec](http://jsonapi.org/format/1.0/#crud).
 
-    All entity collection endpoints respond to the `page` query parameter behavior as described in the [JSON-API
-    pagination spec](http://jsonapi.org/format/1.0/#crud).  However, pagination links are provided in the response, and
-    you are encouraged to use that rather than adding query parameters by hand.
+
+    However, pagination links are provided in the response, and you are encouraged to use that rather than adding query parameters by hand.
 
   summary: Pagination
   responses:

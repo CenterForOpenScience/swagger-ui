@@ -1,10 +1,11 @@
 get:
   description: >-
+    Some entities in the OSF API have fields that only take a restricted set of values. Those fields are listed here for reference.
 
-    Some entities in the OSF API have fields that only take a restricted set of values.  Those fields are listed here
-    for reference.  Fuller descriptions are available on the relevant entity pages.
 
-    #OSF Node Categories
+    Fuller descriptions are available on the relevant entity pages.
+
+    #### OSF Node Categories
 
         value                 description
         ==========================================
@@ -18,20 +19,20 @@ get:
         communication         Communication
         other                 Other
 
-    #OSF Node Permission keys
+
+    #### OSF Node Permissions
 
         value        description
-        ==========================================
+        =============================
         read         Read-only access
-        write        Write access (make changes, cannot delete)
-        admin        Admin access (full write, create, delete, contributor add)
+        write        Write access
+        admin        Admin access
 
-    #Storage Providers
 
-    Valid storage providers are:
+    #### OSF Storage Providers
 
         value        description
-        ==========================================
+        ==========================
         box          Box.com
         dataverse    Dataverse
         dropbox      Dropbox
@@ -42,7 +43,7 @@ get:
         s3           Amazon S3
 
 
-  summary: OSF Enum Fields
+  summary: Enum Fields
   responses:
     '200':
       description: OK
