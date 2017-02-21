@@ -65,10 +65,11 @@
                         // });
 
                     }
-                    // Scroll to the anchor specified in the URL
+                    // Scroll to the anchor specified in the URL and open section on sidebar
                     $(document).ready(function() {
                         setTimeout(function() {
                             if (window.location.hash) {
+                                $('.item[data-endpoint="' + window.location.hash.replace('#', '') + '"]').click();
                                 $(document).scrollTop($(window.location.hash).offset().top);
                             }
                         }, 700);
