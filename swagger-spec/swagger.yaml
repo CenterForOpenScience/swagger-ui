@@ -182,6 +182,12 @@ paths:
   /nodes/{node_id}/contributors/{user_id}/:
     $ref: 'nodes/contributor_detail.yaml'
 
+  /nodes/{node_id}/draft_registrations/:
+    $ref: 'nodes/draft_registrations_list.yaml'
+
+  /nodes/{node_id}/draft_registrations/{draft_id}/:
+    $ref: 'nodes/draft_registration_detail.yaml'
+
   /nodes/{node_id}/forks/:
     $ref: 'nodes/forks_list.yaml'
 
