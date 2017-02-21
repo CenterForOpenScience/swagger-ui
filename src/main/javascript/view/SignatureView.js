@@ -2,7 +2,9 @@
 
 SwaggerUi.Views.SignatureView = Backbone.View.extend({
   events: {
-    'mousedown .snippet': 'snippetToTextArea'
+    'mousedown .snippet': 'snippetToTextArea',
+    'click  h4.sample-title': 'toggleIcon',
+    'click  h4.schema-title': 'toggleIcon'
   },
 
   initialize: function () {
@@ -29,6 +31,17 @@ SwaggerUi.Views.SignatureView = Backbone.View.extend({
             this.model.jsonEditor.setValue(JSON.parse(this.model.sampleJSON));
          }
       }
+    }
+  },
+
+  // handler for changing arrow icon
+  toggleIcon: function (e) {
+    var iconId = e.currentTarget.attributes['data-toggle'].ownerElement.children[0];
+
+    if ($(iconId).hasClass('glyphicon-menu-right')) {
+      $(iconId).removeClass("glyphicon-menu-right").addClass("glyphicon-menu-down");
+    } else {
+      $(iconId).removeClass("glyphicon-menu-down").addClass("glyphicon glyphicon-menu-right");
     }
   }
 });
