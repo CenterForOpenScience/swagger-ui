@@ -56,8 +56,9 @@ gulp.task('dist', ['clean'], function() {
 
   return es.merge(
       gulp.src([
-        './src/main/javascript/**/*.js',
-        './node_modules/swagger-client/browser/swagger-client.js'
+          './src/main/javascript/**/*.js',
+          './node_modules/swagger-client/browser/swagger-client.js',
+          './node_modules/clipboard/dist/clipboard.min.js'
       ]),
       templates()
     )
