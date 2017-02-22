@@ -230,7 +230,7 @@ SwaggerUi.Views.MainView = Backbone.View.extend({
   updateHashOnScroll: function(e) {
     var currentHash = '#';
     var padding = 20;
-    $('.anchor_link').each(function () {
+    $('.anchor-link').each(function () {
         var top = window.pageYOffset;
         var distance = top - $(this).offset().top;
         var hash = $(this).attr('href');
