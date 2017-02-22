@@ -49,7 +49,7 @@ properties:
       current_user_can_comment:
         type: boolean
         readOnly: true
-        description: 'Whether or not the current user has permission to post comments on this node. TODO: more info -- can everyone comment on public nodes? what permission is necessary?'
+        description: 'Whether or not the current user has permission to post comments on this node. Comments on nodes can be set to allow all users to comment (if public) or restricted to only contributors.'
       current_user_permissions:
         type: array
         items:

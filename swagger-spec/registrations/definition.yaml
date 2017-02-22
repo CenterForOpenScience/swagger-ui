@@ -1,0 +1,178 @@
+type: object
+title: Registration
+properties:
+  id:
+    type: string
+    readOnly: true
+    description: 'The unique identifier of the registration.'
+  type:
+    type: string
+    readOnly: true
+    description: 'The type identifier of the registration entity (`registrations`).'
+  attributes:
+    type: object
+    readOnly: true
+    description: 'The properties of the registration entity.'
+    properties:
+      category:
+        type: string
+        readOnly: true
+        enum:
+          - analysis
+          - communication
+          - data
+          - hypothesis
+          - instrumentation
+          - methods and measures
+          - procedure
+          - project
+          - software
+          - other
+        description: 'The category of the registration, as selected by project contributors.'
+      title:
+        type: string
+        readOnly: true
+        description: 'The title of the registration.'
+      collection:
+        type: boolean
+        readOnly: true
+        description: 'Whether or not this registration represents a collection. This value should always be `false`. This field may be deprecated in future versions.'
+      current_user_can_comment:
+        type: boolean
+        readOnly: true
+        description: 'Whether or not the current user has permission to post comments on this registration. Comments on registrations can be set to allow all users to comment or restricted to only contributors.'
+      current_user_permissions:
+        type: array
+        items:
+          type: string
+        readOnly: true
+        description: 'A list of strings representing the permissions for the current user on this registration. Valid permissions are "admin", "read", and "write".'
+      date_created:
+        type: string
+        format: date-time
+        readOnly: true
+        description: 'The time at which the registration was created, as an iso8601 formatted timestamp.'
+      date_modified:
+        type: string
+        format: date-time
+        readOnly: true
+        description: 'The time at which the registration was last modified, as an iso8601 formatted timestamp.'
+      description:
+        type: string
+        readOnly: true
+        description: 'The description of the registration.'
+      fork:
+        type: boolean
+        readOnly: true
+        description: 'Whether or not this registration represents a fork of another node.'
+      forked_date:
+        type: string
+        format: date-time
+        readOnly: true
+        description: 'If this node is a fork of another node, the time at which the node was created, as an iso8601 formatted timestamp.'
+      node_license:
+        type: string
+        readOnly: true
+        description: 'A dictionary containing the metadata (copyright year and holder) associated with the node license (required for certain license types).'
+      preprint:
+        type: boolean
+        readOnly: true
+        description: 'Whether or not a preprint has been created from this node, or if this node was created for a preprint.'
+      public:
+        type: boolean
+        readOnly: true
+        description: 'Whether or not the node is publicly visible. This field is only editable by project administrators.'
+      registration:
+        type: boolean
+        readOnly: true
+        description: 'Whether or not the node represents a registration. This value should always be `false`. This field may be deprecated in future versions.'
+      tags:
+        type: array
+        items:
+          type: string
+        readOnly: true
+        description: 'A list of strings that describe this node, as entered by project contributors.'
+      template_from:
+        type: string
+        readOnly: true 
+        description: 'The unique ID of the node from which this node was templated, if this node was created from a template.'
+  relationships:
+    type: object
+    readOnly: true
+    description: 'URLs to other entities or entity collections that have a relationship to the registration entity.'
+    properties:
+      affiliated_institutions:
+        type: string
+        readOnly: true
+        description: 'A link to the list of institutions this registration is affiliated with.'
+      children:
+        type: string
+        readOnly: true
+        description: 'A link to the list of this registration''s children (components).'
+      citation:
+        type: string
+        readOnly: true
+        description: 'A link to the citation details of this registration.'
+      comments:
+        type: string
+        readOnly: true
+        description: 'A link to the list of comments on this registration.'
+      contributors:
+        type: string
+        readOnly: true
+        description: 'A link to the list of contributors on this registration.'
+      files:
+        type: string
+        readOnly: true
+        description: 'A link to the list of storage providers that have been enabled on this registration.'
+      forks:
+        type: string
+        readOnly: true
+        description: 'A link to the list of nodes that are forks of this registration.'
+      identifiers:
+        type: string
+        readOnly: true
+        description: 'A link to the list of identifiers for this registration (i.e. ARK and DOI identifiers).'
+      logs:
+        type: string
+        readOnly: true
+        description: 'A link to the list of log actions pertaining to this registration.'
+      linked_nodes:
+        type: string
+        readOnly: true
+        description: 'A link to the list of nodes that are linked to this registration.'
+      parent:
+        type: string
+        readOnly: true
+        description: 'A link to the node that is the direct parent of the current registration, if the current registration is a child registration.'
+      registered_from:
+        type: string
+        readOnly: true
+        description: 'A link to the node that this registration was registered from.'
+      root:
+        type: string
+        readOnly: true
+        description: 'A link to the node that is the top-level parent of the current registration. If the current registration is the top-level node, the root is the current registration.'
+      view_only_links:
+        type: string
+        readOnly: true
+        description: 'A link to the list of view only links that have been created for this registration.'
+      wikis:
+        type: string
+        readOnly: true
+        description: 'A link to the list of wiki pages for this registration.'
+  links:
+    type: object
+    readOnly: true
+    description: 'URLs to alternative representations of the registrations entity.'
+    properties:
+      html:
+        type: string
+        format: URL
+        readOnly: true
+        description: 'A link to the registration''s page on the OSF.'
+      self:
+        type: string
+        format: URL
+        readOnly: true
+        description: 'A link to the canonical API endpoint of this registration.'
