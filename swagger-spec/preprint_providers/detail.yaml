@@ -1,13 +1,5 @@
-# /preprint_providers/{provider_id}/
-parameters:
-  - in: path
-    type: string
-    required: true
-    name: preprint_provider_id
-    description: 'The unique identifier of the preprint provider.'
-
 get:
-  summary: Retrieve a preprint
+  summary: Retrieve a preprint provider
   description: >-
     Retrieves the details of a preprint provider.
 
@@ -18,20 +10,20 @@ get:
 
 
     If the request is unsuccessful, JSON with an `errors` key containing
-    information about the failure will be returned. Refer to the [list of error codes]()
+    information about the failure will be returned. Refer to the [list of error codes](#Introduction_error_codes)
     to understand why this request may have failed.
 
 
     #### Acceptable Subjects Structure
-    
-    Each preprint provider specifies acceptable subjects. 
 
-    `subjects_acceptable` is an array found in `attribtues`. 
+    Each preprint provider specifies acceptable subjects.
 
-    Subjects consist of general parent subjects (e.g., Engineering), 
+    `subjects_acceptable` is an array found in `attributes`.
+
+    Subjects consist of general parent subjects (e.g., Engineering),
     more specific child subjects (e.g., Aerospace Engineering),
     and even more specific grandchild subjects (e.g., Aerodynamics and Fluid Mechanics).
-    Subjects can only be nested 3 deep. 
+    Subjects can only be nested 3 deep.
 
 
         "subjects_acceptable": [
@@ -41,12 +33,12 @@ get:
                     # Architecture
                     "584240d954be81056ceca9e5",
 
-                    # Child Subject: 
+                    # Child Subject:
                     # Architectural Engineering
-                    "584240da54be81056cecac87" 
+                    "584240da54be81056cecac87"
                 ],
                 # Include all Architectural Engineering's children:
-                true 
+                true
             ],
             [
                 [
@@ -68,8 +60,14 @@ get:
         ]
 
     The above structure would allow Architecture, Architectural Engineering, all of Architectural Engineering's children,
-    Engineering, Aerospace Engineering, and Aerodynamics and Fluid Mechanics. 
+    Engineering, Aerospace Engineering, and Aerodynamics and Fluid Mechanics.
 
+  parameters:
+    - in: path
+      type: string
+      required: true
+      name: preprint_provider_id
+      description: 'The unique identifier of the preprint provider.'
   tags:
     - Preprint Providers
   operationId: preprint_provider_detail

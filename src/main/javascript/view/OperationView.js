@@ -14,9 +14,9 @@ SwaggerUi.Views.OperationView = Backbone.View.extend({
   initialize: function (opts) {
     var api_topics = [
       "Introduction", "General API Usage", "Versioning",
-      "Filtering and Embedding", "Pagination",
-      "PUT/PATCH Requests", "Attribute Validation", "Entities",
-      "Entity Collections", "Errors", "OSF Enum Fields", "Actions"
+      "Filtering", "Embedding", "Pagination",
+      "Create/Update Requests", "Attribute Validation", "Entities",
+      "Entity Collections", "Errors", "Enum Fields", "Actions"
     ];
 
     opts = opts || {};
@@ -26,6 +26,7 @@ SwaggerUi.Views.OperationView = Backbone.View.extend({
     this.nickname = this.model.nickname;
     this.model.encodedParentId = encodeURIComponent(this.parentId);
     this.model.endpoint = api_topics.indexOf(this.model.summary) == -1 ? true : false;
+    this.model.read = this.model.method == 'get';
     this.schemaName = this.model.operation['x-response-schema'];
     return this;
   },

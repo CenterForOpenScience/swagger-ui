@@ -6,11 +6,12 @@ properties:
     readOnly: true
     description: 'The identifier of the file entity.'
   type:
-    type: string  
+    type: string
     readOnly: true
     description: 'The type identifier of the file entity (`files`).'
   attributes:
     type: object
+    title: Attributes
     readOnly: false
     description:  'The properties of the file entity.'
     properties:
@@ -24,7 +25,7 @@ properties:
         description: 'The kind of files object it is (`file` or `folder`).'
       name:
         type: string
-        readOnly: false 
+        readOnly: false
         description: 'Name of the file'
       last_touched:
         type: string
@@ -85,6 +86,7 @@ properties:
         description: 'Size of the file in bytes.'
   relationships:
     type: object
+    title: Relationships
     readOnly: true
     description: 'Links to other entities or entity collections that have a relationship to the file entity.'
     properties:
@@ -110,6 +112,7 @@ properties:
         description: A link to the versions of the file.
   links:
     type: object
+    title: Links
     readOnly: true
     description: Links to alternative representations of the file entity.
     properties:

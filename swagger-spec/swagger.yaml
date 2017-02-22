@@ -13,7 +13,9 @@ info:
   license:
     name: Apache 2.0
     url: 'http://www.apache.org/licenses/LICENSE-2.0.html'
-host: 'localhost:8000'
+host: 'test-api.osf.io'
+schemes:
+  - https
 basePath: /v2
 paths:
 
@@ -28,14 +30,20 @@ paths:
   /general_api_usage/:
     $ref: 'introduction/general_api_usage.yaml'
 
-  /versioning/:
-    $ref: 'introduction/versioning.yaml'
+  /entities/:
+    $ref: 'introduction/entities.yaml'
 
-  /filtering_and_embedding/:
-    $ref: 'introduction/filtering_and_embedding.yaml'
+  /entity_collections/:
+    $ref: 'introduction/entity_collections.yaml'
 
-  /pagination/:
-    $ref: 'introduction/pagination.yaml'
+  /osf_enum_fields/:
+    $ref: 'introduction/osf_enum_fields.yaml'
+
+  /filtering/:
+    $ref: 'introduction/filtering.yaml'
+
+  /embedding/:
+    $ref: 'introduction/embedding.yaml'
 
   /put_patch_requests/:
     $ref: 'introduction/put_patch_requests.yaml'
@@ -43,17 +51,17 @@ paths:
   /attribute_validation/:
     $ref: 'introduction/attribute_validation.yaml'
 
-  /entities/:
-    $ref: 'introduction/entities.yaml'
-
-  /entity_collections/:
-    $ref: 'introduction/entity_collections.yaml'
-
   /errors/:
     $ref: 'introduction/errors.yaml'
 
-  /osf_enum_fields/:
-    $ref: 'introduction/osf_enum_fields.yaml'
+  /error_codes/:
+    $ref: 'introduction/error_codes.yaml'
+
+  /pagination/:
+    $ref: 'introduction/pagination.yaml'
+
+  /versioning/:
+    $ref: 'introduction/versioning.yaml'
 
   ############
   #   BASE   #
@@ -61,8 +69,28 @@ paths:
 
   /:
     get:
-      description: ''
       summary: Root
+      description: >-
+        Welcome to the Open Science Framework API. With this API you can access
+        users, projects, components, logs, and files from the [Open Science
+        Framework](https://osf.io/). The Open Science Framework (OSF) is a free,
+        open-source service maintained by the [Center for Open
+        Science](http://cos.io/).
+
+
+        #### Returns
+
+        A JSON object with `meta` and `links` keys.
+
+
+        The `meta` key contains information such as a welcome message from the API, the specified version of the request,
+        and the full representation of the current user, if authentication credentials were provided in the request.
+
+
+        The `links` key contains links to the following entity collections: [addons](), [collections](),
+        [institutions](#Institutions_institutions_list), [licenses](#Licenses_license_list), [metaschemas](),
+        [nodes](#Nodes_nodes_list), [registrations](), [users](#Users_users_list)
+
       responses:
         '200':
           description: OK
@@ -173,6 +201,12 @@ paths:
 
   /nodes/{node_id}/contributors/{user_id}/:
     $ref: 'nodes/contributor_detail.yaml'
+
+  /nodes/{node_id}/draft_registrations/:
+    $ref: 'nodes/draft_registrations_list.yaml'
+
+  /nodes/{node_id}/draft_registrations/{draft_id}/:
+    $ref: 'nodes/draft_registration_detail.yaml'
 
   /nodes/{node_id}/forks/:
     $ref: 'nodes/forks_list.yaml'

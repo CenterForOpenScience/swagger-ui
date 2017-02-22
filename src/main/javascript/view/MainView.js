@@ -29,6 +29,9 @@ SwaggerUi.Views.MainView = Backbone.View.extend({
 
     this.router = opts.router;
 
+    _.bindAll(this, 'updateHashOnScroll');
+    $(window).scroll(this.updateHashOnScroll);
+
     // Sort APIs
     if (opts.swaggerOptions.apisSorter) {
       sorterOption = opts.swaggerOptions.apisSorter;
@@ -223,6 +226,21 @@ SwaggerUi.Views.MainView = Backbone.View.extend({
       n.trigger("click")
     }
   },
+
+  updateHashOnScroll: function(e) {
+    var currentHash = '#';
+    var padding = 20;
+    $('.anchor-link').each(function () {
+        var top = window.pageYOffset;
+        var distance = top - $(this).offset().top;
+        var hash = $(this).attr('href');
+        if (distance < padding && distance > -padding && currentHash != hash) {
+            window.location.hash = hash;
+            currentHash = hash;
+        }
+    });
+
+  }
 
   // toggleToken: function (e) {
   //   var t = $(".token-generator"),

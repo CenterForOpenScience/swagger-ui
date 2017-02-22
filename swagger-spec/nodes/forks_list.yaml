@@ -1,20 +1,16 @@
-parameters:
-- description: 'The unique identifier of the node.'
-  required: true
-  type: string
-  name: node_id
-  in: path
-
 post:
   summary: Create a fork of this node
   description: >-
     Creates a fork of the given node.
 
 
-    TODO: explain what forks actually are... especially the difference between forks and templates
+    Forking a project creates a copy of an existing node and all of its contents.
+    The fork always points back to the original node, forming a network of nodes.
 
 
-    Forks are complete copies of projects that you can change without affecting the original project.
+    You might use a fork to copy another's work to build on and extend.
+    For example, a professor may create an OSF project of materials for individual student use.
+    Each student forks the project to have his or her own copy of the materials to start his/her own work.
 
 
     When creating a fork, your fork will only contain public components of the current node and components for which you are a contributor.
@@ -32,9 +28,14 @@ post:
     Returns a dictionary with a `data` property containing the complete representation of the forked node, if the request is successful.
 
     If the request is unsuccessful, a dictionary with an `errors` property containing information about the failure will be returned.
-    Refer to the [list of error codes]() to understand why this request may have failed.
+    Refer to the [list of error codes](#Introduction_error_codes) to understand why this request may have failed.
 
   parameters:
+    - in: path
+      type: string
+      name: node_id
+      required: true
+      description: 'The unique identifier of the node.'
     - in: body
       name: body
       required: true
@@ -59,7 +60,8 @@ get:
     The returned fork nodes are sorted by their `forked_date`, with the most recently forked nodes appearing first.
 
 
-    Forks are copies of projects that you can change without affecting the original project.
+    Forking a project creates a copy of an existing node and all of its contents.
+    The fork always points back to the original node, forming a network of nodes.
 
     #### Returns
 
@@ -71,15 +73,17 @@ get:
     Each resource in the array is a separate node object and contains the full representation of the forked node, meaning additional requests to the forked node's detail view are not necessary.
 
 
-    The `links` property contains a dictionary of links that can be used for [pagination](http://jsonapi.org/format/1.0/#fetching-pagination).
+    The `links` property contains a dictionary of links that can be used for [pagination](#Introduction_pagination).
 
 
     This request should never return an error.
 
-    #### Filtering
-
-    As forks are node objects, the same [filters that apply to nodes]() can be applied to forks.
-
+  parameters:
+    - in: path
+      type: string
+      name: node_id
+      required: true
+      description: 'The unique identifier of the node.'
   tags:
     - Nodes
   operationId: nodes_forks_list

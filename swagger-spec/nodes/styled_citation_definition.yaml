@@ -11,6 +11,7 @@ properties:
     description: 'The type identifier of the citation style entity (`styled-citations`).'
   attributes:
     type: object
+    title: Attributes
     readOnly: true
     description: 'The properties of the citation style entity.'
     properties:

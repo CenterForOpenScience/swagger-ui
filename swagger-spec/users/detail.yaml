@@ -1,10 +1,3 @@
-parameters:
-- in: path
-  type: string
-  name: user_id
-  required: true
-  description: 'The unique identifier of the user.'
-
 get:
   summary: Retrieve a user
   description: >-
@@ -27,9 +20,15 @@ get:
 
 
     If the request is unsuccessful, a dictionary with an `errors` property containing
-    information about the failure will be returned. Refer to the [list of error codes]()
+    information about the failure will be returned. Refer to the [list of error codes](#Introduction_error_codes)
     to understand why this request may have failed.
 
+  parameters:
+  - in: path
+    type: string
+    name: user_id
+    required: true
+    description: 'The unique identifier of the user.'
   tags:
     - Users
   operationId: users_read
@@ -94,10 +93,15 @@ patch:
 
 
     If the request is unsuccessful, a dictionary with an `errors` property containing
-    information about the failure will be returned. Refer to the [list of error codes]()
+    information about the failure will be returned. Refer to the [list of error codes](#Introduction_error_codes)
     to understand why this request may have failed.
 
   parameters:
+    - in: path
+      type: string
+      name: user_id
+      required: true
+      description: 'The unique identifier of the user.'
     - in: body
       name: body
       required: true

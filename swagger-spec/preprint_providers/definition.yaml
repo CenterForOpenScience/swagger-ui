@@ -11,7 +11,8 @@ properties:
     description: 'The type identifier of the preprint provider entity (`preprint_providers`).'
   attributes:
     type: object
-    readOnly: true 
+    title: Attributes
+    readOnly: true
     description: 'The properties of the preprint provider entity.'
     properties:
       social_instagram:
@@ -60,6 +61,7 @@ properties:
         description: 'Name of the preprint provider.'
   relationships:
     type: object
+    title: Relationships
     readOnly: true
     description: 'Links to other entities or entity collections that have a relationship to the preprint provider.'
     properties:
@@ -79,6 +81,7 @@ properties:
         description: 'A link to the preprint list page for the preprint provider.'
   links:
     type: object
+    title: Links
     readOnly: true
     description: 'Links to alternative representations of the preprint entity.'
     properties:

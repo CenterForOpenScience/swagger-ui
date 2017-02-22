@@ -1,17 +1,10 @@
-parameters:
-  - in: path
-    type: string
-    required: true
-    name: wiki_id
-    description: 'The unique identifier of the wiki.'
-
 get:
   summary: Retrieve a Wiki
   description: >-
     Retrieves the details about a specific wiki.
 
     A wiki is a collection of markdown text pages that can be used to describe
-    the project or dataset of contained in the attached node. 
+    the project or dataset of contained in the attached node.
 
     ####Returns
 
@@ -20,8 +13,15 @@ get:
 
 
     If the request is unsuccessful, JSON with an `errors` key containing
-    information about the failure will be returned. Refer to the [list of error codes]()
+    information about the failure will be returned. Refer to the [list of error codes](#Introduction_error_codes)
     to understand why this request may have failed.
+
+  parameters:
+    - in: path
+      type: string
+      required: true
+      name: wiki_id
+      description: 'The unique identifier of the wiki.'
   tags:
     - Wikis
   operationId: wiki_read
@@ -40,12 +40,12 @@ get:
                   related:
                     href: 'https://api.osf.io/v2/nodes/tvyxz/'
                     meta: {}
-              user: 
+              user:
                 links:
                   related:
                     href: 'https://api.osf.io/v2/users/5k3hq/'
                     meta: {}
-              comments: 
+              comments:
                 links:
                   related:
                     href: 'https://api.osf.io/v2/nodes/tvyxz/comments/?filter%5Btarget%5D=zveyb'

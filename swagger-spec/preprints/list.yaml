@@ -14,7 +14,7 @@ get:
     The `data` property contains an array of 10 preprints.
     Each resource in the array is a separate preprint object.
     The `links` property contains a dictionary of links that can be used
-    for [pagination](http://jsonapi.org/format/1.0/#fetching-pagination).
+    for [pagination](#Introduction_pagination).
 
 
     This request should never return an error.

@@ -1,4 +1,3 @@
-# /nodes/{node_id}/citation/
 get:
   summary: Retrieve citation details
   description: >-
@@ -10,11 +9,11 @@ get:
     necessary for the node citation.
 
   parameters:
-    - description: 'The unique identifier of the node.'
-      required: true
+    - in: path
       type: string
       name: node_id
-      in: path
+      required: true
+      description: 'The unique identifier of the node.'
   tags:
     - Nodes
   operationId: nodes_citation_list

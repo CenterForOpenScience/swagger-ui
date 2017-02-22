@@ -15,7 +15,7 @@ get:
     The `data` key contains an array of 10 preprint providers.
     Each resource in the array is a separate preprint provider object.
     The `links` key contains JSON of links that can be used
-    for [pagination](http://jsonapi.org/format/1.0/#fetching-pagination).
+    for [pagination](#Introduction_pagination).
 
 
     This request should never return an error.
@@ -31,15 +31,15 @@ get:
 
 
     #### Acceptable Subjects Structure
-    
-    Each preprint provider specifies acceptable subjects. 
 
-    `subjects_acceptable` is an array found in `attribtues`. 
+    Each preprint provider specifies acceptable subjects.
 
-    Subjects consist of general parent subjects (e.g., Engineering), 
+    `subjects_acceptable` is an array found in `attribtues`.
+
+    Subjects consist of general parent subjects (e.g., Engineering),
     more specific child subjects (e.g., Aerospace Engineering),
     and even more specific grandchild subjects (e.g., Aerodynamics and Fluid Mechanics).
-    Subjects can only be nested 3 deep. 
+    Subjects can only be nested 3 deep.
 
 
         "subjects_acceptable": [
@@ -49,12 +49,12 @@ get:
                     # Architecture
                     "584240d954be81056ceca9e5",
 
-                    # Child Subject: 
+                    # Child Subject:
                     # Architectural Engineering
-                    "584240da54be81056cecac87" 
+                    "584240da54be81056cecac87"
                 ],
                 # Include all Architectural Engineering's children:
-                true 
+                true
             ],
             [
                 [
@@ -76,7 +76,7 @@ get:
         ]
 
     The above structure would allow Architecture, Architectural Engineering, all of Architectural Engineering's children,
-    Engineering, Aerospace Engineering, and Aerodynamics and Fluid Mechanics. 
+    Engineering, Aerospace Engineering, and Aerodynamics and Fluid Mechanics.
 
   tags:
     - Preprint Providers

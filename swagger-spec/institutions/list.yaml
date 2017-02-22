@@ -15,7 +15,7 @@ get:
 
 
     The `links` property contains JSON of links that can be used
-    for [pagination](http://jsonapi.org/format/1.0/#fetching-pagination).
+    for [pagination](#Introduction_pagination).
 
 
     This request should never return an error.

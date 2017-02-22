@@ -14,6 +14,7 @@ properties:
     description: 'The type identifier of the wiki (`wikis`).'
   attributes:
     type: object
+    title: Attributes
     readOnly: false
     description: 'The properties of the wiki.'
     required:
@@ -66,6 +67,7 @@ properties:
         description: 'Size of the wiki.'
   relationships:
     type: object
+    title: Relationships
     readOnly: false
     description: 'URLs to other entities or entity collections that have a relationship to the wiki.'
     required:
@@ -87,6 +89,7 @@ properties:
         description: 'A relationship to the comments related to this wiki.'
   links:
     type: object
+    title: Links
     readOnly: true
     description: 'URLs to alternative representations of the wiki.'
     properties:

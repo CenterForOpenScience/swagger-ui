@@ -1,18 +1,12 @@
-parameters:
-  - description: 'The unique identifier of the node.'
-    required: true
-    type: string
-    name: node_id
-    in: path
-
 get:
   summary: Retrieve a node
   description: >-
     Retrieves the details of a given node (project or component).
 
+    #### Permissions
 
-    Only project contributors have permission to retrieve the details of a private node.
-    Attempting to retreive a node for which you are not a contributor will result in a **403 Forbidden** response.
+    Only project contributors may retrieve the details of a private node.
+    Attempting to retreive a private node for which you are not a contributor will result in a **403 Forbidden** response.
 
 
     Authentication is not required to view the details of a public node, as public nodes give read-only access to everyone.
@@ -24,8 +18,14 @@ get:
 
 
     If the request is unsuccessful, a dictionary with an `errors` property containing
-    information about the failure will be returned. Refer to the [list of error codes]()
+    information about the failure will be returned. Refer to the [list of error codes](#Introduction_error_codes)
     to understand why this request may have failed.
+  parameters:
+    - in: path
+      type: string
+      name: node_id
+      required: true
+      description: 'The unique identifier of the node.'
   tags:
     - Nodes
   operationId: nodes_read
@@ -169,6 +169,11 @@ patch:
     Nodes can be updated with either a **PUT** or **PATCH** request.
     The `title` and `category` fields are mandatory in a **PUT** request, and optional in a **PATCH**.
 
+    #### Permissions
+
+    Only write contributors may update a node.
+    Attempting to update a node for which you do not have write access will result in a **403 Forbidden** response.
+
     #### Returns
 
     Returns a dictionary with a `data` property containing the new representation of the updated
@@ -176,10 +181,15 @@ patch:
 
 
     If the request is unsuccessful, a dictionary with an `errors` property containing
-    information about the failure will be returned. Refer to the [list of error codes]()
+    information about the failure will be returned. Refer to the [list of error codes](#Introduction_error_codes)
     to understand why this request may have failed.
 
   parameters:
+    - in: path
+      type: string
+      name: node_id
+      required: true
+      description: 'The unique identifier of the node.'
     - in: body
       name: body
       required: true
@@ -212,10 +222,10 @@ delete:
 
     Permanently deletes a node. This action cannot be undone.
 
+    #### Permissions
 
-    Only project administrators have permission to delete a node.
+    Only project administrators may delete a node.
     Attempting to delete a node for which you are not an administrator will result in a **403 Forbidden** response.
-
 
     #### Returns
 
@@ -223,9 +233,14 @@ delete:
 
 
     If the request is unsuccessful, a dictionary with an `errors` property containing
-    information about the failure will be returned. Refer to the [list of error codes]()
+    information about the failure will be returned. Refer to the [list of error codes](#Introduction_error_codes)
     to understand why this request may have failed.
-
+  parameters:
+    - in: path
+      type: string
+      name: node_id
+      required: true
+      description: 'The unique identifier of the node.'
   tags:
     - Nodes
   operationId: nodes_delete

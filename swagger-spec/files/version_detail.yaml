@@ -9,11 +9,11 @@ get:
 
 
     Returns JSON with a `data` key containing the representation of the requested
-    file, if the request was successful. 
+    file, if the request was successful.
 
 
     If the request is unsuccessful, JSON with an `errors` key containing
-    information about the failure will be returned. Refer to the [list of error codes]()
+    information about the failure will be returned. Refer to the [list of error codes](#Introduction_error_codes)
     to understand why this request may have failed.
 
   parameters:

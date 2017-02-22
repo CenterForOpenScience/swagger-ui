@@ -11,6 +11,7 @@ properties:
     description: The type identifier of the institution entity (`institutions`).
   attributes:
     type: object
+    title: Attributes
     readOnly: false
     description: The properties of the institution entity.
     properties:
@@ -32,6 +33,7 @@ properties:
         description: Description of the institution.
   relationships:
     type: object
+    title: Relationships
     readOnly: true
     description: URLs to other entities or entity collections that have a relationship to the institution entity.
     properties:
@@ -52,6 +54,7 @@ properties:
         description: A relationship to the registrations affiliated with the institution.
   links:
     type: object
+    title: Links
     readOnly: true
     description: URLs to alternative representations of the institutions entity.
     properties:

@@ -1,15 +1,3 @@
-parameters:
-- in: path
-  type: string
-  name: node_id
-  required: true
-  description: 'The unique identifier of the node.'
-- in: path
-  type: string
-  name: user_id
-  required: true
-  description: 'The unique identifier of the user.'
-
 get:
   summary: Retrieve a contributor
   description: >-
@@ -19,7 +7,7 @@ get:
     Contributors are users who can make changes to the node or, in the case of private nodes, have read access to the node.
 
 
-    Contributors are categorized as either "bibliographic" or "non-bibliographic" contributors.
+    Contributors are categorized as either "bibliographic" or "non-bibliographic".
     From a permissions standpoint, both are the same, but bibliographic contributors are included in citations and are listed on the project overview page on the OSF, while non-bibliographic contributors are not.
 
     #### Returns
@@ -29,9 +17,20 @@ get:
 
 
     If the request is unsuccessful, a dictionary with an `errors` property containing
-    information about the failure will be returned. Refer to the [list of error codes]()
+    information about the failure will be returned. Refer to the [list of error codes](#Introduction_error_codes)
     to understand why this request may have failed.
 
+  parameters:
+  - in: path
+    type: string
+    name: node_id
+    required: true
+    description: 'The unique identifier of the node.'
+  - in: path
+    type: string
+    name: user_id
+    required: true
+    description: 'The unique identifier of the user.'
   tags:
     - Nodes
   operationId: nodes_contributors_read
@@ -110,6 +109,10 @@ patch:
     Contributors can be updated with either a **PUT** or **PATCH** request.
     Since this endpoint has no mandatory attributes, PUT and PATCH are functionally the same.
 
+    #### Permissions
+
+    Only project administrators can update the contributors on a node.
+
     #### Returns
 
     Returns a dictionary with a `data` property containing the new representation of the updated
@@ -117,7 +120,7 @@ patch:
 
 
     If the request is unsuccessful, a dictionary with an `errors` property containing
-    information about the failure will be returned. Refer to the [list of error codes]()
+    information about the failure will be returned. Refer to the [list of error codes](#Introduction_error_codes)
     to understand why this request may have failed.
 
 
@@ -125,6 +128,16 @@ patch:
     A node must always have at least one admin, and any attempt to downgrade the permissions of a sole admin will result in a 400 Bad Request error.
 
   parameters:
+    - in: path
+      type: string
+      name: node_id
+      required: true
+      description: 'The unique identifier of the node.'
+    - in: path
+      type: string
+      name: user_id
+      required: true
+      description: 'The unique identifier of the user.'
     - in: body
       name: body
       required: true
@@ -147,11 +160,11 @@ delete:
     This request only removes the relationship between the node and the user, it does not delete the user itself.
 
 
-    Only project administrators have permission to remove project contributors.
+    A node must always have at least one admin, and attempting to remove the only admin from a node will result in a **400 Bad Request** response.
 
+    #### Permissions
 
-    A node must always have at least one admin, and attempting to remove the only admin from a node will result in a 400 Bad Request response.
-
+    A user can remove themselves as a node contributor. Otherwise, only project administrators can remove contributors.
 
     #### Returns
 
@@ -159,9 +172,20 @@ delete:
 
 
     If the request is unsuccessful, a dictionary with an `errors` property containing
-    information about the failure will be returned. Refer to the [list of error codes]()
+    information about the failure will be returned. Refer to the [list of error codes](#Introduction_error_codes)
     to understand why this request may have failed.
 
+  parameters:
+    - in: path
+      type: string
+      name: node_id
+      required: true
+      description: 'The unique identifier of the node.'
+    - in: path
+      type: string
+      name: user_id
+      required: true
+      description: 'The unique identifier of the user.'
   tags:
     - Nodes
   operationId: nodes_contributors_delete

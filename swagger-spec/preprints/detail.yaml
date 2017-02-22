@@ -1,10 +1,3 @@
-parameters:
-  - in: path
-    type: string
-    required: true
-    name: preprint_id
-    description: 'The unique identifier of the preprint.'
-
 get:
   summary: Retrieve a preprint
   description: >-
@@ -17,8 +10,15 @@ get:
 
 
     If the request is unsuccessful, a dictionary with an `errors` property containing
-    information about the failure will be returned. Refer to the [list of error codes]()
+    information about the failure will be returned. Refer to the [list of error codes](#Introduction_error_codes)
     to understand why this request may have failed.
+
+  parameters:
+    - in: path
+      type: string
+      required: true
+      name: preprint_id
+      description: 'The unique identifier of the preprint.'
   tags:
     - Preprints
   operationId: preprints_read
@@ -104,6 +104,11 @@ patch:
     information about the failure will be returned. Refer to the [list of error codes]()
     to understand why this request may have failed.
   parameters:
+    - in: path
+      type: string
+      required: true
+      name: preprint_id
+      description: 'The unique identifier of the preprint.'
     - in: body
       required: true
       name: data

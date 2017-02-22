@@ -5,15 +5,6 @@
                 <a href="https://api.osf.io"><img src="images/osf-logo.png" width="27"/> OSF API</a>
             </div>
 
-{{!--             <p class="changes-disclaimer">
-                <span class='info' id='api_info'>
-                    {{#if info}}
-                        <span class="markdown">{{{info.description}}}</span>
-                    {{/if}}
-
-                </span>
-            </p> --}}
-
             <div class="mobile-nav">
                 <span class="select-label">API Reference: </span><span data-selected-value></span>
             </div>
@@ -25,6 +16,19 @@
                 <div id="resources_nav">
                 </div>
             </div>
+
+            <p class="changes-disclaimer">
+                {{#if info.contact.email}}
+                    <span class='info_email' style="font-variant: small-caps">contact: </span>
+                    <a href="mailto:{{info.contact.email}}?subject={{info.title}}">{{info.contact.email}}</a>
+                    <br/>
+                {{/if}}
+
+                {{#if info.version}}
+                    <span style="font-variant: small-caps">version: {{info.version}}</span>
+                {{/if}}
+            </p>
+
         </div>
     </div>
 </div>

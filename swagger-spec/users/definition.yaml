@@ -19,6 +19,7 @@ properties:
 
   attributes:
     type: object
+    title: Attributes
     readOnly: false
     description: 'The properties of the user entity.'
     required:
@@ -66,6 +67,7 @@ properties:
 
   relationships:
     type: object
+    title: Relationships
     readOnly: true
     description: 'URLs to other entities or entity collections that have a relationship to the user entity.'
     properties:
@@ -80,6 +82,7 @@ properties:
 
   links:
     type: object
+    title: Links
     readOnly: true
     description: 'URLs to alternative representations of the user entity.'
     properties:

@@ -1383,19 +1383,10 @@
     background: none !important
 }
 
-.changes-disclaimer {
-    display: none;
-    border: 1px solid #dddde2;
-    border-radius: 3px;
-    padding: 15px;
+.swagger-section .changes-disclaimer {
     margin: 20px 20px 20px;
     line-height: 1.4;
-    background: #ebebee;
     font-size: 13px
-}
-
-.changes-disclaimer p {
-    margin: 0px;
 }
 
 @media (min-width: 992px) {
@@ -1820,7 +1811,6 @@ body {
 .swagger-section .swagger-ui-wrap .markdown ol li, .swagger-section .swagger-ui-wrap .markdown ul li {
     padding: 3px 0;
     line-height: 1.4em;
-    color: #333
 }
 
 .swagger-section .swagger-ui-wrap form.formtastic fieldset.inputs ol li.numeric input, .swagger-section .swagger-ui-wrap form.formtastic fieldset.inputs ol li.string input, .swagger-section .swagger-ui-wrap form.formtastic fieldset.inputs ol li.url input {
@@ -2468,4 +2458,19 @@ body {
     min-height: 30px;
     text-align: center;
     padding-top: 10px
+}
+
+.glyphicon-link:hover {
+    color: #44c7f4;
+}
+
+.glyphicon {
+    padding-right: 5px;
+}
+
+.anchor-link {
+    float:left;
+    margin-left: -15px;
+    padding-top: 10px;
+    color: lightblue;
 }

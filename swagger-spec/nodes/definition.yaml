@@ -16,6 +16,7 @@ properties:
 
   attributes:
     type: object
+    title: Attributes
     readOnly: false
     description: 'The properties of the node entity.'
     required:
@@ -48,7 +49,7 @@ properties:
       current_user_can_comment:
         type: boolean
         readOnly: true
-        description: 'Whether or not the current user has permission to post comments on this node. Comments on nodes can be set to allow all users to comment (if public) or restricted to only contributors.'
+        description: 'Whether or not the current user has permission to post comments on this node. Comments on nodes can be set to allow all users to comment (if public) or restricted to only allow comments from contributors.'
       current_user_permissions:
         type: array
         items:
@@ -107,6 +108,7 @@ properties:
 
   relationships:
     type: object
+    title: Relationships
     readOnly: false
     description: 'URLs to other entities or entity collections that have a relationship to the node entity.'
     properties:
@@ -197,6 +199,7 @@ properties:
 
   links:
     type: object
+    title: Links
     readOnly: true
     description: 'URLs to alternative representations of the node entity.'
     properties:

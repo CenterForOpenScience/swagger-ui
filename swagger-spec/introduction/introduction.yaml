@@ -1,4 +1,5 @@
 get:
+  summary: Introduction
   description: >-
     Welcome to the Open Science Framework API. With this API you can access
     users, projects, components, logs, and files from the [Open Science
@@ -16,19 +17,9 @@ get:
     and files you make public. With the OSF you have full control of what
     parts of your research are public and what remains private.
 
-
-    Beta notice: This API is currently a beta service.  You are encouraged
-    to use the API and will receive support
-
-    when doing so, however, while the API remains in beta status, it may
-    change without notice as a result of product updates. The temporary beta
-    status of the API will remain in place while it matures. In a future
-    release, the beta status will be removed, at which point we will provide
-    details on how long we will support the API V2 and under what
-    circumstances it might change.
-  summary: Introduction
+  operationId: introduction
+  tags:
+    - Introduction
   responses:
     '200':
       description: OK
-  tags:
-    - Introduction

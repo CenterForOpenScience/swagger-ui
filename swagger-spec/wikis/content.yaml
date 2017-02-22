@@ -1,9 +1,3 @@
-parameters:
-  - in: path
-    type: string
-    required: true
-    name: wiki_id
-
 get:
   summary: Retrieve the Content of a Wiki
   description: >-
@@ -11,9 +5,16 @@ get:
 
     ####Returns
 
-    Returns `text/markdown` of the wiki content itself. 
+    Returns `text/markdown` of the wiki content itself.
 
     If the request is unsuccessful, plaintext with the error message will be displayed.
+
+  parameters:
+    - in: path
+      type: string
+      required: true
+      name: wiki_id
+      description: 'The unique identifier of the wiki.'
   tags:
     - Wikis
   operationId: wiki_content

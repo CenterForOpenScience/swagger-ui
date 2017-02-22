@@ -53,10 +53,10 @@ SwaggerUi.Views.SidebarHeaderView = Backbone.View.extend({
       var i = $(".sticky-nav").outerHeight();
       var r = $("#" + elem).offset().top - i - 10;
       matchMedia() && (r = $("#" + elem).offset().top - 10);
-      scrollT(r)
+      scrollT(r);
     }
 
-    /set selected value and select operation (class) */
+    /* set selected value and select operation (class) */
     function setSelected(element) {
       {
         var nav = $(".sticky-nav [data-navigator]");

@@ -11,6 +11,7 @@ properties:
     description: 'The type identifier of the citation entity (either `node-citation`, `preprint-citation`, or `registration-citation`).'
   attributes:
     type: object
+    title: Attributes
     readOnly: true
     description: 'The properties of the citation entity.'
     properties:
@@ -32,6 +33,7 @@ properties:
         description: 'The title of the entity being cited.'
   links:
     type: object
+    title: Links
     readOnly: true
     description: 'URLs to alternative representations of the citation entity.'
     properties:

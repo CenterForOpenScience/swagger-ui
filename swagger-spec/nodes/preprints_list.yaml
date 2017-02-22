@@ -1,14 +1,12 @@
-# /nodes/{node_id}/preprints/
 get:
   summary: List all preprints
   description: >-
-
-    **Note: This API endpoint is under active development, and is subject to change in the future.**
-
-
     A paginated list of preprints related to a given node.
     The returned preprints are sorted by their creation date, with the most recent
     preprints appearing first.
+
+
+    **Note: This API endpoint is under active development, and is subject to change in the future.**
 
     #### Returns
 
@@ -18,7 +16,7 @@ get:
     The `data` property contains an array of up to 10 preprints.
     Each resource in the array is a separate preprint object.
     The `links` property contains a dictionary of links that can be used
-    for [pagination](http://jsonapi.org/format/1.0/#fetching-pagination).
+    for [pagination](#Introduction_pagination).
 
   parameters:
     - in: path

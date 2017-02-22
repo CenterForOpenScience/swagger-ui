@@ -1,11 +1,3 @@
-# /nodes/{node_id}/children/
-parameters:
-- description: 'The unique identifier of the node.'
-  required: true
-  type: string
-  name: node_id
-  in: path
-
 get:
   summary: 'List all child nodes'
   description: >-
@@ -26,7 +18,7 @@ get:
     Each resource in the array is a separate node object and contains the full representation of the child node, meaning additional requests to the child node's detail view are not necessary.
 
 
-    The `links` property contains a dictionary of links that can be used for [pagination](http://jsonapi.org/format/1.0/#fetching-pagination).
+    The `links` property contains a dictionary of links that can be used for [pagination](#Introduction_pagination).
 
 
     This request should never return an error.
@@ -43,7 +35,12 @@ get:
     Most fields are string fields and will be filtered using simple substring matching.
     Public and preprint are boolean fields, and can be filtered using truthy values, such as **true**, **false**, **0** or **1**.
     Note that quoting true or false in the query will cause the match to fail.
-
+  parameters:
+    - in: path
+      type: string
+      name: node_id
+      required: true
+      description: 'The unique identifier of the node.'
   tags:
     - Nodes
   operationId: nodes_children_list
@@ -210,6 +207,10 @@ post:
     Note: Creating a child node via this endpoint will function the same as creating a node via the node list endpoint,
     but the child node will have the given node set as its parent.
 
+    #### Permissions
+
+    Only write contributors may create children nodes.
+
     #### Required
 
     Required fields for creating a node include:
@@ -230,10 +231,15 @@ post:
 
 
     If the request is unsuccessful, a dictionary with an `errors` property containing
-    information about the failure will be returned. Refer to the [list of error codes]()
+    information about the failure will be returned. Refer to the [list of error codes](#Introduction_error_codes)
     to understand why this request may have failed.
 
   parameters:
+  - in: path
+    type: string
+    name: node_id
+    required: true
+    description: 'The unique identifier of the node.'
   - in: body
     name: body
     required: true

@@ -14,6 +14,7 @@ properties:
     description: 'The type identifier of the contributor entity (`contributors`).'
   attributes:
     type: object
+    title: Attributes
     readOnly: false
     description: 'The properties of the contributor entity.'
     properties:
@@ -37,12 +38,9 @@ properties:
         type: string
         readOnly: true
         description: 'The assigned name of the contributor if the contributor has not yet claimed their account.'
-  embeds:
-    type: string
-    readOnly: true
-    description: 'The full representation of the user this contributor '
   relationships:
     type: object
+    title: Relationships
     readOnly: false
     description: 'URLs to other entities or entity collections that have a relationship to the contributor entity.'
     required:
@@ -59,6 +57,7 @@ properties:
         description: 'A relationship to the file that is designated as the preprint''s primary file, or the manuscript of the preprint.'
   links:
     type: object
+    title: Links
     readOnly: true
     description: 'URLs to alternative representations of the contributor entity.'
     properties:

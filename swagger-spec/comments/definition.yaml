@@ -13,6 +13,7 @@ properties:
     description: 'The type identifier of the comment entity (`comments`).'
   attributes:
     type: object
+    title: Attibutes
     readOnly: false
     description: 'The properties of the comment entity.'
     properties:
@@ -64,6 +65,7 @@ properties:
         type: string
   relationships:
     type: object
+    title: Relationships
     readOnly: false
     description: 'URLs to other entities or entity collections that have a relationship to the comment entity.'
     properties:
@@ -94,6 +96,7 @@ properties:
         description: 'A relationship to the user who created the comment.'
   links:
     type: object
+    title: Links
     readOnly: true
     description: 'URLs to alternative representations of the comment entity.'
     properties:
