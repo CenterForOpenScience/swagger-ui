@@ -4,10 +4,13 @@ post:
     Creates a fork of the given node.
 
 
-    TODO: explain what forks actually are... especially the difference between forks and templates
+    Forking a project creates a copy of an existing node and all of its contents.
+    The fork always points back to the original node, forming a network of nodes.
 
 
-    Forks are complete copies of projects that you can change without affecting the original project.
+    You might use a fork to copy another's work to build on and extend.
+    For example, a professor may create an OSF project of materials for individual student use.
+    Each student forks the project to have his or her own copy of the materials to start his/her own work.
 
 
     When creating a fork, your fork will only contain public components of the current node and components for which you are a contributor.
@@ -57,7 +60,8 @@ get:
     The returned fork nodes are sorted by their `forked_date`, with the most recently forked nodes appearing first.
 
 
-    Forks are copies of projects that you can change without affecting the original project.
+    Forking a project creates a copy of an existing node and all of its contents.
+    The fork always points back to the original node, forming a network of nodes.
 
     #### Returns
 

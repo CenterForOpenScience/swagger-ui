@@ -36,20 +36,21 @@ properties:
       doi:
         type: string
         readOnly: false
-        description: 'The [DOI](https://www.doi.org/) for the manuscript of the preprint, as entered by the user.'
+        description: 'The DOI for the manuscript of the preprint, as entered by the user.'
       is_preprint_orphan:
         type: boolean
         readOnly: true
-        description: 'Whether or not the preprint is orphaned. TODO: explain what orphaned means in this context.'
+        description: 'Whether or not the preprint is orphaned. A preprint can be orphaned if it''s primary file was removed from the preprint node. This field may be deprecated in future versions.'
       license_record:
         type: string
         readOnly: false
         description: 'The metadata (copyright year and holder) associated with a license, required for certain licenses.'
       subjects:
-        # TODO: this is not at all correct, it's a list of lists of dictionaries
-        type: string
+        type: array
+        items:
+          type: string
         readOnly: false
-        description: 'A list of lists of dictionaries that describe subjects related to the preprint, in the PLOS taxonomy[link me pls]. Each dictionary contains the text and ID of a subject.'
+        description: 'A list of lists of dictionaries that describe subjects related to the preprint, in the PLOS taxonomy. Each dictionary contains the text and ID of a subject.'
   relationships:
     type: object
     title: Relationships
@@ -67,7 +68,7 @@ properties:
       license:
         type: string
         readOnly: false
-        description: 'A relationship to the license that has been applied to the preprint. TODO: note here what license preprints default to.'
+        description: 'A relationship to the license that has been applied to the preprint.'
       node:
         type: string
         readOnly: false
@@ -79,7 +80,7 @@ properties:
       provider:
         type: string
         readOnly: false
-        description: 'A relationship to the preprint provider under which the preprint was created (OSF, socarxiv, psyarxiv, etc.)'
+        description: 'A relationship to the preprint provider under which the preprint was created (OSF, socarxiv, psyarxiv, etc.).'
   links:
     type: object
     title: Links

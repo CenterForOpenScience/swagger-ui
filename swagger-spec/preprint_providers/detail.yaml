@@ -1,5 +1,5 @@
 get:
-  summary: Retrieve a preprint
+  summary: Retrieve a preprint provider
   description: >-
     Retrieves the details of a preprint provider.
 
