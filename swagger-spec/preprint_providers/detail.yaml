@@ -10,7 +10,7 @@ get:
 
 
     If the request is unsuccessful, JSON with an `errors` key containing
-    information about the failure will be returned. Refer to the [list of error codes]()
+    information about the failure will be returned. Refer to the [list of error codes](#Introduction_error_codes)
     to understand why this request may have failed.
 
 
@@ -18,7 +18,7 @@ get:
 
     Each preprint provider specifies acceptable subjects.
 
-    `subjects_acceptable` is an array found in `attribtues`.
+    `subjects_acceptable` is an array found in `attributes`.
 
     Subjects consist of general parent subjects (e.g., Engineering),
     more specific child subjects (e.g., Aerospace Engineering),

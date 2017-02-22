@@ -14,11 +14,11 @@ get:
     The `data` key contains an array of 10 preprint providers.
     Each resource in the array is a separate preprint provider object.
     The `links` key contains JSON of links that can be used
-    for [pagination](http://jsonapi.org/format/1.0/#fetching-pagination).
+    for [pagination](#Introduction_pagination).
 
 
     If the request is unsuccessful, JSON with an `errors` key containing
-    information about the failure will be returned. Refer to the [list of error codes]()
+    information about the failure will be returned. Refer to the [list of error codes](#Introduction_error_codes)
     to understand why this request may have failed.
 
   parameters:

@@ -1,7 +1,7 @@
 get:
   summary: Errors
   description: >-
-    When a request fails for any reason, the OSF API will return an appropriate [HTTP response code](#error_codes) and include a descriptive error in the body of the response.
+    When a request fails for any reason, the OSF API will return an appropriate [HTTP response code](#Introduction_error_codes) and include a descriptive error in the body of the response.
 
 
     The response body will be a JSON object with a key, `errors`, pointing to an array of error objects.

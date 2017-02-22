@@ -12,11 +12,11 @@ get:
     The `data` key contains an array of 10 users.
     Each resource in the array is a separate users object.
     The `links` property contains JSON of links that can be used
-    for [pagination](http://jsonapi.org/format/1.0/#fetching-pagination).
+    for [pagination](#Introduction_pagination).
 
 
     If the request is unsuccessful, a dictionary with an `errors` property containing
-    information about the failure will be returned. Refer to the [list of error codes]()
+    information about the failure will be returned. Refer to the [list of error codes](#Introduction_error_codes)
     to understand why this request may have failed.
 
     #### Filtering

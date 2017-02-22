@@ -25,7 +25,7 @@ post:
     Returns a dictionary with a `data` property containing the complete representation of the forked node, if the request is successful.
 
     If the request is unsuccessful, a dictionary with an `errors` property containing information about the failure will be returned.
-    Refer to the [list of error codes]() to understand why this request may have failed.
+    Refer to the [list of error codes](#Introduction_error_codes) to understand why this request may have failed.
 
   parameters:
     - in: path
@@ -69,14 +69,10 @@ get:
     Each resource in the array is a separate node object and contains the full representation of the forked node, meaning additional requests to the forked node's detail view are not necessary.
 
 
-    The `links` property contains a dictionary of links that can be used for [pagination](http://jsonapi.org/format/1.0/#fetching-pagination).
+    The `links` property contains a dictionary of links that can be used for [pagination](#Introduction_pagination).
 
 
     This request should never return an error.
-
-    #### Filtering
-
-    As forks are node objects, the same [filters that apply to nodes]() can be applied to forks.
 
   parameters:
     - in: path

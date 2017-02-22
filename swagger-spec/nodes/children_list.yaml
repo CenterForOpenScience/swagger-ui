@@ -18,7 +18,7 @@ get:
     Each resource in the array is a separate node object and contains the full representation of the child node, meaning additional requests to the child node's detail view are not necessary.
 
 
-    The `links` property contains a dictionary of links that can be used for [pagination](http://jsonapi.org/format/1.0/#fetching-pagination).
+    The `links` property contains a dictionary of links that can be used for [pagination](#Introduction_pagination).
 
 
     This request should never return an error.
@@ -227,7 +227,7 @@ post:
 
 
     If the request is unsuccessful, a dictionary with an `errors` property containing
-    information about the failure will be returned. Refer to the [list of error codes]()
+    information about the failure will be returned. Refer to the [list of error codes](#Introduction_error_codes)
     to understand why this request may have failed.
 
   parameters:

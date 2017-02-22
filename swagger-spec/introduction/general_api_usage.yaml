@@ -12,7 +12,7 @@ get:
     #### Canonical URLs
 
     All canonical URLs have trailing slashes.  A request to an endpoint
-    without a trailing slash will result in a 301 redirect to the canonical
+    without a trailing slash will result in a **301 Redirect** to the canonical
     URL.  There are some exceptions when working with the Files API, so if a
     URL in a response does not have a slash, do not append one.
 

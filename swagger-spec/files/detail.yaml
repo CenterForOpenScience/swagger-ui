@@ -1,17 +1,17 @@
 # /files/{file_id}/
 get:
-  summary: Retrieve a file 
+  summary: Retrieve a file
   description: >-
     Retrieves the details of a file (or folder)
 
     ####Returns
 
     Returns JSON with a `data` key containing the representation of the requested
-    file, if the request was successful. 
+    file, if the request was successful.
 
 
     If the request is unsuccessful, JSON with an `errors` key containing
-    information about the failure will be returned. Refer to the [list of error codes]()
+    information about the failure will be returned. Refer to the [list of error codes](#Introduction_error_codes)
     to understand why this request may have failed.
 
     ###Waterbutler API actions
@@ -127,7 +127,7 @@ get:
               path: "/553e69248c5e4a219919ea54"
               current_user_can_comment: true
               guid: sejcv
-              checkout: 
+              checkout:
               tags: []
               size: 216945
             type: files
@@ -146,7 +146,7 @@ patch:
 
 
     If the request is unsuccessful, JSON with an `errors` key containing
-    information about the failure will be returned. Refer to the [list of error codes]()
+    information about the failure will be returned. Refer to the [list of error codes](#Introduction_error_codes)
     to understand why this request may have failed.
 
   parameters:

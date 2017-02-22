@@ -6,11 +6,11 @@ get:
 
     #### ID
 
-    The identifier for the entity.  This **MUST** be included with [PUT and PATCH requests](TODO: link me).
+    The identifier for the entity.  This **MUST** be included with all PUT and PATCH requests.
 
     #### Type
 
-    The type identifier of this entity.  This **MUST** be included with [all create/update requests](TODO: link me).
+    The type identifier of this entity.  This **MUST** be included with all create and update requests.
 
     #### Attributes
 
@@ -43,7 +43,7 @@ get:
 
     #### Embeds
 
-    Please see the [embedding](TODO: link me) documentation.
+    Please see the [embedding](#Introduction_embedding) documentation.
 
     #### Links
 
@@ -51,7 +51,7 @@ get:
 
 
     Most entities will provide a `self` link that is the canonical endpoint for the entity where update and delete requests should be sent.
-    Most entities will also provide an `html` link that directs to the entity's page on the [OSF](http://osf.io/).
+    Most entities will also provide an `html` link that directs to the entity's page on the Open Science Framework.
 
   operationId: entities
   tags:

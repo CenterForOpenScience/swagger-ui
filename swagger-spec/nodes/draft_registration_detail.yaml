@@ -20,7 +20,7 @@ get:
 
 
     If the request is unsuccessful, a dictionary with an `errors` property containing
-    information about the failure will be returned. Refer to the [list of error codes]()
+    information about the failure will be returned. Refer to the [list of error codes](#Introduction_error_codes)
     to understand why this request may have failed.
 
   parameters:
@@ -96,7 +96,7 @@ patch:
 
     When updating a draft registration, `registration_metadata` is required.
     It must be a dictionary with keys as question ids in the registration form,
-    and values as nested dictionaries matching the specific format in the [registration schema]().
+    and values as nested dictionaries matching the specific format in the [registration schema](TODO: link me pls).
 
 
     If a question is multiple-choice, the question response must exactly match one of the possible choices.
@@ -112,7 +112,7 @@ patch:
 
 
     If the request is unsuccessful, a dictionary with an `errors` property containing
-    information about the failure will be returned. Refer to the [list of error codes]()
+    information about the failure will be returned. Refer to the [list of error codes](#Introduction_error_codes)
     to understand why this request may have failed.
 
   parameters:

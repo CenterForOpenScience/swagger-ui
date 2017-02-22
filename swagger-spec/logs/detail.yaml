@@ -1,11 +1,11 @@
 # /logs/{log_id}/
 get:
-  summary: Retrieve a Log
+  summary: Retrieve a log
   description: >-
     Retrieves the details of a log.
 
     A log is permanent immutable record of a node's history. A log is created when a user
-    performs one of many actions. See the [Actions](#Logs_logs_actions) section for more details.
+    performs one of many actions. See the [actions](#Logs_logs_actions) section for more details.
 
     ####Returns
 
@@ -14,7 +14,7 @@ get:
 
 
     If the request is unsuccessful, JSON with an `errors` key containing
-    information about the failure will be returned. Refer to the [list of error codes]()
+    information about the failure will be returned. Refer to the [list of error codes](#Introduction_error_codes)
     to understand why this request may have failed.
 
   parameters:

@@ -36,7 +36,7 @@ get:
     &nbsp;&nbsp;&nbsp;&nbsp;`/nodes/?embed=contributors&embed=comments`
 
 
-    Some endpoints are automatically embedded, such as the [node contributors](TODO: link me) endpoint, which automatically embeds user information.
+    Some endpoints are automatically embedded, such as the [node contributors](#Nodes_nodes_contributors_list) endpoint, which automatically embeds user information.
 
   operationId: embedding
   tags:

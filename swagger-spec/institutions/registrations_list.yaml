@@ -12,7 +12,7 @@ get:
     The `data` key contains an array of 10 registrations.
     Each resource in the array is a separate users object.
     The `links` property contains JSON of links that can be used
-    for [pagination](http://jsonapi.org/format/1.0/#fetching-pagination).
+    for [pagination](#Introduction_pagination).
 
 
     #### Filtering
