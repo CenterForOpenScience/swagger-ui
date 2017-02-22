@@ -137,6 +137,7 @@ SwaggerUi.Views.MainView = Backbone.View.extend({
 
       this.addResource(resource, this.model.auths);
       this.addSidebarHeader(resource, i);
+      this.addSidebarToken(resource, i);
     }
 
     $('.propWrap').hover(function onHover() {
@@ -173,23 +174,23 @@ SwaggerUi.Views.MainView = Backbone.View.extend({
     $('#resources').append(resourceView.render().el);
   },
 
-  // addSidebarToken: function (resource, i) {
-  //   resource.id = resource.id.replace(/\s/g, '_');
-  //   var sidebarView = new SwaggerUi.Views.SidebarHeaderView({
-  //     model: resource,
-  //     tagName: 'div',
-  //     className: function () {
-  //       return i == 0 ? 'active' : ''
-  //     },
-  //     attributes: {
-  //       "data-resource": 'resource_' + resource.name,
-  //       "label": resource.name
-  //     },
-  //     router: this.router,
-  //     swaggerOptions: this.options.swaggerOptions
-  //   });
-  //   $('#token-generator', $(this.el)).append(sidebarView.render().el);
-  // },
+  addSidebarToken: function (resource, i) {
+    resource.id = resource.id.replace(/\s/g, '_');
+    var sidebarView = new SwaggerUi.Views.SidebarHeaderView({
+      model: resource,
+      tagName: 'div',
+      className: function () {
+        return i == 0 ? 'active' : ''
+      },
+      attributes: {
+        "data-resource": 'resource_' + resource.name,
+        "label": resource.name
+      },
+      router: this.router,
+      swaggerOptions: this.options.swaggerOptions
+    });
+    $('#token-generator', $(this.el)).append(sidebarView.render().el);
+  },
 
 
   addSidebarHeader: function (resource, i) {
@@ -240,7 +241,7 @@ SwaggerUi.Views.MainView = Backbone.View.extend({
         }
     });
 
-  }
+  },
 
   // toggleToken: function (e) {
   //   var t = $(".token-generator"),
@@ -269,13 +270,13 @@ SwaggerUi.Views.MainView = Backbone.View.extend({
   //   t.parents(".sticky-nav").trigger("mobile_nav:update")
   // },
 
-  // showCustom: function(e){
-  //   if (e) {
-  //     e.preventDefault();
-  //   }
-  //   this.trigger('update-swagger-ui', {
-  //     url: $('#input_baseUrl').val(),
-  //     apiKey: $('#input_apiKey').val()
-  //   });
-  // }
+  showCustom: function(e){
+    if (e) {
+      e.preventDefault();
+    }
+    this.trigger('update-swagger-ui', {
+      url: $('#input_baseUrl').val(),
+      apiKey: $('#input_apiKey').val()
+    });
+  }
 });
