@@ -12,7 +12,7 @@ get:
 
     #### Permissions
 
-    Users must have admin permission on the node in order to view draft registrations.
+    Only project administrators may view draft registrations.
 
     #### Returns
 
@@ -94,7 +94,7 @@ post:
 
     #### Permissions
 
-    Users must have admin permission on the node in order to create draft registrations.
+    Only project administrators may view create registrations.
 
     #### Required
 

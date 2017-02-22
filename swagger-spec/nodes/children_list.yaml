@@ -207,6 +207,10 @@ post:
     Note: Creating a child node via this endpoint will function the same as creating a node via the node list endpoint,
     but the child node will have the given node set as its parent.
 
+    #### Permissions
+
+    Only write contributors may create children nodes.
+
     #### Required
 
     Required fields for creating a node include:

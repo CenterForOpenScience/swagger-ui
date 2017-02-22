@@ -11,7 +11,7 @@ get:
 
     #### Permissions
 
-    A user must have admin permission on a node in order to view draft registrations.
+    Only project administrators may view draft registrations.
 
     #### Returns
 
@@ -103,7 +103,7 @@ patch:
 
     #### Permissions
 
-    A user must have admin permission on a node in order to update draft registrations.
+    Only project administrators may update draft registrations.
 
     #### Returns
 
@@ -149,7 +149,7 @@ delete:
 
     #### Permissions
 
-    A user must have admin permission on a node in order to delete draft registrations.
+    Only project administrators may delete draft registrations.
 
     #### Returns
 
