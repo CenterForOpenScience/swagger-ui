@@ -86,6 +86,28 @@
 
                     $("[data-toggle='tooltip']").tooltip();
 
+                    // Add ability to copy links and display tooltip if supported
+                    if (Clipboard.isSupported()) {
+                        $('.anchor-link').tooltip({
+                            delay: 500,
+                            title: 'Copy URL to clipboard',
+                            placement: 'left'
+                        });
+
+                        new Clipboard('.anchor-link', {
+                            text: function(trigger) {
+                                return $(trigger).get(0).href;
+                            }
+                        }).on('success', function(e) {
+                            $(e.trigger).attr('title', 'Copied!')
+                            .tooltip('fixTitle')
+                            .tooltip('show');
+
+                            $(e.trigger).attr('title', 'Copy URL to clipboard')
+                            .tooltip('fixTitle');
+                        });
+                    }
+
                     // addApiKeyAuthorization();
                 },
                 onFailure: function (data) {
