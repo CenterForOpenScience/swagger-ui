@@ -136,7 +136,6 @@ properties:
         type: string
         readOnly: true
         description: 'The reasoning for why this registration was withdrawn, as entered by the administrator that initiated the withdrawal.'
-
   relationships:
     type: object
     title: Relationships
@@ -211,7 +210,6 @@ properties:
         type: string
         readOnly: true
         description: 'A link to the list of wiki pages for this registration.'
-
   links:
     type: object
     title: Links
@@ -228,3 +226,10 @@ properties:
         format: URL
         readOnly: true
         description: 'A link to the canonical API endpoint of this registration.'
+
+example:
+  data:
+    id: '{registration_id}'
+    type: 'registrations'
+    attributes:
+      public: true

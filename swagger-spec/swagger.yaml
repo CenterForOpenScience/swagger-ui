@@ -253,6 +253,16 @@ paths:
   /preprint_providers/{preprint_provider_id}/licenses/:
     $ref: 'preprint_providers/licenses_list.yaml'
 
+  #####################
+  #   REGISTRATIONS   #
+  #####################
+
+  /registrations/:
+    $ref: 'registrations/list.yaml'
+
+  /registrations/{registration_id}/:
+    $ref: 'registrations/detail.yaml'
+
   #############
   #   USERS   #
   #############
