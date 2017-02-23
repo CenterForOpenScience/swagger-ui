@@ -10,12 +10,20 @@ info:
     name: OSF
     email: support@osf.io
     url: 'https://osf.io/support'
+  x-token-settings: 'https://test.osf.io/settings/tokens/'
   license:
     name: Apache 2.0
     url: 'http://www.apache.org/licenses/LICENSE-2.0.html'
 host: 'test-api.osf.io'
 schemes:
-  - https
+  - http
+securityDefinitions:
+  api_key:
+    type: apiKey
+    in: header
+    name: api_key
+  basic:
+    type: basic
 basePath: /v2
 paths:
 

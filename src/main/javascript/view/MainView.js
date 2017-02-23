@@ -100,23 +100,6 @@ SwaggerUi.Views.MainView = Backbone.View.extend({
   },
 
   render: function () {
-    if (this.model.securityDefinitions) {
-      for (var name in this.model.securityDefinitions) {
-        var auth = this.model.securityDefinitions[name];
-        var button;
-
-        if (auth.type === 'apiKey' && $('#apikey_button').length === 0) {
-          button = new SwaggerUi.Views.ApiKeyButton({model: auth, router: this.router}).render().el;
-          $('.auth_main_container').append(button);
-        }
-
-        if (auth.type === 'basicAuth' && $('#basic_auth_button').length === 0) {
-          button = new SwaggerUi.Views.BasicAuthButton({model: auth, router: this.router}).render().el;
-          $('.auth_main_container').append(button);
-        }
-      }
-    }
-
     // Render the outer container for resources
     $(this.el).html(Handlebars.templates.main(this.model));
 
@@ -150,6 +133,23 @@ SwaggerUi.Views.MainView = Backbone.View.extend({
       var n = $(this.el).find("#resources_nav [data-resource]").first();
       n.trigger("click");
       $(window).scrollTop(0)
+    }
+
+    if (this.model.securityDefinitions) {
+      for (var name in this.model.securityDefinitions) {
+        var auth = this.model.securityDefinitions[name];
+        var button;
+
+        if (auth.type === 'apiKey' && $('#apikey_button').length === 0) {
+          button = new SwaggerUi.Views.ApiKeyButton({model: auth, router: this.router}).render().el;
+          $('.auth_main_container').append(button);
+        }
+
+        if (auth.type === 'basicAuth' && $('#basic_auth_button').length === 0) {
+          button = new SwaggerUi.Views.BasicAuthButton({model: auth, router: this.router}).render().el;
+          $('.auth_main_container').append(button);
+        }
+      }
     }
 
     return this;
@@ -243,32 +243,32 @@ SwaggerUi.Views.MainView = Backbone.View.extend({
 
   },
 
-  // toggleToken: function (e) {
-  //   var t = $(".token-generator"),
-  //     tg = $("[data-tg-switch]");
+  toggleToken: function (e) {
+    var t = $(".token-generator"),
+      tg = $("[data-tg-switch]");
 
-  //   t.toggleClass("hide");
-  //   t.hasClass("hide") ? tg.removeClass("active") : tg.addClass("active");
-  //   t.parents(".sticky-nav").trigger("mobile_nav:update")
-  // },
+    t.toggleClass("hide");
+    t.hasClass("hide") ? tg.removeClass("active") : tg.addClass("active");
+    t.parents(".sticky-nav").trigger("mobile_nav:update")
+  },
 
-  // closeToken: function (e) {
-  //   var t = $(".token-generator"),
-  //     tg = $("[data-tg-switch]");
+  closeToken: function (e) {
+    var t = $(".token-generator"),
+      tg = $("[data-tg-switch]");
 
-  //   t.addClass("hide");
-  //   tg.removeClass("active");
-  //   t.parents(".sticky-nav").trigger("mobile_nav:update")
-  // },
+    t.addClass("hide");
+    tg.removeClass("active");
+    t.parents(".sticky-nav").trigger("mobile_nav:update")
+  },
 
-  // openToken: function (e) {
-  //   var t = $(".token-generator"),
-  //     tg = $("[data-tg-switch]");
+  openToken: function (e) {
+    var t = $(".token-generator"),
+      tg = $("[data-tg-switch]");
 
-  //   t.removeClass("hide");
-  //   tg.removeClass("active");
-  //   t.parents(".sticky-nav").trigger("mobile_nav:update")
-  // },
+    t.removeClass("hide");
+    tg.removeClass("active");
+    t.parents(".sticky-nav").trigger("mobile_nav:update")
+  },
 
   showCustom: function(e){
     if (e) {

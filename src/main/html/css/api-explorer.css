@@ -2474,3 +2474,45 @@ body {
     padding-top: 10px;
     color: lightblue;
 }
+
+.auth-container {
+    margin: 20px 20px 20px;
+}
+
+.auth_input {
+    margin-top: 6px;
+    padding-top: 6px;
+    padding-bottom: 7px;
+    padding-left: 12px;
+    font-family: inherit;
+
+}
+
+.token-indicator {
+    font-size: smaller;
+    margin-top: 5px;
+    font-style: italic;
+    font-family: inherit;
+}
+
+.osf-token-info {
+    font-size: smaller;
+    margin-top: 5px;
+    font-style: italic;
+    font-family: inherit;
+}
+
+.try-hide {
+    font-family: inherit;
+    font-size: inherit;
+    font-color: inherit;
+}
+
+.put-post-patch-info {
+    background-color: #d9edf7;
+}
+
+#clear-token-link {
+    padding-left: 57px;
+    cursor: pointer;
+}

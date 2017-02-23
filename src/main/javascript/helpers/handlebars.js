@@ -5,3 +5,11 @@ Handlebars.registerHelper('sanitize', function(html) {
     html = html.replace(/<script\b[^<]*(?:(?!<\/script>)<[^<]*)*<\/script>/gi, '');
     return new Handlebars.SafeString(html);
 });
+
+Handlebars.registerHelper('notequal', function(value1, value2, options) {
+    if (value1 == value2) {
+        return options.inverse(this);
+    } else {
+        return options.fn(this);
+    }
+});

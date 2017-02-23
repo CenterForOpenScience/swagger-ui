@@ -37,6 +37,13 @@
                 <div class="markdown action-summary">{{{description}}}</div>
             {{/if}}
 
+            {{#notequal this.method 'get'}}
+                <div class="swagger-section action-summary put-post-patch-info"><p>To enable the "try it out" feature for patch, post, or delete requests,
+                    <a href="#apikey_button">enter an OSF API Token at the top of the sidebar.</a></p>
+                </div>
+                <div class="put-post-patch-try hidden">
+            {{/notequal}}
+
             <form accept-charset="UTF-8" class="sandbox">
 
                 {{#if endpoint}}
@@ -58,8 +65,8 @@
                             <input class="submit btn btn-primary" name="commit" type="submit" value="try"
                                    data-target="#get_clients-modal-request">
                             <a href="#" class="response_hider hide" style="display: inline;">Hide Response</a>
-                            <!--small class="curl-copy-message hide" style="display:none;">Copied to clipboard</small-->
-                            <!--span class="response_throbber hide" style="display: none;"></span-->
+                            <small class="curl-copy-message hide" style="display:none;">Copied to clipboard</small>
+                            <span class="response_throbber hide" style="display: none;"></span>
 
                             {{#oauth}}
                             <div class="auth">
@@ -102,6 +109,11 @@
 
                 {{/if}}
             </form>
+
+            {{#notequal this.method 'get'}}
+            </div>
+            {{/notequal}}
+
         </div>
 
         <div class="samples">
