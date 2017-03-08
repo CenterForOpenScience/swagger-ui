@@ -18,6 +18,11 @@ properties:
         type: object
         readOnly: true
         description: 'MIME content-type for the file (null if unavailable).'
+      date_created:
+        type: string
+        format: date-time
+        readOnly: true
+        description: 'The date of the file version creation, as an iso8601 formatted timestamp.'
       size:
         type: integer 
         readOnly: true

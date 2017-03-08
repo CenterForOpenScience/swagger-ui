@@ -46,6 +46,7 @@ get:
               html: https://osf.io/ezcuj/files/osfstorage/553e69248c5e4a219919ea54?revision=1
             attributes:
               content_type: application/octet-stream
+              date_created: '2017-01-01T12:34:56.78910'
               size: 216945
             type: file_versions
             id: '1'
