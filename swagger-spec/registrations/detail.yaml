@@ -24,7 +24,7 @@ get:
 
     Registrations cannot be deleted, but they can be withdrawn.
     Withdrawing a registration removes the content of the registration but leaves behind basic metadata.
-    A withdrawn registration will display a limited subset of information, namely, title, description, date_created, registration, withdrawn, date_registered, withdrawal_justification, and registration supplement.
+    A withdrawn registration will display a limited subset of information, namely, title, description, date_created, date_registered, date_withdrawn, registration, withdrawn, withdrawal_justification, and registration supplement.
     All other fields will be displayed as null.
     Additionally, the only relationship that remains accesible for a withdrawn registration is the contributors.
     All other relationships will return a **403 Forbidden** response.

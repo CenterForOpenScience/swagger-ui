@@ -65,6 +65,11 @@ properties:
         format: date-time
         readOnly: true
         description: 'The time at which this registration was created, as an iso8601 formatted timestamp.'
+      date_withdrawn:
+        type: string
+        format: date-time
+        readOnly: true
+        description: 'The time at which this registration was withdrawn, as an iso8601 formatted timestamp.'
       description:
         type: string
         readOnly: true
