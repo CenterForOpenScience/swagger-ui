@@ -4,7 +4,8 @@ SwaggerUi.Views.ApiKeyButton = Backbone.View.extend({ // TODO: append this to gl
 
   events:{
     'click #apikey_button' : 'toggleApiKeyContainer',
-    'click #apply_api_key' : 'applyApiKey'
+    'click #apply_api_key' : 'applyApiKey',
+    'click #clear-token-link': 'removeApiKey'
   },
 
   initialize: function(opts){
@@ -15,19 +16,21 @@ SwaggerUi.Views.ApiKeyButton = Backbone.View.extend({ // TODO: append this to gl
   render: function(){
     var template = this.template();
     $(this.el).html(template(this.model));
-
     return this;
   },
 
-
   applyApiKey: function(){
-    var keyAuth = new SwaggerClient.ApiKeyAuthorization(
-      this.model.name,
-      $('#input_apiKey_entry').val(),
-      this.model.in
-    );
-    this.router.api.clientAuthorizations.add(this.model.name, keyAuth);
-    this.router.load();
+    var key = encodeURIComponent($('#input_apiKey_entry')[0].value);
+    if (key && key.trim() != "") {
+      var apiKeyAuth = new SwaggerClient.ApiKeyAuthorization("Authorization", "Bearer " + key, "header");
+      this.router.api.clientAuthorizations.add("key", apiKeyAuth);
+      $('.token-indicator').removeClass("hidden");
+      $('.osf-token-info').addClass("hidden");
+      $('.put-post-patch-try').removeClass("hidden");
+      $('.put-post-patch-info').addClass("hidden");
+    } else {
+      this.removeApiKey();
+    }
     $('#apikey_container').show();
   },
 
@@ -35,10 +38,14 @@ SwaggerUi.Views.ApiKeyButton = Backbone.View.extend({ // TODO: append this to gl
     if ($('#apikey_container').length) {
 
       var elem = $('#apikey_container').first();
+      var button = $('#apikey_menu_icon');
 
       if (elem.is(':visible')){
         elem.hide();
+        button.removeClass("glyphicon-menu-down").addClass("glyphicon glyphicon-menu-right");
+
       } else {
+        button.removeClass("glyphicon-menu-right").addClass("glyphicon-menu-down");
 
         // hide others
         $('.auth_container').hide();
@@ -49,6 +56,15 @@ SwaggerUi.Views.ApiKeyButton = Backbone.View.extend({ // TODO: append this to gl
 
   template: function(){
     return Handlebars.templates.apikey_button_view;
+  },
+
+  removeApiKey: function() {
+    this.router.api.clientAuthorizations.remove("key");
+    $('#input_apiKey_entry')[0].value = '';
+    $('.token-indicator').addClass("hidden");
+    $('.osf-token-info').removeClass("hidden");
+    $('.put-post-patch-try').addClass("hidden");
+    $('.put-post-patch-info').removeClass("hidden");
   }
 
 });

@@ -37,51 +37,61 @@
                 <div class="markdown action-summary">{{{description}}}</div>
             {{/if}}
 
+            {{#notequal this.method 'get'}}
+                <div class="swagger-section action-summary put-post-patch-info"><p>To enable the "try it out" feature for patch, post, or delete requests,
+                    <a href="#apikey_button">enter an OSF API Token at the top of the sidebar.</a></p>
+                </div>
+                <div class="put-post-patch-try hidden">
+            {{/notequal}}
+
             <form accept-charset="UTF-8" class="sandbox">
 
                 {{#if endpoint}}
-                    {{#if read}}
-                        {{#if parameters}}
-                            <h4 data-control data-parm-toggle data-toggle="collapse"
-                                data-target="#parm-{{parentId}}_{{nickname}}">
-                                Parameters
-                            </h4>
-                            <div data-content class="operation-params collapse in" id="parm-{{parentId}}_{{nickname}}"/>
-                        {{/if}}
 
-                        <div id="test-{{parentId}}_{{nickname}}">
-                            <div class="sandbox_header collapse in" data-content>
-                                <input class="submit btn btn-primary" name="commit" type="submit" value="try"
-                                       data-target="#get_clients-modal-request">
-                                <a href="#" class="response_hider hide" style="display: inline;">Hide Response</a>
-                                <!--small class="curl-copy-message hide" style="display:none;">Copied to clipboard</small-->
-                                <!--span class="response_throbber hide" style="display: none;"></span-->
+                    {{#if parameters}}
+                        <h4 data-control data-parm-toggle data-toggle="collapse"
+                            data-target="#parm-{{parentId}}_{{nickname}}">
+                            Parameters
+                        </h4>
+                        <div data-content class="operation-params collapse in" id="parm-{{parentId}}_{{nickname}}"/>
+                    {{/if}}
 
-                                {{#oauth}}
-                                <div class="auth">
-                                {{/oauth}}
+{{!--                     <h4 data-control data-toggle="collapse" data-target="#test-{{parentId}}_{{nickname}}">
+                        Test this endpoint
+                    </h4>
+ --}}
+                    <div id="test-{{parentId}}_{{nickname}}">
+                        <div class="sandbox_header collapse in" data-content>
+                            <input class="submit btn btn-primary" name="commit" type="submit" value="try"
+                                   data-target="#get_clients-modal-request">
+                            <a href="#" class="response_hider hide" style="display: inline;">Hide Response</a>
+                            <small class="curl-copy-message hide" style="display:none;">Copied to clipboard</small>
+                            <span class="response_throbber hide" style="display: none;"></span>
 
-                                {{#each oauth}}
-                                    <div id="api_information_panel" style="top: 526px; left: 776px; display: none;">
-                                        {{#each this}}
-                                            <div title='{{{this.description}}}'>{{this.scope}}</div>
-                                        {{/each}}
-                                    </div>
-                                {{/each}}
+                            {{#oauth}}
+                            <div class="auth">
+                            {{/oauth}}
 
-                                {{#oauth}}
-                                    <button type="button" class="api-ic ic-off btn btn-default pull-right">Oauth</button>
+                            {{#each oauth}}
+                                <div id="api_information_panel" style="top: 526px; left: 776px; display: none;">
+                                    {{#each this}}
+                                        <div title='{{{this.description}}}'>{{this.scope}}</div>
+                                    {{/each}}
                                 </div>
-                                {{/oauth}}
+                            {{/each}}
 
+                            {{#oauth}}
+                                <button type="button" class="api-ic ic-off btn btn-default pull-right">Oauth</button>
                             </div>
-
-                            {{#if type}}
-                                <div class="response-content-type"/>
-                            {{/if}}
+                            {{/oauth}}
 
                         </div>
-                    {{/if}}
+
+                        {{#if type}}
+                            <div class="response-content-type"/>
+                        {{/if}}
+
+                    </div>
 
 {{!--                     {{#if responseMessages}}
                         <div style="margin:0;padding:0;display:inline"></div>
@@ -99,6 +109,11 @@
 
                 {{/if}}
             </form>
+
+            {{#notequal this.method 'get'}}
+            </div>
+            {{/notequal}}
+
         </div>
 
         <div class="samples">

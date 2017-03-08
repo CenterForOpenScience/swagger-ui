@@ -108,7 +108,6 @@
                         });
                     }
 
-                    // addApiKeyAuthorization();
                 },
                 onFailure: function (data) {
                     log("Unable to Load SwaggerUI");
@@ -116,23 +115,6 @@
                 docExpansion: "none",
                 sorter: "alpha"
             });
-
-            // function addApiKeyAuthorization() {
-            //     var key = encodeURIComponent($('#input_apiKey')[0].value);
-            //     if (key && key.trim() != "") {
-            //         var apiKeyAuth = new SwaggerClient.ApiKeyAuthorization("Authorization", "Bearer " + key, "header");
-            //         window.swaggerUi.api.clientAuthorizations.add("key", apiKeyAuth);
-            //         log("added key " + key);
-            //     }
-            // }
-
-            // $('#input_apiKey').change(addApiKeyAuthorization);
-            // if you have an apiKey you would like to pre-populate on the page for demonstration purposes...
-            /*
-             var apiKey = "myApiKeyXXXX123456789";
-             $('#input_apiKey').val(apiKey);
-             */
-
             window.swaggerUi.load();
 
             function log() {

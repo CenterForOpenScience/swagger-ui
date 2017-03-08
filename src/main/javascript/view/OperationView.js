@@ -26,7 +26,6 @@ SwaggerUi.Views.OperationView = Backbone.View.extend({
     this.nickname = this.model.nickname;
     this.model.encodedParentId = encodeURIComponent(this.parentId);
     this.model.endpoint = api_topics.indexOf(this.model.summary) == -1 ? true : false;
-    this.model.read = this.model.method == 'get';
     this.schemaName = this.model.operation['x-response-schema'];
     return this;
   },
