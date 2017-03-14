@@ -126,5 +126,6 @@ get:
                 email_contact: ''
                 example: khbvy
                 name: Open Science Framework
+                domain: 'osf.io'
               type: preprint_providers
               id: osf

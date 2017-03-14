@@ -59,6 +59,10 @@ properties:
         type: string
         readOnly: true
         description: 'Name of the preprint provider.'
+      domain:
+        type: string
+        readOnly: true
+        description: 'The preprint provider''s domain, if the provider is using a domain to for their preprint service.'
   relationships:
     type: object
     title: Relationships
