@@ -1,0 +1,57 @@
+type: object
+title: view-only-links
+required:
+  - id
+  - type
+  - attributes
+  - relationships
+properties:
+  id:
+    type: string
+    readOnly: true
+    description: 'The identifier of the view only link.'
+  type:
+    type: string
+    readOnly: true
+    description: 'The type identifier of the view only link.'
+  attributes:
+    type: object
+    title: Attributes
+    readOnly: true
+    description: 'The properties of the view only link entity.'
+    properties:
+      date_created:
+        type: string
+        format: date-time
+        readOnly: true
+        description: 'The time at which the view only link was created'
+      anonymous:
+        type: boolean
+        readOnly: true
+        description: 'Whether or not the view only link has anonymized contributors'
+      name:
+        type: string
+        readOnly: true
+        description: 'The name of the view only link'
+      key:
+        type: string
+        readOnly: true
+        description: 'The view only key'
+  relationships:
+    type: object
+    title: Relationships
+    readOnly: true
+    description: 'URLs to other entities or entity collections that have a relationship to the view only link entity.'
+    required:
+      - nodes
+      - creator
+    properties:
+      nodes:
+        type: string
+        format: URL
+        readOnly: false
+        description: 'A relationship to the nodes affiliated with this view only link.'
+      creator:
+        type: string
+        readOnly: true
+        description: 'A relationship to the user who created this view only link.'
