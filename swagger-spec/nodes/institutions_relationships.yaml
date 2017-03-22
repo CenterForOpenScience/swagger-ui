@@ -1,1 +1,24 @@
 # /nodes/{node_id}/relationships/institutions/
+get:
+  summary: Retrieve institution-node relationships
+  description: >-
+    Returns all institutions affiliated with a node.
+    Users that have write access over a node can add an institutional affiliation. This
+    displays an institutional logo on the node page.
+
+  tags:
+    - Nodes
+  operationId: nodes_relationships_institutions
+  responses:
+    '200':
+      description: OK
+      schema:
+        type: array
+      examples:
+        application/json:
+          data:
+          - type: institutions
+            id: cos
+          links:
+            self: https://api.osf.io/v2/nodes/api6f/relationships/institutions/
+            html: https://api.osf.io/v2/nodes/api6f/institutions/
