@@ -1,1 +1,176 @@
 # /nodes/{node_id}/node_links/{node_link_id}/
+get:
+  summary: Retrieve a node link
+  description: >-
+    Retrieves the details of a node link.
+
+    Node links act as pointers to other nodes.
+    Unlike Forks, they are not copies of nodes. Node links are a direct
+    reference to the node to which they point.
+
+    ####Returns
+
+    Returns a JSON object with a `data` key containing the representation of the requested
+    node link, if the request is successful.
+
+
+    If the request is unsuccessful, an `errors` key containing
+    information about the failure will be returned. Refer to the [list of error codes](#Introduction_error_codes)
+    to understand why this request may have failed.
+
+  parameters:
+
+    - in: path
+      type: string
+      name: node_id
+      required: true
+      description: 'The unique identifier of the node.'
+
+    - in: path
+      type: string
+      name: node_link_id
+      required: true
+      description: 'The unique identifier of the node link.'
+
+
+  tags:
+    - Nodes
+  operationId: nodes_node_links_read
+  x-response-schema: 'Node Link'
+  responses:
+    '200':
+      description: 'OK'
+      schema:
+        $ref: 'definition.yaml'
+      examples:
+        application/json:
+          data:
+            relationships:
+              target_node:
+                links:
+                  related:
+                    href: http://api.osf.io/v2/nodes/6q49d/
+                    meta: {}
+            links:
+              self: http://api.osf.io/v2/nodes/gaz5n/node_links/58d288c1a170c50017124d71/
+            embeds:
+              target_node:
+                data:
+                  relationships:
+                    files:
+                      links:
+                        related:
+                          href: http://api.osf.io/v2/nodes/6q49d/files/
+                          meta: {}
+                    view_only_links:
+                      links:
+                        related:
+                          href: http://api.osf.io/v2/nodes/6q49d/view_only_links/
+                          meta: {}
+                    citation:
+                      links:
+                        related:
+                          href: http://api.osf.io/v2/nodes/6q49d/citation/
+                          meta: {}
+                    draft_registrations:
+                      links:
+                        related:
+                          href: http://api.osf.io/v2/nodes/6q49d/draft_registrations/
+                          meta: {}
+                    contributors:
+                      links:
+                        related:
+                          href: http://api.osf.io/v2/nodes/6q49d/contributors/
+                          meta: {}
+                    forks:
+                      links:
+                        related:
+                          href: http://api.osf.io/v2/nodes/6q49d/forks/
+                          meta: {}
+                    root:
+                      links:
+                        related:
+                          href: http://api.osf.io/v2/nodes/6q49d/
+                          meta: {}
+                    identifiers:
+                      links:
+                        related:
+                          href: http://api.osf.io/v2/nodes/6q49d/identifiers/
+                          meta: {}
+                    comments:
+                      links:
+                        related:
+                          href: http://api.osf.io/v2/nodes/6q49d/comments/?filter%5Btarget%5D=6q49d
+                          meta: {}
+                    registrations:
+                      links:
+                        related:
+                          href: http://api.osf.io/v2/nodes/6q49d/registrations/
+                          meta: {}
+                    node_links:
+                      links:
+                        related:
+                          href: http://api.osf.io/v2/nodes/6q49d/node_links/
+                          meta: {}
+                    linked_nodes:
+                      links:
+                        self:
+                          href: http://api.osf.io/v2/nodes/6q49d/relationships/linked_nodes/
+                          meta: {}
+                        related:
+                          href: http://api.osf.io/v2/nodes/6q49d/linked_nodes/
+                          meta: {}
+                    wikis:
+                      links:
+                        related:
+                          href: http://api.osf.io/v2/nodes/6q49d/wikis/
+                          meta: {}
+                    affiliated_institutions:
+                      links:
+                        self:
+                          href: http://api.osf.io/v2/nodes/6q49d/relationships/institutions/
+                          meta: {}
+                        related:
+                          href: http://api.osf.io/v2/nodes/6q49d/institutions/
+                          meta: {}
+                    children:
+                      links:
+                        related:
+                          href: http://api.osf.io/v2/nodes/6q49d/children/
+                          meta: {}
+                    preprints:
+                      links:
+                        related:
+                          href: http://api.osf.io/v2/nodes/6q49d/preprints/
+                          meta: {}
+                    logs:
+                      links:
+                        related:
+                          href: http://api.osf.io/v2/nodes/6q49d/logs/
+                          meta: {}
+                  links:
+                    self: http://api.osf.io/v2/nodes/6q49d/
+                    html: http://osf.io/6q49d/
+                  attributes:
+                    category: project
+                    fork: false
+                    preprint: false
+                    description: 'Your awesome project description'
+                    current_user_permissions:
+                    - read
+                    - write
+                    - admin
+                    date_modified: '2017-03-22T14:22:00.193773'
+                    title: 'Your awesome project title'
+                    collection: false
+                    registration: false
+                    date_created: '2017-03-22T14:22:00.193773'
+                    current_user_can_comment: true
+                    node_license:
+                    public: false
+                    tags: []
+                  type: nodes
+                  id: 6q49d
+            attributes: {}
+            type: node_links
+            id: 58d288c1a170c50017124d71
