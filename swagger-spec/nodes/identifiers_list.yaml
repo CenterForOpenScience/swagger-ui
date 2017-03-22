@@ -1,1 +1,47 @@
 # /nodes/{node_id}/identifiers/
+get:
+  summary: List all identifiers
+  description: >-
+    List all identifiers associated with the given node.
+
+    ####Returns
+
+    Returns a JSON object containing `data` and `links` keys.
+
+
+    The `data` key contains an array of identifiers.
+    Each resource in the array is a separate identifier object and contains the full representation of the identifier, meaning additional requests to a identifier's detail view are not necessary.
+
+
+    The `links` key contains a dictionary of links that can be used for [pagination](#Introduction_pagination).
+
+  parameters:
+
+    - in: path
+      name: node_id
+      type: string
+      required: true
+      description: 'The unique identifier of the node.'
+
+  tags:
+    - Nodes
+  operationId: nodes_identifiers_list
+  x-response-schema: 'Identifier'
+  responses:
+    '200':
+      description: 'OK'
+      schema:
+        type: array
+        items:
+          $ref: '../identifiers/definition.yaml'
+      examples:
+        application/json:
+          data: []
+          links:
+            first:
+            last:
+            prev:
+            next:
+            meta:
+              total: 0
+              per_page: 10
