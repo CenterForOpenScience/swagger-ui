@@ -1,1 +1,470 @@
 # /nodes/{node_id}/registrations/
+get:
+  summary: List all registrations
+  description: >-
+    List of all registrations of the given node.
+
+    ####Returns
+    Returns a JSON object containing `data` and `links` keys.
+
+
+    The `data` key contains an array of up to 10 registrations.
+    Each resource in the array is a separate registrations object.
+
+
+    The `links` key contains a dictionary of links that can be used for [pagination](#Introduction_pagination).
+
+    ####Filtering
+    You can optionally request that the response only include registrations that match your filters by utilizing the filter query parameter, e.g. [https://api.osf.io/v2/registrations/?filter[title]=open].
+    Registrations may be filtered by their `id`, `title`, `category`, `description`, `public`, `tags`, `date_created`, `date_modified`, `root`, `parent`, and `contributors`.
+
+
+  parameters:
+    - in: path
+      name: node_id
+      type: string
+      required: true
+      description: 'The unique identifier of the node.'
+
+  tags:
+    - Nodes
+
+  operationId: nodes_registrations_list
+  x-response-schema: Registration
+  responses:
+    '200':
+      description: 'OK'
+      schema:
+        type: array
+        items:
+          $ref: '../registrations/definition.yaml'
+      examples:
+        application/json:
+          data:
+          - relationships:
+              files:
+                links:
+                  related:
+                    href: http://api.osf.io/v2/registrations/9ytbg/files/
+                    meta: {}
+              view_only_links:
+                links:
+                  related:
+                    href: http://api.osf.io/v2/registrations/9ytbg/view_only_links/
+                    meta: {}
+              citation:
+                links:
+                  related:
+                    href: http://api.osf.io/v2/registrations/9ytbg/citation/
+                    meta: {}
+              registration_schema:
+                links:
+                  related:
+                    href: http://api.osf.io/v2/metaschemas/58c6f0d8ce8e8b000a54754b/
+                    meta: {}
+              logs:
+                links:
+                  related:
+                    href: http://api.osf.io/v2/registrations/9ytbg/logs/
+                    meta: {}
+              contributors:
+                links:
+                  related:
+                    href: http://api.osf.io/v2/registrations/9ytbg/contributors/
+                    meta: {}
+              forks:
+                links:
+                  related:
+                    href: http://api.osf.io/v2/registrations/9ytbg/forks/
+                    meta: {}
+              root:
+                links:
+                  related:
+                    href: http://api.osf.io/v2/registrations/9ytbg/
+                    meta: {}
+              identifiers:
+                links:
+                  related:
+                    href: http://api.osf.io/v2/registrations/9ytbg/identifiers/
+                    meta: {}
+              comments:
+                links:
+                  related:
+                    href: http://api.osf.io/v2/registrations/9ytbg/comments/?filter%5Btarget%5D=9ytbg
+                    meta: {}
+              registered_from:
+                links:
+                  related:
+                    href: http://api.osf.io/v2/nodes/gaz5n/
+                    meta: {}
+              registered_by:
+                links:
+                  related:
+                    href: http://api.osf.io/v2/users/4xpu9/
+                    meta: {}
+              linked_nodes:
+                links:
+                  self:
+                    href: http://api.osf.io/v2/registrations/9ytbg/relationships/linked_nodes/
+                    meta: {}
+                  related:
+                    href: http://api.osf.io/v2/registrations/9ytbg/linked_nodes/
+                    meta: {}
+              wikis:
+                links:
+                  related:
+                    href: http://api.osf.io/v2/registrations/9ytbg/wikis/
+                    meta: {}
+              affiliated_institutions:
+                links:
+                  related:
+                    href: http://api.osf.io/v2/registrations/9ytbg/institutions/
+                    meta: {}
+              children:
+                links:
+                  related:
+                    href: http://api.osf.io/v2/registrations/9ytbg/children/
+                    meta: {}
+            links:
+              self: http://api.osf.io/v2/registrations/9ytbg/
+              html: http://osf.io/9ytbg/
+            attributes:
+              registration_supplement: 'Pre-Registration in Social Psychology (van ''t Veer
+                & Giner-Sorolla, 2016): Pre-Registration'
+              pending_embargo_approval: false
+              registration: true
+              embargo_end_date:
+              withdrawn: false
+              withdrawal_justification:
+              category: project
+              preprint: false
+              current_user_permissions:
+              - read
+              - write
+              - admin
+              title: 'Your awesome project title'
+              registered_meta:
+                dataCollectionDates:
+                  comments: []
+                  value: <answer_text>
+                  extra: []
+                description-methods:
+                  comments: []
+                  value:
+                    exclusion-criteria:
+                      comments: []
+                      value:
+                        question8b:
+                          comments: []
+                          value: <answer_text>
+                          extra: []
+                      extra: []
+                    design:
+                      comments: []
+                      value:
+                        question2a:
+                          comments: []
+                          value: <answer_text>
+                          extra: []
+                        question2b:
+                          comments: []
+                          value: <answer_text>
+                          extra: []
+                        question3b:
+                          comments: []
+                          value: <answer_text>
+                          extra: []
+                      extra: []
+                    procedure:
+                      comments: []
+                      value:
+                        question10b:
+                          comments: []
+                          value: <answer_text>
+                          extra: []
+                      extra: []
+                    planned-sample:
+                      comments: []
+                      value:
+                        question4b:
+                          comments: []
+                          value: <answer_text>
+                          extra: []
+                        question7b:
+                          comments: []
+                          value: <answer_text>
+                          extra: []
+                        question5b:
+                          comments: []
+                          value: <answer_text>
+                          extra: []
+                        question6b-upload:
+                          comments: []
+                          value: <answer_text>
+                          extra: []
+                        question6b:
+                          comments: []
+                          value: <answer_text>
+                          extra: []
+                      extra: []
+                  extra: []
+                recommended-analysis:
+                  comments: []
+                  value:
+                    specify:
+                      comments: []
+                      value:
+                        question6c:
+                          comments: []
+                          value: <answer_text>
+                          extra: []
+                        question8c:
+                          comments: []
+                          value: <answer_text>
+                          extra: []
+                        question9c:
+                          comments: []
+                          value: <answer_text>
+                          extra: []
+                        question7c:
+                          comments: []
+                          value: <answer_text>
+                          extra: []
+                        question11c:
+                          comments: []
+                          value: <answer_text>
+                          extra: []
+                        question10c:
+                          comments: []
+                          value: <answer_text>
+                          extra: []
+                      extra: []
+                  extra: []
+                description-hypothesis:
+                  comments: []
+                  value:
+                    question2a:
+                      comments: []
+                      value: <answer_text>
+                      extra: []
+                    question1a:
+                      comments: []
+                      value: <answer_text>
+                      extra: []
+                    question3a:
+                      comments: []
+                      value: <answer_text>
+                      extra: []
+                  extra: []
+                confirmatory-analyses-first:
+                  comments: []
+                  value:
+                    first:
+                      comments: []
+                      value:
+                        question4c:
+                          comments: []
+                          value: <answer_text>
+                          extra: []
+                        question5c:
+                          comments: []
+                          value: <answer_text>
+                          extra: []
+                        question2c:
+                          comments: []
+                          value: <answer_text>
+                          extra: []
+                        question3c:
+                          comments: []
+                          value: <answer_text>
+                            sdjfhalkj
+                          extra: []
+                        question1c:
+                          comments: []
+                          value: <answer_text>
+                          extra: []
+                      extra: []
+                  extra: []
+                confirmatory-analyses-third:
+                  comments: []
+                  value:
+                    third:
+                      comments: []
+                      value:
+                        question4c:
+                          comments: []
+                          value: <answer_text>
+                          extra: []
+                        question5c:
+                          comments: []
+                          value: <answer_text>
+                          extra: []
+                        question2c:
+                          comments: []
+                          value: <answer_text>
+                          extra: []
+                        question3c:
+                          comments: []
+                          value: <answer_text>
+                          extra: []
+                        question1c:
+                          comments: []
+                          value: <answer_text>
+                          extra: []
+                      extra: []
+                  extra: []
+                datacompletion:
+                  comments: []
+                  value: <answer_text>
+                  extra: []
+                looked:
+                  comments: []
+                  value: <answer_text>
+                  extra: []
+                confirmatory-analyses-fourth:
+                  comments: []
+                  value:
+                    fourth:
+                      comments: []
+                      value:
+                        question4c:
+                          comments: []
+                          value: <answer_text>
+                          extra: []
+                        question5c:
+                          comments: []
+                          value: <answer_text>
+                          extra: []
+                        question2c:
+                          comments: []
+                          value: <answer_text>
+                          extra: []
+                        question3c:
+                          comments: []
+                          value: <answer_text>
+                          extra: []
+                        question1c:
+                          comments: []
+                          value: <answer_text>
+                          extra: []
+                      extra: []
+                  extra: []
+                confirmatory-analyses-further:
+                  comments: []
+                  value:
+                    further:
+                      comments: []
+                      value:
+                        question4c:
+                          comments: []
+                          value: <answer_text>
+                          extra: []
+                        question5c:
+                          comments: []
+                          value: <answer_text>
+                          extra: []
+                        question2c:
+                          comments: []
+                          value: <answer_text>
+                          extra: []
+                        question3c:
+                          comments: []
+                          value: <answer_text>
+                          extra: []
+                        question1c:
+                          comments: []
+                          value: <answer_text>
+                          extra: []
+                      extra: []
+                  extra: []
+                recommended-hypothesis:
+                  comments: []
+                  value:
+                    question5a:
+                      comments: []
+                      value: <answer_text>
+                      extra: []
+                    question4a:
+                      comments: []
+                      value: <answer_text>
+                      extra: []
+                    question6a:
+                      comments: []
+                      value: <answer_text>
+                      extra: []
+                  extra: []
+                additionalComments:
+                  comments: []
+                  value: <answer_text>
+                  extra: []
+                confirmatory-analyses-second:
+                  comments: []
+                  value:
+                    second:
+                      comments: []
+                      value:
+                        question4c:
+                          comments: []
+                          value: <answer_text>
+                          extra: []
+                        question5c:
+                          comments: []
+                          value: <answer_text>
+                          extra: []
+                        question2c:
+                          comments: []
+                          value: <answer_text>
+                          extra: []
+                        question3c:
+                          comments: []
+                          value: <answer_text>
+                          extra: []
+                        question1c:
+                          comments: []
+                          value: <answer_text>
+                          extra: []
+                      extra: []
+                  extra: []
+                recommended-methods:
+                  comments: []
+                  value:
+                    procedure:
+                      comments: []
+                      value:
+                        question9b-file:
+                          comments: []
+                          value: <answer_text>
+                          extra: []
+                        question9b:
+                          comments: []
+                          value: <answer_text>
+                          extra: []
+                      extra: []
+                  extra: []
+              public: false
+              fork: false
+              description: 'Your awesome project description'
+              tags: []
+              collection: false
+              current_user_can_comment: true
+              pending_registration_approval: true
+              date_modified: '2017-03-21T17:36:37.797687'
+              date_registered: '2017-03-22T12:57:20.767877'
+              node_links:
+                links:
+                  related:
+                    href: http://api.osf.io/v2/registrations/9ytbg/node_links/
+                    meta: {}
+              date_created: '2017-03-20T20:12:17.002426'
+              pending_withdrawal: false
+              node_license:
+            type: registrations
+            id: 9ytbg
+          links:
+            first: null
+            last: null
+            prev: null
+            next: null
+            meta: null
+              total: 1
+              per_page: 10
