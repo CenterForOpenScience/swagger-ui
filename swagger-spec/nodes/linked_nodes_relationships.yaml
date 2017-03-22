@@ -1,1 +1,23 @@
 # /nodes/{node_id}/relationships/linked_nodes/
+get:
+  summary: Retrieve linked_nodes-node relationships
+  description: >-
+    Returns all linked nodes that contain this node.
+    For each id, there exists a node link that contains that node.
+
+  tags:
+    - Nodes
+  operationId: nodes_relationships_linked_nodes
+  responses:
+    '200':
+      description: OK
+      schema:
+        type: array
+      examples:
+        application/json:
+          data:
+          - type: linked_nodes
+            id: 6q49d
+          links:
+            self: http://api.osf.io/v2/nodes/gaz5n/relationships/linked_nodes/
+            html: http://api.osf.io/v2/nodes/gaz5n/linked_nodes/
