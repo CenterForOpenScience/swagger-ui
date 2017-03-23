@@ -3,13 +3,15 @@ get:
   summary: List all comments
   description: >-
 
-    Paginated list of comments ordered by their date_created.
+    A paginated list of comments related to a given node.
+    The returned comments are sorted by their creation date, with the most recent
+    comments appearing first.
 
     ####Permissions
 
     Comments on public nodes are given read-only access to everyone.
-    If the node comment-level is "private", only contributors have permission to
-    comment. If the comment-level is "public" any logged-in OSF user can comment.
+    If the node comment-level is `private`, only contributors have permission to
+    comment. If the comment-level is `public` any logged-in OSF user can comment.
     Comments on private nodes are only visible to contributors and administrators
     on the parent node.
 
@@ -19,8 +21,7 @@ get:
 
 
     The `data` key contains an array of comment objects.
-    Each resource in the array is a separate comment object and contains the
-    full representation of the comment, meaning additional requests to a comment's detail view are not necessary.
+    Each resource in the array is a separate comment object.
 
 
     The `links` key contains a dictionary of links that can be used for [pagination](#Introduction_pagination).
@@ -30,11 +31,13 @@ get:
     You can optionally request that the response only include nodes that match your filters by utilizing the `filter` query parameter, e.g.
     https://api.osf.io/v2/nodes/?filter[title]=reproducibility
 
+
     Nodes may be filtered by their `deleted`, `target_id`, `date_created`, `date_modified`.
+
 
     Most fields are string fields and will be filtered using simple substring matching.
     Public and preprint are boolean fields, and can be filtered using truthy values, such as **true**, **false**, **0** or **1**.
-    Note that quoting true or false in the query will cause the match to fail.
+    Note that quoting `true` or `false` in the query will cause the match to fail.
 
   parameters:
     - in: path
@@ -46,7 +49,7 @@ get:
   tags:
     - Nodes
   operationId: nodes_comments_list
-  x-response-schema: 'Comment'
+  x-response-schema: Comment
   responses:
     '200':
       description: OK
@@ -61,50 +64,280 @@ get:
               node:
                 links:
                   related:
-                    href: https://api.osf.io/v2/nodes/<node_id>/
+                    href: https://api.osf.io/v2/nodes/ezcuj/
                     meta: {}
               replies:
                 links:
                   related:
-                    href: https://api.osf.io/v2/nodes/api6f/comments/?filter[deleted]=True
+                    href: https://api.osf.io/v2/nodes/ezcuj/comments/?filter%5Btarget%5D=jg7sezmdnt93
                     meta: {}
               target:
                 links:
                   related:
-                    href: https://api.osf.io/v2/nodes/<node_id>/
+                    href: https://api.osf.io/v2/nodes/ezcuj/
                     meta:
                       type: nodes
               reports:
                 links:
                   related:
-                    href: https://api.osf.io/v2/comments/<comment_id>/reports/
+                    href: https://api.osf.io/v2/comments/jg7sezmdnt93/reports/
                     meta: {}
               user:
                 links:
                   related:
-                    href: https://api.osf.io/v2/users/<user_id>/
+                    href: https://api.osf.io/v2/users/6yc8z/
                     meta: {}
             links:
-              self: https://api.osf.io/v2/comments/<comment_id>/
+              self: https://api.osf.io/v2/comments/jg7sezmdnt93/
             attributes:
               can_edit: false
-              date_modified: '2016-08-11T22:58:53.694000'
+              date_modified: '2016-04-01T04:45:44.123000'
               deleted: false
               is_ham: false
               has_children: false
               modified: false
-              content: "hello world\r\n"
+              content: |-
+                We have published a Bayesian reanalysis of this project at PLOS ONE: http://journals.plos.org/plosone/article?id=10.1371/journal.pone.0149794
+
+                I explain some of the context on my blog: http://alexanderetz.com/2016/02/26/the-bayesian-rpp-take-2/
+
+                Please note that the analysis we use in this paper is very different from the analysis used in the blog I posted in the previous comment, so the results are different as well.
               has_report: false
               is_abuse: false
-              date_created: '2016-08-11T22:58:53.666000'
+              date_created: '2016-02-27T13:50:24.240000'
               page: node
             type: comments
-            id: <comment_id>
+            id: jg7sezmdnt93
+          - relationships:
+              node:
+                links:
+                  related:
+                    href: https://api.osf.io/v2/nodes/ezcuj/
+                    meta: {}
+              replies:
+                links:
+                  related:
+                    href: https://api.osf.io/v2/nodes/ezcuj/comments/?filter%5Btarget%5D=23pk9
+                    meta: {}
+              target:
+                links:
+                  related:
+                    href: https://api.osf.io/v2/nodes/ezcuj/
+                    meta:
+                      type: nodes
+              reports:
+                links:
+                  related:
+                    href: https://api.osf.io/v2/comments/23pk9/reports/
+                    meta: {}
+              user:
+                links:
+                  related:
+                    href: https://api.osf.io/v2/users/6yc8z/
+                    meta: {}
+            links:
+              self: https://api.osf.io/v2/comments/23pk9/
+            attributes:
+              can_edit: false
+              date_modified: '2016-04-01T04:45:37.437000'
+              deleted: false
+              is_ham: false
+              has_children: false
+              modified:
+              content: In this blog http://wp.me/p4sgtg-o6 I conduct a Bayesian Re-analysis
+                of the Reproducibility Project that gives a graded measure of replication success.
+                In an attempt to avoid dichotomous success/fail replication outcomes, I calculate
+                a continous outcome (Bayes factor) that answers the question, does the replication
+                result fit more with the original reported effect or a null effect? Many replications
+                are strong successes, many are strong failures, and there are many that lie
+                somewhere in between.
+              has_report: false
+              is_abuse: false
+              date_created: '2015-08-30T14:50:21.093000'
+              page: node
+            type: comments
+            id: 23pk9
+          - relationships:
+              node:
+                links:
+                  related:
+                    href: https://api.osf.io/v2/nodes/ezcuj/
+                    meta: {}
+              replies:
+                links:
+                  related:
+                    href: https://api.osf.io/v2/nodes/ezcuj/comments/?filter%5Btarget%5D=kjgd8
+                    meta: {}
+              target:
+                links:
+                  related:
+                    href: https://api.osf.io/v2/nodes/ezcuj/
+                    meta:
+                      type: nodes
+              reports:
+                links:
+                  related:
+                    href: https://api.osf.io/v2/comments/kjgd8/reports/
+                    meta: {}
+              user:
+                links:
+                  related:
+                    href: https://api.osf.io/v2/users/pct7w/
+                    meta: {}
+            links:
+              self: https://api.osf.io/v2/comments/kjgd8/
+            attributes:
+              can_edit: false
+              date_modified: '2016-04-01T04:45:44.416000'
+              deleted: false
+              is_ham: false
+              has_children: false
+              modified:
+              content: In a blog post, I wonder about the possibility the replication studies
+                might have had power less than 90%, because they were based on overestimated
+                effect sizes in original studies. But after looking at the p-value distribution,
+                my concerns were reduced - I think the studies distinguished between signal
+                and noise well. See http://daniellakens.blogspot.nl/2015/08/power-of-replications-in.html
+              has_report: false
+              is_abuse: false
+              date_created: '2015-08-29T17:40:32.911000'
+              page: node
+            type: comments
+            id: kjgd8
+          - relationships:
+              node:
+                links:
+                  related:
+                    href: https://api.osf.io/v2/nodes/ezcuj/
+                    meta: {}
+              replies:
+                links:
+                  related:
+                    href: https://api.osf.io/v2/nodes/ezcuj/comments/?filter%5Btarget%5D=95j3d
+                    meta: {}
+              target:
+                links:
+                  related:
+                    href: https://api.osf.io/v2/comments/iv6hb/
+                    meta:
+                      type: comments
+              reports:
+                links:
+                  related:
+                    href: https://api.osf.io/v2/comments/95j3d/reports/
+                    meta: {}
+              user:
+                links:
+                  related:
+                    href: https://api.osf.io/v2/users/cdi38/
+                    meta: {}
+            links:
+              self: https://api.osf.io/v2/comments/95j3d/
+            attributes:
+              can_edit: false
+              date_modified: '2016-04-01T04:45:41.030000'
+              deleted: false
+              is_ham: false
+              has_children: false
+              modified:
+              content: yup, it works.
+              has_report: false
+              is_abuse: false
+              date_created: '2014-08-29T19:28:40.428000'
+              page: node
+            type: comments
+            id: 95j3d
+          - relationships:
+              node:
+                links:
+                  related:
+                    href: https://api.osf.io/v2/nodes/ezcuj/
+                    meta: {}
+              replies:
+                links:
+                  related:
+                    href: https://api.osf.io/v2/nodes/ezcuj/comments/?filter%5Btarget%5D=iv6hb
+                    meta: {}
+              target:
+                links:
+                  related:
+                    href: https://api.osf.io/v2/nodes/ezcuj/
+                    meta:
+                      type: nodes
+              reports:
+                links:
+                  related:
+                    href: https://api.osf.io/v2/comments/iv6hb/reports/
+                    meta: {}
+              user:
+                links:
+                  related:
+                    href: https://api.osf.io/v2/users/326x8/
+                    meta: {}
+            links:
+              self: https://api.osf.io/v2/comments/iv6hb/
+            attributes:
+              can_edit: false
+              date_modified: '2016-04-01T04:45:43.970000'
+              deleted: false
+              is_ham: false
+              has_children: true
+              modified:
+              content: just testing the comments stream
+              has_report: false
+              is_abuse: false
+              date_created: '2014-08-28T14:12:40.055000'
+              page: node
+            type: comments
+            id: iv6hb
+          - relationships:
+              node:
+                links:
+                  related:
+                    href: https://api.osf.io/v2/nodes/ezcuj/
+                    meta: {}
+              replies:
+                links:
+                  related:
+                    href: https://api.osf.io/v2/nodes/ezcuj/comments/?filter%5Btarget%5D=x37bp
+                    meta: {}
+              target:
+                links:
+                  related:
+                    href: https://api.osf.io/v2/nodes/ezcuj/
+                    meta:
+                      type: nodes
+              reports:
+                links:
+                  related:
+                    href: https://api.osf.io/v2/comments/x37bp/reports/
+                    meta: {}
+              user:
+                links:
+                  related:
+                    href: https://api.osf.io/v2/users/326x8/
+                    meta: {}
+            links:
+              self: https://api.osf.io/v2/comments/x37bp/
+            attributes:
+              can_edit: false
+              date_modified: '2016-04-01T04:45:48.161000'
+              deleted: true
+              is_ham: false
+              has_children: false
+              modified:
+              content:
+              has_report: false
+              is_abuse: false
+              date_created: '2014-08-28T14:12:09.776000'
+              page: node
+            type: comments
+            id: x37bp
           links:
-            first: null
-            last: null
-            prev: null
-            next: null
-            meta: null
-              total: 1
-              per_page: 10
+            first:
+            last:
+            prev:
+            next:
+            meta:
+            total: 6
+            per_page: 10

@@ -217,6 +217,9 @@ paths:
   /nodes/{node_id}/preprints/:
     $ref: 'nodes/preprints_list.yaml'
 
+  /nodes/{node_id}/comments/:
+    $ref: 'nodes/comments_list.yaml'
+
   #################
   #   PREPRINTS   #
   #################
