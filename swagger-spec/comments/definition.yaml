@@ -105,3 +105,13 @@ properties:
         format: URL
         readOnly: true
         description: 'A link to the detail page for the comment.'
+example:
+  data:
+    type: comments
+    attributes:
+      content: 'An excellent reply to your comment'
+    relationships:
+      target:
+        data:
+          type: 'comments'
+          id: '{comment_id}'
