@@ -3,7 +3,14 @@
 get:
   summary: List all storage providers
   description: >-
-    List of all storage providers enabled for this node.
+    List of all storage providers that are configured for this node
+
+
+    Users of the OSF may access their data on a [number of cloud-storage services](https://api.osf.io/v2/#storage-providers) that have integrations with the OSF.
+    We call these **providers**. By default, every node has access to the OSF-provided storage but may use as many of
+    the supported providers as desired.
+
+
 
     ####Returns
 
