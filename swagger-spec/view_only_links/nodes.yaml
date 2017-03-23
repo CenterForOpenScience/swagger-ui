@@ -6,33 +6,25 @@ get:
 
     #### Permissions
 
-    This requires admin permissions on all nodes to be associated with this view only link.
+    Only project administrators may retrieve the nodes of a view only link.
+    Attempting to retrieve a view only link without appropriate permissions will
+    result in a 403 Forbidden response.
 
     #### Returns
 
     Returns a JSON object containing `data` and `links` keys.
 
-    The `data` key contains an array of 10 nodes.
-    Each resource in the array is a separate node object and contains the full representation of the node, meaning additional requests to a node's detail view are not necessary.
+    The `data` key contains an array of up to 10 nodes.
+    Each resource in the array is a separate node object and contains the full
+    representation of the node, meaning additional requests to a node's detail
+    view are not necessary.
 
 
     The `links` key contains a dictionary of links that can be used for [pagination](#Introduction_pagination).
 
 
-    This request should never return an error.
-
-    #### Filtering
-
-    You can optionally request that the response only include nodes that match your filters by utilizing the `filter` query parameter, e.g.
-    https://api.osf.io/v2/nodes/?filter[title]=reproducibility.
-
-
-    Nodes may be filtered by their `id`, `title`, `category`, `description`, `public`, `tags`, `date_created`, `date_modified`, `root`, `parent`, `preprint`, and `contributors`.
-
-
-    Most fields are string fields and will be filtered using simple substring matching.
-    Public and preprint are boolean fields, and can be filtered using truthy values, such as **true**, **false**, **0** or **1**.
-    Note that quoting true or false in the query will cause the match to fail.
+    If the request is unsuccessful, an `errors` key containing information about the failure will be returned.
+    Refer to the [list of error codes](#Introduction_error_codes) to understand why this request may have failed.
 
   parameters:
     - in: path
