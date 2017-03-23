@@ -220,6 +220,9 @@ paths:
   /nodes/{node_id}/comments/:
     $ref: 'nodes/comments_list.yaml'
 
+  /nodes/{node_id}/files/:
+    $ref: 'nodes/providers_list.yaml'
+
   #################
   #   PREPRINTS   #
   #################
