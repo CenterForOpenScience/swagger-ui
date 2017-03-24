@@ -223,6 +223,9 @@ paths:
   /nodes/{node_id}/files/:
     $ref: 'nodes/providers_list.yaml'
 
+  /nodes/{node_id}/institutions/:
+    $ref: 'nodes/institutions_list.yaml'
+
   #################
   #   PREPRINTS   #
   #################
