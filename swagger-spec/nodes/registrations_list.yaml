@@ -5,6 +5,8 @@ get:
     List of all registrations of the given node.
 
     ####Returns
+
+
     Returns a JSON object containing `data` and `links` keys.
 
 
@@ -15,6 +17,8 @@ get:
     The `links` key contains a dictionary of links that can be used for [pagination](#Introduction_pagination).
 
     ####Filtering
+
+
     You can optionally request that the response only include registrations that match your filters by utilizing the filter query parameter, e.g. [https://api.osf.io/v2/registrations/?filter[title]=open].
     Registrations may be filtered by their `id`, `title`, `category`, `description`, `public`, `tags`, `date_created`, `date_modified`, `root`, `parent`, and `contributors`.
 
@@ -466,5 +470,48 @@ get:
             prev: null
             next: null
             meta: null
-              total: 1
-              per_page: 10
+            total: 1
+            per_page: 10
+
+post:
+  summary: Create a registration
+  description: >-
+    Create a registration for a given node.
+
+
+    #### Required
+
+
+    A relationship object with a `data` key, containing the `nodes` type and target node `id` is required.
+
+
+    All attributes describing the relationship between the node and the target node are optional.
+
+    #### Returns
+
+    Returns a JSON object with a `data` key containing the representation of the new registration, if the request is successful.
+
+
+    If the request is unsuccessful, an `errors` key containing information about the failure will be returned.
+    Refer to the [list of error codes](#Introduction_error_codes) to understand why this request may have failed.
+
+  parameters:
+    - in: path
+      type: string
+      name: node_id
+      required: true
+      description: 'The unique identifier of the node.'
+    - in: body
+      name: body
+      required: true
+      schema:
+        $ref: '../registrations/definition.yaml'
+  tags:
+    - Nodes
+  operationId: nodes_registrations_create
+  x-response-schema: Registration
+  consumes:
+    - application/json
+  responses:
+    '201':
+      description: 'Success'
