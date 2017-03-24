@@ -36,12 +36,12 @@ get:
   tags:
     - Nodes
   operationId: nodes_node_links_read
-  x-response-schema: 'Node Link'
+  x-response-schema: Node Link
   responses:
     '200':
       description: 'OK'
       schema:
-        $ref: 'definition.yaml'
+        $ref: node_link_definition.yaml
       examples:
         application/json:
           data:
@@ -49,10 +49,10 @@ get:
               target_node:
                 links:
                   related:
-                    href: http://api.osf.io/v2/nodes/6q49d/
+                    href: https://api.osf.io/v2/nodes/ng6cc/
                     meta: {}
             links:
-              self: http://api.osf.io/v2/nodes/gaz5n/node_links/58d288c1a170c50017124d71/
+              self: https://api.osf.io/v2/nodes/ezcuj/node_links/58bf69aa54be8101f48dcc68/
             embeds:
               target_node:
                 data:
@@ -60,117 +60,149 @@ get:
                     files:
                       links:
                         related:
-                          href: http://api.osf.io/v2/nodes/6q49d/files/
+                          href: https://api.osf.io/v2/nodes/ng6cc/files/
                           meta: {}
                     view_only_links:
                       links:
                         related:
-                          href: http://api.osf.io/v2/nodes/6q49d/view_only_links/
+                          href: https://api.osf.io/v2/nodes/ng6cc/view_only_links/
                           meta: {}
                     citation:
                       links:
                         related:
-                          href: http://api.osf.io/v2/nodes/6q49d/citation/
+                          href: https://api.osf.io/v2/nodes/ng6cc/citation/
                           meta: {}
                     draft_registrations:
                       links:
                         related:
-                          href: http://api.osf.io/v2/nodes/6q49d/draft_registrations/
+                          href: https://api.osf.io/v2/nodes/ng6cc/draft_registrations/
                           meta: {}
                     contributors:
                       links:
                         related:
-                          href: http://api.osf.io/v2/nodes/6q49d/contributors/
+                          href: https://api.osf.io/v2/nodes/ng6cc/contributors/
                           meta: {}
                     forks:
                       links:
                         related:
-                          href: http://api.osf.io/v2/nodes/6q49d/forks/
+                          href: https://api.osf.io/v2/nodes/ng6cc/forks/
                           meta: {}
                     root:
                       links:
                         related:
-                          href: http://api.osf.io/v2/nodes/6q49d/
+                          href: https://api.osf.io/v2/nodes/ng6cc/
                           meta: {}
                     identifiers:
                       links:
                         related:
-                          href: http://api.osf.io/v2/nodes/6q49d/identifiers/
+                          href: https://api.osf.io/v2/nodes/ng6cc/identifiers/
                           meta: {}
                     comments:
                       links:
                         related:
-                          href: http://api.osf.io/v2/nodes/6q49d/comments/?filter%5Btarget%5D=6q49d
+                          href: https://api.osf.io/v2/nodes/ng6cc/comments/?filter%5Btarget%5D=ng6cc
                           meta: {}
                     registrations:
                       links:
                         related:
-                          href: http://api.osf.io/v2/nodes/6q49d/registrations/
+                          href: https://api.osf.io/v2/nodes/ng6cc/registrations/
                           meta: {}
                     node_links:
                       links:
                         related:
-                          href: http://api.osf.io/v2/nodes/6q49d/node_links/
+                          href: https://api.osf.io/v2/nodes/ng6cc/node_links/
                           meta: {}
                     linked_nodes:
                       links:
                         self:
-                          href: http://api.osf.io/v2/nodes/6q49d/relationships/linked_nodes/
+                          href: https://api.osf.io/v2/nodes/ng6cc/relationships/linked_nodes/
                           meta: {}
                         related:
-                          href: http://api.osf.io/v2/nodes/6q49d/linked_nodes/
+                          href: https://api.osf.io/v2/nodes/ng6cc/linked_nodes/
                           meta: {}
                     wikis:
                       links:
                         related:
-                          href: http://api.osf.io/v2/nodes/6q49d/wikis/
+                          href: https://api.osf.io/v2/nodes/ng6cc/wikis/
                           meta: {}
                     affiliated_institutions:
                       links:
                         self:
-                          href: http://api.osf.io/v2/nodes/6q49d/relationships/institutions/
+                          href: https://api.osf.io/v2/nodes/ng6cc/relationships/institutions/
                           meta: {}
                         related:
-                          href: http://api.osf.io/v2/nodes/6q49d/institutions/
+                          href: https://api.osf.io/v2/nodes/ng6cc/institutions/
                           meta: {}
                     children:
                       links:
                         related:
-                          href: http://api.osf.io/v2/nodes/6q49d/children/
+                          href: https://api.osf.io/v2/nodes/ng6cc/children/
                           meta: {}
                     preprints:
                       links:
                         related:
-                          href: http://api.osf.io/v2/nodes/6q49d/preprints/
+                          href: https://api.osf.io/v2/nodes/ng6cc/preprints/
                           meta: {}
                     logs:
                       links:
                         related:
-                          href: http://api.osf.io/v2/nodes/6q49d/logs/
+                          href: https://api.osf.io/v2/nodes/ng6cc/logs/
                           meta: {}
                   links:
-                    self: http://api.osf.io/v2/nodes/6q49d/
-                    html: http://osf.io/6q49d/
+                    self: https://api.osf.io/v2/nodes/ng6cc/
+                    html: https://osf.io/ng6cc/
                   attributes:
                     category: project
                     fork: false
                     preprint: false
-                    description: 'Your awesome project description'
+                    description: ''
                     current_user_permissions:
                     - read
-                    - write
-                    - admin
-                    date_modified: '2017-03-22T14:22:00.193773'
-                    title: 'Your awesome project title'
+                    date_modified: '2016-08-19T17:04:59.968000'
+                    title: Replication of Eastwick & Finkel (2008, JPSP)
                     collection: false
                     registration: false
-                    date_created: '2017-03-22T14:22:00.193773'
-                    current_user_can_comment: true
+                    date_created: '2013-04-02T12:08:53.469000'
+                    current_user_can_comment: false
                     node_license:
-                    public: false
+                    public: true
                     tags: []
                   type: nodes
-                  id: 6q49d
+                  id: ng6cc
             attributes: {}
             type: node_links
-            id: 58d288c1a170c50017124d71
+            id: 58bf69aa54be8101f48dcc68
+
+delete:
+  summary: Delete a node link
+  description: >-
+    Deletes a node link from a node. This request effectively removes the relationship between
+    the node and the target node.
+
+    #### Returns
+
+    If the request is successful, no content is returned.
+
+    If the request is unsuccessful, a JSON object with an `errors` key containing
+    information about the failure will be returned. Refer to the [list of error codes](#Introduction_error_codes)
+    to understand why this request may have failed.
+
+  parameters:
+    - in: path
+      type: string
+      name: node_id
+      required: true
+      description: 'The unique identifier of the node.'
+
+    - in: path
+      type: string
+      name: node_link_id
+      required: true
+      description: 'The unique identifier of the node link.'
+
+  tags:
+    - Nodes
+  operationId: nodes_node_link_delete
+  responses:
+    '204':
+      description: 'No content'

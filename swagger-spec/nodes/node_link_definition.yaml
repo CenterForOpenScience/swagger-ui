@@ -1,0 +1,36 @@
+type: object
+title: Node Link
+required:
+  - relationships
+properties:
+  id:
+    type: string
+    readOnly: true
+    description: 'The unique identifier of the node link entity.'
+
+  type:
+    type: string
+    readOnly: true
+    description: 'The type identifier of the node link entity (`node_links`).'
+
+  relationships:
+    type: object
+    title: Relationships
+    readOnly: true
+    required:
+      - target_node
+    description: 'URLs to other entities or entity collections that have a relationship to the node link entity.'
+    properties:
+      target_node:
+        type: string
+        readOnly: true
+        description: 'Embeds the details of the target node.'
+
+example:
+  data:
+    type: node_links
+    relationships:
+      nodes:
+        data:
+          type: nodes
+          id: "{target_node_id}"
