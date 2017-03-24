@@ -232,6 +232,12 @@ paths:
   /nodes/{node_id}/logs/:
     $ref: 'nodes/logs_list.yaml'
 
+  /nodes/{node_id}/node_links:
+    $ref: 'nodes/node_links_list.yaml'
+
+  /nodes/{node_id}/node_links/{node_link_id}:
+    $ref: 'nodes/node_link_detail.yaml'
+
   #################
   #   PREPRINTS   #
   #################
