@@ -13,7 +13,7 @@ properties:
     description: 'The type identifier of the comment entity (`comments`).'
   attributes:
     type: object
-    title: Attibutes
+    title: Attributes
     readOnly: false
     description: 'The properties of the comment entity.'
     properties:
