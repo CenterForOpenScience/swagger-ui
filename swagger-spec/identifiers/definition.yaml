@@ -18,7 +18,7 @@ properties:
       category:
         type: string
         readOnly: true
-        description: 'ark or doi'
+        description: 'category can be ark or doi'
       value:
         type: string
         readOnly: true
