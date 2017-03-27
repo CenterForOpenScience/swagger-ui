@@ -294,3 +294,11 @@ paths:
 
   /wikis/{wiki_id}/content/:
     $ref: 'wikis/content.yaml'
+
+
+  ##############
+  #   ADDONS   #
+  ##############
+
+  /addons/:
+    $ref: 'addons/list.yaml'
