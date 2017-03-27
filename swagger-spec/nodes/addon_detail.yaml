@@ -5,7 +5,7 @@ get:
     Retrieve details of an individual addon connected to this node.
 
     #### Permissions
-    
+
     NodeSettings that are attached to public Nodes will give read-only access to everyone.
     Private nodes require explicit read permission. Write and admin access are the same for public and private nodes.
     Administrators on a parent node have implicit read permissions for all child nodes.
@@ -30,7 +30,7 @@ get:
       description: 'The unique identifier of the node.'
     - in: path
       type: string
-      name: provider_id
+      name: provider
       required: true
       description: 'The unique identifier/name of the provider'
   tags:
