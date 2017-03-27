@@ -126,7 +126,7 @@ gulp.task('validate', function() {
  * Watch for changes and recompile
  */
 gulp.task('watch', function() {
-  return watch(['./src/**/*.{js,less,handlebars}', './swagger-spec/**/*.yaml'], function() {
+  return watch(['./src/**/*.{js,less,handlebars}'], function() {
     gulp.start('default');
   });
 });
