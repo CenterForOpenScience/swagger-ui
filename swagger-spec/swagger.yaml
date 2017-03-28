@@ -294,3 +294,13 @@ paths:
 
   /wikis/{wiki_id}/content/:
     $ref: 'wikis/content.yaml'
+
+  ##################
+  #   TAXONOMIES   #
+  ##################
+
+  /taxonomies/:
+    $ref: 'taxonomies/list.yaml'
+
+  /taxonomies/{taxonomy_id}/:
+    $ref: 'taxonomies/detail.yaml'
