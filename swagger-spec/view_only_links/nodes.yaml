@@ -2,7 +2,7 @@ get:
   summary: List all nodes
   description: >-
 
-    A list of nodes associated with the View Only Link.
+    The list of nodes which this view only link gives read-only access to.
 
     #### Permissions
 
