@@ -10,6 +10,7 @@ get:
 
 
     ####Returns
+
     Returns a JSON object containing `data` and `links` keys.
 
 

@@ -10,10 +10,15 @@ get:
     ####Permissions
 
     Comments on public nodes are given read-only access to everyone.
-    If the node comment-level is `private`, only contributors have permission to
-    comment. If the comment-level is `public` any logged-in OSF user can comment.
-    Comments on private nodes are only visible to contributors and administrators
-    on the parent node.
+
+
+    If the node comment-level is `private`, only contributors have permission to comment.
+
+
+    If the comment-level is `public`, any logged-in OSF user can comment.
+
+
+    Comments on private nodes are only visible to contributors and administrators on the parent node.
 
     ####Returns
 
@@ -345,6 +350,7 @@ post:
   summary: Create a comment
   description: >-
     Create a comment on a given node overview page or a reply to a comment on that node.
+
 
     To create a comment on the node overview page, the target `type` would be "nodes" and the target `id` would be the node `id`.
     To reply to a comment on this node, the target `type` would be "comments" and the target `id` would be the `id` of the comment to reply to.

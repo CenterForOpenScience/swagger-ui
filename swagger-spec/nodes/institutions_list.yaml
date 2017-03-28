@@ -5,6 +5,7 @@ get:
     List of all institutions affiliated with this node.
 
     ####Returns
+
     Returns a JSON object containing `data` and `links` keys.
 
 

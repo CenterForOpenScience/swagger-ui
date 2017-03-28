@@ -42,6 +42,7 @@ get:
         type: array
         items:
           $ref: '../registrations/definition.yaml'
+      # TODO: A better example from an actual OSF project.
       examples:
         application/json:
           data:
