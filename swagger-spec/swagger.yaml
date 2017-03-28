@@ -294,3 +294,13 @@ paths:
 
   /wikis/{wiki_id}/content/:
     $ref: 'wikis/content.yaml'
+
+
+  ###################
+  #   METASCHEMAS   #
+  ###################
+
+  /metaschemas/:
+    $ref: 'metaschemas/list.yaml'
+  /metaschemas/{metaschema_id}:
+    $ref: 'metaschemas/detail.yaml'
