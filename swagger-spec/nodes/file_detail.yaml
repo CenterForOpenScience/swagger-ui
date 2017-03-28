@@ -25,13 +25,13 @@ get:
 
     - in: path
       type: string
-      name: provider_id
+      name: provider
       required: true
       description: 'The unique identifier of the storage provider.'
 
     - in: path
       type: string
-      name: path_id
+      name: path
       required: true
       description: 'The unique identifier of the file path.'
 
