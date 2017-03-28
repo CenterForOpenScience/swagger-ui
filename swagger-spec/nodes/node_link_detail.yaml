@@ -4,6 +4,7 @@ get:
   description: >-
     Retrieves the details of a node link.
 
+
     Node links act as pointers to other nodes.
     Unlike Forks, they are not copies of nodes. Node links are a direct
     reference to the node to which they point.
