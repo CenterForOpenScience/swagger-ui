@@ -109,9 +109,9 @@ example:
   data:
     type: comments
     attributes:
-      content: 'An excellent reply to your comment'
+      content: 'comment content'
     relationships:
       target:
         data:
-          type: 'comments'
-          id: '{comment_id}'
+          type: '{target_type}'
+          id: '{target_id}'
