@@ -17,8 +17,11 @@ properties:
     properties:
       category:
         type: string
+        enum:
+          - ark
+          - doi
         readOnly: true
-        description: 'category can be ark or doi'
+        description: 'The category of this identifier'
       value:
         type: string
         readOnly: true

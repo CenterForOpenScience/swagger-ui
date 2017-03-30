@@ -18,7 +18,7 @@ get:
     ####Filtering
 
     You can optionally request that the response only include identifiers that match your filters by utilizing the `filter` query parameter, e.g.
-    https://api.osf.io/v2/nodes/?filter[category]=doi.
+    https://api.osf.io/v2/identifiers/73pnd/identifiers/?filter[category]=doi.
 
     Identifiers may be filtered by their `category` e.g `ark` or `doi`.
 
