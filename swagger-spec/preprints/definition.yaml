@@ -36,7 +36,7 @@ properties:
       doi:
         type: string
         readOnly: false
-        description: 'The DOI for the manuscript of the preprint, as entered by the user.'
+        description: 'The DOI of the associated journal article, as entered by the user, if the preprint is published.'
       is_preprint_orphan:
         type: boolean
         readOnly: true
@@ -50,7 +50,7 @@ properties:
         items:
           type: string
         readOnly: false
-        description: 'A list of lists of dictionaries that describe subjects related to the preprint, in the PLOS taxonomy. Each dictionary contains the text and ID of a subject.'
+        description: 'A nested array structure that describe subjects related to the preprint, in the BePress taxonomy. Each dictionary contains the text and ID of a subject.'
   relationships:
     type: object
     title: Relationships
