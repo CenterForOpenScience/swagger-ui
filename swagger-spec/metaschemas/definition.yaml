@@ -19,33 +19,31 @@ properties:
   attributes:
     type: object
     title: Attributes
-    readOnly: false
+    readOnly: true
     description: 'The properties of the metaschema entity.'
     properties:
       name:
         type: string
         readOnly: true
-        description: 'Name of the registration schema'
+        description: 'The name of the metaschema'
       schema_version:
         type: integer
         readOnly: true
-        description: 'Latest version of the schema'
+        description: 'The latest version of the schema'
       schema:
-        # TODO: Swagger UI seems to lack support for dictionaries.
-        # This property should not show as object
         type: object
         additionalProperties:
           type: array
           items:
             type: string
         readOnly: true
-        description: 'Registration schema details'
+        description: 'The details of the metaschema which contains the supplemental questions to accompany a registration'
 
   links:
     type: object
     title: Links
     readOnly: true
-    description: 'URLs to alternative representations of the user entity.'
+    description: 'URLs to alternative representations of the metaschema entity.'
     properties:
       self:
         type: string

@@ -177,6 +177,15 @@ paths:
   # /institutions/{institution_id}/relationships/nodes/:
   #   $ref: 'institutions/nodes_relationships.yaml'
 
+  ###################
+  #   METASCHEMAS   #
+  ###################
+
+  /metaschemas/:
+    $ref: 'metaschemas/list.yaml'
+  /metaschemas/{metaschema_id}:
+    $ref: 'metaschemas/detail.yaml'
+
   #############
   #   NODES   #
   #############
@@ -294,13 +303,3 @@ paths:
 
   /wikis/{wiki_id}/content/:
     $ref: 'wikis/content.yaml'
-
-
-  ###################
-  #   METASCHEMAS   #
-  ###################
-
-  /metaschemas/:
-    $ref: 'metaschemas/list.yaml'
-  /metaschemas/{metaschema_id}:
-    $ref: 'metaschemas/detail.yaml'
