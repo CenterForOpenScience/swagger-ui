@@ -22,7 +22,7 @@ properties:
       child_count:
         type: integer
         readOnly: true
-        description: 'Number of children this taxonomy contains.'
+        description: 'The number of children this taxonomy contains.'
       parents:
         type: array
         items:

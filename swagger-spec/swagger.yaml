@@ -263,6 +263,16 @@ paths:
   /registrations/{registration_id}/:
     $ref: 'registrations/detail.yaml'
 
+  ##################
+  #   TAXONOMIES   #
+  ##################
+
+  /taxonomies/:
+    $ref: 'taxonomies/list.yaml'
+
+  /taxonomies/{taxonomy_id}/:
+    $ref: 'taxonomies/detail.yaml'
+
   #############
   #   USERS   #
   #############
@@ -294,13 +304,3 @@ paths:
 
   /wikis/{wiki_id}/content/:
     $ref: 'wikis/content.yaml'
-
-  ##################
-  #   TAXONOMIES   #
-  ##################
-
-  /taxonomies/:
-    $ref: 'taxonomies/list.yaml'
-
-  /taxonomies/{taxonomy_id}/:
-    $ref: 'taxonomies/detail.yaml'

@@ -6,8 +6,9 @@ get:
 
     #### Returns
 
+
     Returns a JSON object with a `data` key containing the representation of the requested
-    PLOS taxonomy, if the request is successful.
+    taxonomy, if the request is successful.
 
 
     If the request is unsuccessful, an `errors` key containing
