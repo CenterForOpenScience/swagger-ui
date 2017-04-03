@@ -7,7 +7,7 @@ get:
 
     ####Returns
 
-    
+
     Returns a JSON object containing `data` and `links` keys.
 
 
@@ -170,139 +170,6 @@ get:
               target_node:
                 links:
                   related:
-                    href: https://api.osf.io/v2/nodes/swrhy/
-                    meta: {}
-            links:
-              self: https://api.osf.io/v2/nodes/ezcuj/node_links/58bf68e754be8101f48db39c/
-            embeds:
-              target_node:
-                data:
-                  relationships:
-                    files:
-                      links:
-                        related:
-                          href: https://api.osf.io/v2/nodes/swrhy/files/
-                          meta: {}
-                    view_only_links:
-                      links:
-                        related:
-                          href: https://api.osf.io/v2/nodes/swrhy/view_only_links/
-                          meta: {}
-                    citation:
-                      links:
-                        related:
-                          href: https://api.osf.io/v2/nodes/swrhy/citation/
-                          meta: {}
-                    draft_registrations:
-                      links:
-                        related:
-                          href: https://api.osf.io/v2/nodes/swrhy/draft_registrations/
-                          meta: {}
-                    contributors:
-                      links:
-                        related:
-                          href: https://api.osf.io/v2/nodes/swrhy/contributors/
-                          meta: {}
-                    forks:
-                      links:
-                        related:
-                          href: https://api.osf.io/v2/nodes/swrhy/forks/
-                          meta: {}
-                    root:
-                      links:
-                        related:
-                          href: https://api.osf.io/v2/nodes/swrhy/
-                          meta: {}
-                    identifiers:
-                      links:
-                        related:
-                          href: https://api.osf.io/v2/nodes/swrhy/identifiers/
-                          meta: {}
-                    forked_from:
-                      links:
-                        related:
-                          href: https://api.osf.io/v2/nodes/rc6mv/
-                          meta: {}
-                    comments:
-                      links:
-                        related:
-                          href: https://api.osf.io/v2/nodes/swrhy/comments/?filter%5Btarget%5D=swrhy
-                          meta: {}
-                    registrations:
-                      links:
-                        related:
-                          href: https://api.osf.io/v2/nodes/swrhy/registrations/
-                          meta: {}
-                    node_links:
-                      links:
-                        related:
-                          href: https://api.osf.io/v2/nodes/swrhy/node_links/
-                          meta: {}
-                    linked_nodes:
-                      links:
-                        self:
-                          href: https://api.osf.io/v2/nodes/swrhy/relationships/linked_nodes/
-                          meta: {}
-                        related:
-                          href: https://api.osf.io/v2/nodes/swrhy/linked_nodes/
-                          meta: {}
-                    wikis:
-                      links:
-                        related:
-                          href: https://api.osf.io/v2/nodes/swrhy/wikis/
-                          meta: {}
-                    affiliated_institutions:
-                      links:
-                        self:
-                          href: https://api.osf.io/v2/nodes/swrhy/relationships/institutions/
-                          meta: {}
-                        related:
-                          href: https://api.osf.io/v2/nodes/swrhy/institutions/
-                          meta: {}
-                    children:
-                      links:
-                        related:
-                          href: https://api.osf.io/v2/nodes/swrhy/children/
-                          meta: {}
-                    preprints:
-                      links:
-                        related:
-                          href: https://api.osf.io/v2/nodes/swrhy/preprints/
-                          meta: {}
-                    logs:
-                      links:
-                        related:
-                          href: https://api.osf.io/v2/nodes/swrhy/logs/
-                          meta: {}
-                  links:
-                    self: https://api.osf.io/v2/nodes/swrhy/
-                    html: https://osf.io/swrhy/
-                  attributes:
-                    category: project
-                    fork: true
-                    preprint: false
-                    description:
-                    current_user_permissions:
-                    - read
-                    date_modified: '2016-08-19T17:03:18.757000'
-                    title: Replication of Farrell (2008, JEP:LMC, Study 2)
-                    collection: false
-                    registration: false
-                    date_created: '2012-08-15T11:23:28.602000'
-                    current_user_can_comment: false
-                    node_license:
-                    public: true
-                    tags:
-                    - replication
-                  type: nodes
-                  id: swrhy
-            attributes: {}
-            type: node_links
-            id: 58bf68e754be8101f48db39c
-          - relationships:
-              target_node:
-                links:
-                  related:
                     href: https://api.osf.io/v2/nodes/sq8k9/
                     meta: {}
             links:
@@ -439,13 +306,13 @@ get:
             prev:
             next:
             meta:
-            total: 3
+            total: 2
             per_page: 10
 
 post:
   summary: Create a node link
   description: >-
-    Adds a node link to a node, effectively creating a relationship between the node and a target node.
+    Links the given node to a target node, effectively creating a relationship between the node and a target node.
 
 
     #### Required

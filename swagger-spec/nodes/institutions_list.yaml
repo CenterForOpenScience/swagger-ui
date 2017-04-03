@@ -94,38 +94,11 @@ get:
                 and Data Protection Policies</a>.
             type: institutions
             id: uva
-          - relationships:
-              nodes:
-                links:
-                  related:
-                    href: https://api.osf.io/v2/institutions/ljaf/nodes/
-                    meta: {}
-              users:
-                links:
-                  related:
-                    href: https://api.osf.io/v2/institutions/ljaf/users/
-                    meta: {}
-              registrations:
-                links:
-                  related:
-                    href: https://api.osf.io/v2/institutions/ljaf/registrations/
-                    meta: {}
-            links:
-              self: https://api.osf.io/v2/institutions/ljaf/
-            attributes:
-              auth_url:
-              logo_path: "/static/img/institutions/shields/ljaf-shield.png"
-              name: Laura and John Arnold Foundation
-              description: Projects listed below are for grants awarded by the Foundation. Please
-                see the <a href="http://www.arnoldfoundation.org/wp-content/uploads/Guidelines-for-Investments-in-Research.pdf">LJAF
-                Guidelines for Investments in Research</a> for more information and requirements.
-            type: institutions
-            id: ljaf
           links:
             first:
             last:
             prev:
             next:
             meta:
-              total: 3
+              total: 2
               per_page: 10

@@ -1,6 +1,6 @@
 # /nodes/{node_id}/view_only_links/
 get:
-  summary: List all VOLs
+  summary: List all view only links
   description: >-
     List of view only links on a node.
 
@@ -25,15 +25,11 @@ get:
     ####Filtering
 
 
-    View Only Links can be filtered based on their `name`, `anonymous` and `date_created` fields.
-
-    + `filter[name]=<Str>` -- filter view only links by `name`
-
-    + `filter[anonymous]=<true|false>` -- filter view only links by `anonymous`
-
-    + `filter[date_created][comparison_operator]=YYYY-MM-DDTH:M:S` -- filter view only links based on `date_created`.
+    You can optionally request that the response only include view only links that match your filters by utilizing the `filter` query parameter, e.g.
+    https://api.osf.io/v2/nodes/ezcuj/view_only_links/?filter[anonymous]=true.
 
 
+    View Only Links may be filtered based on their `name`, `anonymous` and `date_created` fields.
     Possible comparison operators include 'gt' (greater than), 'gte'(greater than or equal to), 'lt' (less than) and 'lte' (less than or equal to). The date must be in the format YYYY-MM-DD and the time is optional.
 
   parameters:
@@ -108,5 +104,5 @@ get:
             prev:
             next:
             meta:
-              total: 2
-              per_page: 10
+            total: 2
+            per_page: 10

@@ -24,7 +24,7 @@ get:
 
     - in: path
       type: string
-      name: view_only_link_id
+      name: link_id
       required: true
       description: 'The unique identifier of the view only link.'
 

@@ -17,8 +17,10 @@ get:
 
     ####Filtering
 
+
     You can optionally request that the response only include nodes that match your filters by utilizing the `filter` query parameter, e.g.
-    https://api.osf.io/v2/nodes/?filter[title]=reproducibility
+    https://api.osf.io/v2/nodes/ezcuj/identifiers/?filter[category]=ark
+
 
     Identifiers may be filtered by their `category` e.g `ark` or `doi`.
 

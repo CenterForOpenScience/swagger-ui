@@ -2,11 +2,15 @@
 get:
   summary: List all logs
   description: >-
-    List of all logs associated with a given node.
+    A paginated list of all logs associated with a given node.
 
-    Paginated list of Logs ordered by their date.
-    This list includes the Logs of the specified Node as well as
-    the logs of that Node's children to which the current user has access.
+
+    The returned logs are sorted by their `date`, with the most recents logs appearing
+    first.
+
+
+    This list includes the logs of the specified node as well as
+    the logs of that node's children to which the current user has read-only access.
 
 
     ####Returns
@@ -23,7 +27,8 @@ get:
     ####Filtering
 
     You can optionally request that the response only include logs that match your filters by utilizing the `filter` query parameter, e.g.
-    https://api.osf.io/v2/nodes/?filter[action]=made_private.
+    https://api.osf.io/v2/nodes/ezcuj/logs/?filter[action]=made_private.
+
 
     Nodes may be filtered by their `action`, and `date`.
 
@@ -114,234 +119,11 @@ get:
                 contributors: []
             type: logs
             id: 5873190554be8101d7e30b3e
-          - relationships:
-              node:
-                links:
-                  related:
-                    href: https://api.osf.io/v2/nodes/rye76/
-                    meta: {}
-              original_node:
-                links:
-                  related:
-                    href: https://api.osf.io/v2/nodes/rye76/
-                    meta: {}
-            links:
-              self: https://api.osf.io/v2/logs/5873190554be8101d7e30b3d/
-            attributes:
-              date: '2017-01-09T05:00:53.699000'
-              action: project_registered
-              params:
-                preprint_provider:
-                params_node:
-                  id: rye76
-                  title: Data
-                params_project:
-                contributors: []
-            type: logs
-            id: 5873190554be8101d7e30b3d
-          - relationships:
-              node:
-                links:
-                  related:
-                    href: https://api.osf.io/v2/nodes/62knn/
-                    meta: {}
-              original_node:
-                links:
-                  related:
-                    href: https://api.osf.io/v2/nodes/62knn/
-                    meta: {}
-            links:
-              self: https://api.osf.io/v2/logs/5873190554be8101d7e30b3c/
-            attributes:
-              date: '2017-01-09T05:00:53.524000'
-              action: project_registered
-              params:
-                preprint_provider:
-                params_node:
-                  id: 62knn
-                  title: Study Materials
-                params_project:
-                contributors: []
-            type: logs
-            id: 5873190554be8101d7e30b3c
-          - relationships:
-              node:
-                links:
-                  related:
-                    href: https://api.osf.io/v2/nodes/i29mh/
-                    meta: {}
-              original_node:
-                links:
-                  related:
-                    href: https://api.osf.io/v2/nodes/i29mh/
-                    meta: {}
-            links:
-              self: https://api.osf.io/v2/logs/5873190554be8101d7e30b3b/
-            attributes:
-              date: '2017-01-09T05:00:53.390000'
-              action: project_registered
-              params:
-                preprint_provider:
-                params_node:
-                  id: i29mh
-                  title: Replication of Vohs &amp; Schooler (2008, PS, Study 1)
-                params_project:
-                contributors: []
-            type: logs
-            id: 5873190554be8101d7e30b3b
-          - relationships:
-              node:
-                links:
-                  related:
-                    href: https://api.osf.io/v2/nodes/i29mh/
-                    meta: {}
-              original_node:
-                links:
-                  related:
-                    href: https://api.osf.io/v2/nodes/i29mh/
-                    meta: {}
-            links:
-              self: https://api.osf.io/v2/logs/5873190554be8101d7e30b3a/
-            attributes:
-              date: '2017-01-09T05:00:53.314000'
-              action: registration_approved
-              params:
-                preprint_provider:
-                params_node:
-                  id: i29mh
-                  title: Replication of Vohs &amp; Schooler (2008, PS, Study 1)
-                params_project:
-                contributors: []
-            type: logs
-            id: 5873190554be8101d7e30b3a
-          - relationships:
-              node:
-                links:
-                  related:
-                    href: https://api.osf.io/v2/nodes/i29mh/
-                    meta: {}
-              original_node:
-                links:
-                  related:
-                    href: https://api.osf.io/v2/nodes/i29mh/
-                    meta: {}
-              user:
-                links:
-                  related:
-                    href: https://api.osf.io/v2/users/fkn2j/
-                    meta: {}
-            links:
-              self: https://api.osf.io/v2/logs/586fc1676c613b01fdac5cad/
-            attributes:
-              date: '2017-01-06T16:10:15.302000'
-              action: registration_initiated
-              params:
-                preprint_provider:
-                params_node:
-                  id: i29mh
-                  title: Replication of Vohs &amp; Schooler (2008, PS, Study 1)
-                params_project:
-                contributors: []
-            type: logs
-            id: 586fc1676c613b01fdac5cad
-          - relationships:
-              node:
-                links:
-                  related:
-                    href: https://api.osf.io/v2/nodes/i29mh/
-                    meta: {}
-              original_node:
-                links:
-                  related:
-                    href: https://api.osf.io/v2/nodes/i29mh/
-                    meta: {}
-              user:
-                links:
-                  related:
-                    href: https://api.osf.io/v2/users/fkn2j/
-                    meta: {}
-            links:
-              self: https://api.osf.io/v2/logs/584e2eed54be8101d4e1bc64/
-            attributes:
-              date: '2016-12-12T05:00:29.122000'
-              action: retraction_approved
-              params:
-                preprint_provider:
-                params_node:
-                  id: i29mh
-                  title: Replication of Vohs &amp; Schooler (2008, PS, Study 1)
-                params_project:
-                contributors: []
-            type: logs
-            id: 584e2eed54be8101d4e1bc64
-          - relationships:
-              node:
-                links:
-                  related:
-                    href: https://api.osf.io/v2/nodes/i29mh/
-                    meta: {}
-              original_node:
-                links:
-                  related:
-                    href: https://api.osf.io/v2/nodes/i29mh/
-                    meta: {}
-              user:
-                links:
-                  related:
-                    href: https://api.osf.io/v2/users/fkn2j/
-                    meta: {}
-            links:
-              self: https://api.osf.io/v2/logs/584ac51b594d90020056055a/
-            attributes:
-              date: '2016-12-09T14:52:11.219000'
-              action: retraction_initiated
-              params:
-                preprint_provider:
-                params_node:
-                  id: i29mh
-                  title: Replication of Vohs &amp; Schooler (2008, PS, Study 1)
-                params_project:
-                contributors: []
-            type: logs
-            id: 584ac51b594d90020056055a
-          - relationships:
-              node:
-                links:
-                  related:
-                    href: https://api.osf.io/v2/nodes/ezcuj/
-                    meta: {}
-              original_node:
-                links:
-                  related:
-                    href: https://api.osf.io/v2/nodes/ezcuj/
-                    meta: {}
-              user:
-                links:
-                  related:
-                    href: https://api.osf.io/v2/users/2zx63/
-                    meta: {}
-            links:
-              self: https://api.osf.io/v2/logs/5849d46d9ad5a10202820acb/
-            attributes:
-              date: '2016-12-08T21:45:17.058000'
-              action: affiliated_institution_added
-              params:
-                preprint_provider:
-                params_node:
-                  id: ezcuj
-                  title: 'Reproducibility Project: Psychology'
-                params_project:
-                contributors: []
-                institution:
-                  id: ljaf
-                  name: Laura and John Arnold Foundation
-            type: logs
-            id: 5849d46d9ad5a10202820acb
           links:
             first:
-            last: https://api.osf.io/v2/nodes/ezcuj/logs/?page=540
+            last:
             prev:
-            next: https://api.osf.io/v2/nodes/ezcuj/logs/?page=2
+            next:
             meta:
-              total: 5392
-              per_page: 10
+            total: 2
+            per_page: 10

@@ -19,7 +19,9 @@ get:
     ####Filtering
 
 
-    You can optionally request that the response only include registrations that match your filters by utilizing the filter query parameter, e.g. [https://api.osf.io/v2/registrations/?filter[title]=open].
+    You can optionally request that the response only include registrations that match your filters by utilizing the filter query parameter, e.g. https://api.osf.io/v2/registrations/?filter[title]=open.
+
+
     Registrations may be filtered by their `id`, `title`, `category`, `description`, `public`, `tags`, `date_created`, `date_modified`, `root`, `parent`, and `contributors`.
 
 
@@ -42,7 +44,7 @@ get:
         type: array
         items:
           $ref: '../registrations/definition.yaml'
-      # TODO: A better example from an actual OSF project.
+      # TODO: Need a better example from an actual OSF project.
       examples:
         application/json:
           data:
@@ -150,306 +152,305 @@ get:
               title: 'Your awesome project title'
               registered_meta:
                 dataCollectionDates:
-                  comments: []
-                  value: <answer_text>
-                  extra: []
+                  comments: ""
+                  value: ""
+                  extra: ""
                 description-methods:
-                  comments: []
+                  comments: ""
                   value:
                     exclusion-criteria:
-                      comments: []
+                      comments: ""
                       value:
                         question8b:
-                          comments: []
-                          value: <answer_text>
-                          extra: []
-                      extra: []
+                          comments: ""
+                          value: ""
+                          extra: ""
+                      extra: ""
                     design:
-                      comments: []
+                      comments: ""
                       value:
                         question2a:
-                          comments: []
-                          value: <answer_text>
-                          extra: []
+                          comments: ""
+                          value: ""
+                          extra: ""
                         question2b:
-                          comments: []
-                          value: <answer_text>
-                          extra: []
+                          comments: ""
+                          value: ""
+                          extra: ""
                         question3b:
-                          comments: []
-                          value: <answer_text>
-                          extra: []
-                      extra: []
+                          comments: ""
+                          value: ""
+                          extra: ""
+                      extra: ""
                     procedure:
-                      comments: []
+                      comments: ""
                       value:
                         question10b:
-                          comments: []
-                          value: <answer_text>
-                          extra: []
-                      extra: []
+                          comments: ""
+                          value: ""
+                          extra: ""
+                      extra: ""
                     planned-sample:
-                      comments: []
+                      comments: ""
                       value:
                         question4b:
-                          comments: []
-                          value: <answer_text>
-                          extra: []
+                          comments: ""
+                          value: ""
+                          extra: ""
                         question7b:
-                          comments: []
-                          value: <answer_text>
-                          extra: []
+                          comments: ""
+                          value: ""
+                          extra: ""
                         question5b:
-                          comments: []
-                          value: <answer_text>
-                          extra: []
+                          comments: ""
+                          value: ""
+                          extra: ""
                         question6b-upload:
-                          comments: []
-                          value: <answer_text>
-                          extra: []
+                          comments: ""
+                          value: ""
+                          extra: ""
                         question6b:
-                          comments: []
-                          value: <answer_text>
-                          extra: []
-                      extra: []
-                  extra: []
+                          comments: ""
+                          value: ""
+                          extra: ""
+                      extra: ""
+                  extra: ""
                 recommended-analysis:
-                  comments: []
+                  comments: ""
                   value:
                     specify:
-                      comments: []
+                      comments: ""
                       value:
                         question6c:
-                          comments: []
-                          value: <answer_text>
-                          extra: []
+                          comments: ""
+                          value: ""
+                          extra: ""
                         question8c:
-                          comments: []
-                          value: <answer_text>
-                          extra: []
+                          comments: ""
+                          value: ""
+                          extra: ""
                         question9c:
-                          comments: []
-                          value: <answer_text>
-                          extra: []
+                          comments: ""
+                          value: ""
+                          extra: ""
                         question7c:
-                          comments: []
-                          value: <answer_text>
-                          extra: []
+                          comments: ""
+                          value: ""
+                          extra: ""
                         question11c:
-                          comments: []
-                          value: <answer_text>
-                          extra: []
+                          comments: ""
+                          value: ""
+                          extra: ""
                         question10c:
-                          comments: []
-                          value: <answer_text>
-                          extra: []
-                      extra: []
-                  extra: []
+                          comments: ""
+                          value: ""
+                          extra: ""
+                      extra: ""
+                  extra: ""
                 description-hypothesis:
-                  comments: []
+                  comments: ""
                   value:
                     question2a:
-                      comments: []
-                      value: <answer_text>
-                      extra: []
+                      comments: ""
+                      value: ""
+                      extra: ""
                     question1a:
-                      comments: []
-                      value: <answer_text>
-                      extra: []
+                      comments: ""
+                      value: ""
+                      extra: ""
                     question3a:
-                      comments: []
-                      value: <answer_text>
-                      extra: []
-                  extra: []
+                      comments: ""
+                      value: ""
+                      extra: ""
+                  extra: ""
                 confirmatory-analyses-first:
-                  comments: []
+                  comments: ""
                   value:
                     first:
-                      comments: []
+                      comments: ""
                       value:
                         question4c:
-                          comments: []
-                          value: <answer_text>
-                          extra: []
+                          comments: ""
+                          value: ""
+                          extra: ""
                         question5c:
-                          comments: []
-                          value: <answer_text>
-                          extra: []
+                          comments: ""
+                          value: ""
+                          extra: ""
                         question2c:
-                          comments: []
-                          value: <answer_text>
-                          extra: []
+                          comments: ""
+                          value: ""
+                          extra: ""
                         question3c:
-                          comments: []
-                          value: <answer_text>
-                            sdjfhalkj
-                          extra: []
+                          comments: ""
+                          value: ""
+                          extra: ""
                         question1c:
-                          comments: []
-                          value: <answer_text>
-                          extra: []
-                      extra: []
-                  extra: []
+                          comments: ""
+                          value: ""
+                          extra: ""
+                      extra: ""
+                  extra: ""
                 confirmatory-analyses-third:
-                  comments: []
+                  comments: ""
                   value:
                     third:
-                      comments: []
+                      comments: ""
                       value:
                         question4c:
-                          comments: []
-                          value: <answer_text>
-                          extra: []
+                          comments: ""
+                          value: ""
+                          extra: ""
                         question5c:
-                          comments: []
-                          value: <answer_text>
-                          extra: []
+                          comments: ""
+                          value: ""
+                          extra: ""
                         question2c:
-                          comments: []
-                          value: <answer_text>
-                          extra: []
+                          comments: ""
+                          value: ""
+                          extra: ""
                         question3c:
-                          comments: []
-                          value: <answer_text>
-                          extra: []
+                          comments: ""
+                          value: ""
+                          extra: ""
                         question1c:
-                          comments: []
-                          value: <answer_text>
-                          extra: []
-                      extra: []
-                  extra: []
+                          comments: ""
+                          value: ""
+                          extra: ""
+                      extra: ""
+                  extra: ""
                 datacompletion:
-                  comments: []
-                  value: <answer_text>
-                  extra: []
+                  comments: ""
+                  value: ""
+                  extra: ""
                 looked:
-                  comments: []
-                  value: <answer_text>
-                  extra: []
+                  comments: ""
+                  value: ""
+                  extra: ""
                 confirmatory-analyses-fourth:
-                  comments: []
+                  comments: ""
                   value:
                     fourth:
-                      comments: []
+                      comments: ""
                       value:
                         question4c:
-                          comments: []
-                          value: <answer_text>
-                          extra: []
+                          comments: ""
+                          value: ""
+                          extra: ""
                         question5c:
-                          comments: []
-                          value: <answer_text>
-                          extra: []
+                          comments: ""
+                          value: ""
+                          extra: ""
                         question2c:
-                          comments: []
-                          value: <answer_text>
-                          extra: []
+                          comments: ""
+                          value: ""
+                          extra: ""
                         question3c:
-                          comments: []
-                          value: <answer_text>
-                          extra: []
+                          comments: ""
+                          value: ""
+                          extra: ""
                         question1c:
-                          comments: []
-                          value: <answer_text>
-                          extra: []
-                      extra: []
-                  extra: []
+                          comments: ""
+                          value: ""
+                          extra: ""
+                      extra: ""
+                  extra: ""
                 confirmatory-analyses-further:
-                  comments: []
+                  comments: ""
                   value:
                     further:
-                      comments: []
+                      comments: ""
                       value:
                         question4c:
-                          comments: []
-                          value: <answer_text>
-                          extra: []
+                          comments: ""
+                          value: ""
+                          extra: ""
                         question5c:
-                          comments: []
-                          value: <answer_text>
-                          extra: []
+                          comments: ""
+                          value: ""
+                          extra: ""
                         question2c:
-                          comments: []
-                          value: <answer_text>
-                          extra: []
+                          comments: ""
+                          value: ""
+                          extra: ""
                         question3c:
-                          comments: []
-                          value: <answer_text>
-                          extra: []
+                          comments: ""
+                          value: ""
+                          extra: ""
                         question1c:
-                          comments: []
-                          value: <answer_text>
-                          extra: []
-                      extra: []
-                  extra: []
+                          comments: ""
+                          value: ""
+                          extra: ""
+                      extra: ""
+                  extra: ""
                 recommended-hypothesis:
-                  comments: []
+                  comments: ""
                   value:
                     question5a:
-                      comments: []
-                      value: <answer_text>
-                      extra: []
+                      comments: ""
+                      value: ""
+                      extra: ""
                     question4a:
-                      comments: []
-                      value: <answer_text>
-                      extra: []
+                      comments: ""
+                      value: ""
+                      extra: ""
                     question6a:
-                      comments: []
-                      value: <answer_text>
-                      extra: []
-                  extra: []
+                      comments: ""
+                      value: ""
+                      extra: ""
+                  extra: ""
                 additionalComments:
-                  comments: []
-                  value: <answer_text>
-                  extra: []
+                  comments: ""
+                  value: ""
+                  extra: ""
                 confirmatory-analyses-second:
-                  comments: []
+                  comments: ""
                   value:
                     second:
-                      comments: []
+                      comments: ""
                       value:
                         question4c:
-                          comments: []
-                          value: <answer_text>
-                          extra: []
+                          comments: ""
+                          value: ""
+                          extra: ""
                         question5c:
-                          comments: []
-                          value: <answer_text>
-                          extra: []
+                          comments: ""
+                          value: ""
+                          extra: ""
                         question2c:
-                          comments: []
-                          value: <answer_text>
-                          extra: []
+                          comments: ""
+                          value: ""
+                          extra: ""
                         question3c:
-                          comments: []
-                          value: <answer_text>
-                          extra: []
+                          comments: ""
+                          value: ""
+                          extra: ""
                         question1c:
-                          comments: []
-                          value: <answer_text>
-                          extra: []
-                      extra: []
-                  extra: []
+                          comments: ""
+                          value: ""
+                          extra: ""
+                      extra: ""
+                  extra: ""
                 recommended-methods:
-                  comments: []
+                  comments: ""
                   value:
                     procedure:
-                      comments: []
+                      comments: ""
                       value:
                         question9b-file:
-                          comments: []
-                          value: <answer_text>
-                          extra: []
+                          comments: ""
+                          value: ""
+                          extra: ""
                         question9b:
-                          comments: []
-                          value: <answer_text>
-                          extra: []
-                      extra: []
-                  extra: []
+                          comments: ""
+                          value: ""
+                          extra: ""
+                      extra: ""
+                  extra: ""
               public: false
               fork: false
               description: 'Your awesome project description'
-              tags: []
+              tags: ""
               collection: false
               current_user_can_comment: true
               pending_registration_approval: true
@@ -466,11 +467,11 @@ get:
             type: registrations
             id: 9ytbg
           links:
-            first: null
-            last: null
-            prev: null
-            next: null
-            meta: null
+            first:
+            last:
+            prev:
+            next:
+            meta:
             total: 1
             per_page: 10
 
@@ -480,13 +481,17 @@ post:
     Create a registration for a given node.
 
 
-    #### Required
+    To create a registration, `draft_registration` must be the `id` of a completed draft registration created for the current node.
 
 
-    A relationship object with a `data` key, containing the `nodes` type and target node `id` is required.
+    All required supplemental questions in the draft registration must have been answered.
 
 
-    All attributes describing the relationship between the node and the target node are optional.
+    Registration choice should be 'embargo' if you wish to add an embargo date to the registration.
+    Registrations can have embargo periods for up to four years. 'lift_embargo' should be the embargo end date.
+    When the embargo expires, the registration will be made public. If 'immediate' is selected as the "registration_choice",
+    the registration will be made public once it is approved.
+
 
     #### Returns
 

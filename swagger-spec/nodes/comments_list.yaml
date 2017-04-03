@@ -4,6 +4,8 @@ get:
   description: >-
 
     A paginated list of comments related to a given node.
+
+
     The returned comments are sorted by their creation date, with the most recent
     comments appearing first.
 
@@ -33,8 +35,8 @@ get:
 
     #### Filtering
 
-    You can optionally request that the response only include nodes that match your filters by utilizing the `filter` query parameter, e.g.
-    https://api.osf.io/v2/nodes/?filter[title]=reproducibility
+    You can optionally request that the response only include comments that match your filters by utilizing the `filter` query parameter, e.g.
+    https://api.osf.io/v2/nodes/ezcuj/comments/?filter[target_id]=jg7sezmdnt93
 
 
     Nodes may be filtered by their `deleted`, `target_id`, `date_created`, `date_modified`.
@@ -162,189 +164,13 @@ get:
               page: node
             type: comments
             id: 23pk9
-          - relationships:
-              node:
-                links:
-                  related:
-                    href: https://api.osf.io/v2/nodes/ezcuj/
-                    meta: {}
-              replies:
-                links:
-                  related:
-                    href: https://api.osf.io/v2/nodes/ezcuj/comments/?filter%5Btarget%5D=kjgd8
-                    meta: {}
-              target:
-                links:
-                  related:
-                    href: https://api.osf.io/v2/nodes/ezcuj/
-                    meta:
-                      type: nodes
-              reports:
-                links:
-                  related:
-                    href: https://api.osf.io/v2/comments/kjgd8/reports/
-                    meta: {}
-              user:
-                links:
-                  related:
-                    href: https://api.osf.io/v2/users/pct7w/
-                    meta: {}
-            links:
-              self: https://api.osf.io/v2/comments/kjgd8/
-            attributes:
-              can_edit: false
-              date_modified: '2016-04-01T04:45:44.416000'
-              deleted: false
-              is_ham: false
-              has_children: false
-              modified:
-              content: In a blog post, I wonder about the possibility the replication studies
-                might have had power less than 90%, because they were based on overestimated
-                effect sizes in original studies. But after looking at the p-value distribution,
-                my concerns were reduced - I think the studies distinguished between signal
-                and noise well. See http://daniellakens.blogspot.nl/2015/08/power-of-replications-in.html
-              has_report: false
-              is_abuse: false
-              date_created: '2015-08-29T17:40:32.911000'
-              page: node
-            type: comments
-            id: kjgd8
-          - relationships:
-              node:
-                links:
-                  related:
-                    href: https://api.osf.io/v2/nodes/ezcuj/
-                    meta: {}
-              replies:
-                links:
-                  related:
-                    href: https://api.osf.io/v2/nodes/ezcuj/comments/?filter%5Btarget%5D=95j3d
-                    meta: {}
-              target:
-                links:
-                  related:
-                    href: https://api.osf.io/v2/comments/iv6hb/
-                    meta:
-                      type: comments
-              reports:
-                links:
-                  related:
-                    href: https://api.osf.io/v2/comments/95j3d/reports/
-                    meta: {}
-              user:
-                links:
-                  related:
-                    href: https://api.osf.io/v2/users/cdi38/
-                    meta: {}
-            links:
-              self: https://api.osf.io/v2/comments/95j3d/
-            attributes:
-              can_edit: false
-              date_modified: '2016-04-01T04:45:41.030000'
-              deleted: false
-              is_ham: false
-              has_children: false
-              modified:
-              content: yup, it works.
-              has_report: false
-              is_abuse: false
-              date_created: '2014-08-29T19:28:40.428000'
-              page: node
-            type: comments
-            id: 95j3d
-          - relationships:
-              node:
-                links:
-                  related:
-                    href: https://api.osf.io/v2/nodes/ezcuj/
-                    meta: {}
-              replies:
-                links:
-                  related:
-                    href: https://api.osf.io/v2/nodes/ezcuj/comments/?filter%5Btarget%5D=iv6hb
-                    meta: {}
-              target:
-                links:
-                  related:
-                    href: https://api.osf.io/v2/nodes/ezcuj/
-                    meta:
-                      type: nodes
-              reports:
-                links:
-                  related:
-                    href: https://api.osf.io/v2/comments/iv6hb/reports/
-                    meta: {}
-              user:
-                links:
-                  related:
-                    href: https://api.osf.io/v2/users/326x8/
-                    meta: {}
-            links:
-              self: https://api.osf.io/v2/comments/iv6hb/
-            attributes:
-              can_edit: false
-              date_modified: '2016-04-01T04:45:43.970000'
-              deleted: false
-              is_ham: false
-              has_children: true
-              modified:
-              content: just testing the comments stream
-              has_report: false
-              is_abuse: false
-              date_created: '2014-08-28T14:12:40.055000'
-              page: node
-            type: comments
-            id: iv6hb
-          - relationships:
-              node:
-                links:
-                  related:
-                    href: https://api.osf.io/v2/nodes/ezcuj/
-                    meta: {}
-              replies:
-                links:
-                  related:
-                    href: https://api.osf.io/v2/nodes/ezcuj/comments/?filter%5Btarget%5D=x37bp
-                    meta: {}
-              target:
-                links:
-                  related:
-                    href: https://api.osf.io/v2/nodes/ezcuj/
-                    meta:
-                      type: nodes
-              reports:
-                links:
-                  related:
-                    href: https://api.osf.io/v2/comments/x37bp/reports/
-                    meta: {}
-              user:
-                links:
-                  related:
-                    href: https://api.osf.io/v2/users/326x8/
-                    meta: {}
-            links:
-              self: https://api.osf.io/v2/comments/x37bp/
-            attributes:
-              can_edit: false
-              date_modified: '2016-04-01T04:45:48.161000'
-              deleted: true
-              is_ham: false
-              has_children: false
-              modified:
-              content:
-              has_report: false
-              is_abuse: false
-              date_created: '2014-08-28T14:12:09.776000'
-              page: node
-            type: comments
-            id: x37bp
           links:
             first:
             last:
             prev:
             next:
             meta:
-            total: 6
+            total: 2
             per_page: 10
 post:
   summary: Create a comment
@@ -353,11 +179,9 @@ post:
 
 
     To create a comment on the node overview page, the target `type` would be "nodes" and the target `id` would be the node `id`.
+
+
     To reply to a comment on this node, the target `type` would be "comments" and the target `id` would be the `id` of the comment to reply to.
-
-    ####Permissions
-
-    Only project contributors can create comments on a node.
 
     ####Required
 

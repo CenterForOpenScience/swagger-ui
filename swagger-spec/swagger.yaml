@@ -203,6 +203,15 @@ paths:
   /nodes/{node_id}/:
     $ref: 'nodes/detail.yaml'
 
+  /nodes/{node_id}/addons/:
+    $ref: 'nodes/addons_list.yaml'
+
+  /nodes/{node_id}/addons/{provider}/folders/:
+    $ref: 'nodes/addon_folder_list.yaml'
+
+  /nodes/{node_id}/addons/{provider}/:
+    $ref: 'nodes/addon_detail.yaml'
+
   /nodes/{node_id}/children/:
     $ref: 'nodes/children_list.yaml'
 
@@ -211,6 +220,9 @@ paths:
 
   /nodes/{node_id}/citation/{style_id}/:
     $ref: 'nodes/styled_citation_detail.yaml'
+
+  /nodes/{node_id}/comments/:
+    $ref: 'nodes/comments_list.yaml'
 
   /nodes/{node_id}/contributors/:
     $ref: 'nodes/contributors_list.yaml'
@@ -224,20 +236,23 @@ paths:
   /nodes/{node_id}/draft_registrations/{draft_id}/:
     $ref: 'nodes/draft_registration_detail.yaml'
 
-  /nodes/{node_id}/forks/:
-    $ref: 'nodes/forks_list.yaml'
+  /nodes/{node_id}/files/:
+    $ref: 'nodes/providers_list.yaml'
 
-  /nodes/{node_id}/wikis/:
-    $ref: 'nodes/wikis_list.yaml'
+  /nodes/{node_id}/files/{provider}/{path}/:
+    $ref: 'nodes/file_detail.yaml'
 
-  /nodes/{node_id}/preprints/:
-    $ref: 'nodes/preprints_list.yaml'
+  /nodes/{node_id}/files/{provider}/:
+    $ref: 'nodes/files_list.yaml'
 
-  /nodes/{node_id}/comments/:
-    $ref: 'nodes/comments_list.yaml'
+  /nodes/{node_id}/identifiers/:
+    $ref: 'nodes/identifiers_list.yaml'
 
   /nodes/{node_id}/institutions/:
     $ref: 'nodes/institutions_list.yaml'
+
+  /nodes/{node_id}/forks/:
+    $ref: 'nodes/forks_list.yaml'
 
   /nodes/{node_id}/linked_nodes/:
     $ref: 'nodes/linked_nodes_list.yaml'
@@ -251,14 +266,20 @@ paths:
   /nodes/{node_id}/node_links/{node_link_id}:
     $ref: 'nodes/node_link_detail.yaml'
 
-  /nodes/{node_id}/files/:
-    $ref: 'nodes/providers_list.yaml'
+  /nodes/{node_id}/preprints/:
+    $ref: 'nodes/preprints_list.yaml'
 
-  /nodes/{node_id}/files/{provider}/{path}/:
-    $ref: 'nodes/file_detail.yaml'
+  /nodes/{node_id}/registrations:
+    $ref: 'nodes/registrations_list.yaml'
 
-  /nodes/{node_id}/files/{provider}/:
-    $ref: 'nodes/files_list.yaml'
+  /nodes/{node_id}/view_only_links/:
+    $ref: 'nodes/view_only_links_list.yaml'
+
+  /nodes/{node_id}/view_only_links/{link_id}/:
+    $ref: 'nodes/view_only_link_detail.yaml'
+
+  /nodes/{node_id}/wikis/:
+    $ref: 'nodes/wikis_list.yaml'
 
   #/nodes/{node_id}/relationships/institutions:
   #  $ref: 'nodes/institutions_relationships.yaml'
@@ -352,7 +373,7 @@ paths:
     $ref: 'view_only_links/detail.yaml'
   /view_only_links/{link_id}/nodes/:
     $ref: 'view_only_links/nodes.yaml'
-    
+
   #############
   #   WIKIS   #
   #############
