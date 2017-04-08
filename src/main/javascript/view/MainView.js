@@ -29,8 +29,8 @@ SwaggerUi.Views.MainView = Backbone.View.extend({
 
     this.router = opts.router;
 
-    _.bindAll(this, 'updateHashOnScroll');
-    $(window).scroll(this.updateHashOnScroll);
+    /*_.bindAll(this, 'updateHashOnScroll');
+    $(window).scroll(this.updateHashOnScroll);*/
 
     // Sort APIs
     if (opts.swaggerOptions.apisSorter) {
