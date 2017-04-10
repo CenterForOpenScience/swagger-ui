@@ -29,8 +29,8 @@ SwaggerUi.Views.MainView = Backbone.View.extend({
 
     this.router = opts.router;
 
-    /*_.bindAll(this, 'updateHashOnScroll');
-    $(window).scroll(this.updateHashOnScroll);*/
+    _.bindAll(this, 'updateHashOnScroll');
+    $(window).scroll(this.updateHashOnScroll);
 
     // Sort APIs
     if (opts.swaggerOptions.apisSorter) {
@@ -235,9 +235,13 @@ SwaggerUi.Views.MainView = Backbone.View.extend({
         var distance = top - $(this).offset().top;
         var hash = $(this).attr('href');
         if (distance < padding && distance > -padding && currentHash !== hash) {
-            window.location.hash = hash;
+            if(history.pushState) {
+              history.pushState(null, null, hash);
+            } else {
+              location.hash = hash;
+            }
             currentHash = hash;
-        }
+       }
     });
 
   }
