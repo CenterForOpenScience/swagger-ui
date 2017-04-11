@@ -294,6 +294,49 @@ paths:
   /registrations/{node_id}/identifiers:
     $ref: 'registrations/identifiers_list.yaml'
 
+  /registrations/{node_id}/logs:
+    $ref: 'registrations/logs_list.yaml'
+
+  /registrations/{node_id}/children:
+    $ref: 'registrations/children_list.yaml'
+
+  /registrations/{node_id}/citations:
+    $ref: 'registrations/style_list.yaml'
+
+  /registrations/{node_id}/citations/{citation_id}/:
+    $ref: 'registrations/style_detail.yaml'
+
+  /registrations/{node_id}/files:
+    $ref: 'registrations/providers_list.yaml'
+
+  /registrations/{node_id}/files/{provider}:
+    $ref: 'registrations/files_list.yaml'
+
+  /registrations/{node_id}/files/{provider}/{path}:
+    $ref: 'registrations/file_detail.yaml'
+
+  /registrations/{node_id}/forks:
+    $ref: 'registrations/forks_list.yaml'
+
+  /registrations/{node_id}/linked_nodes:
+    $ref: 'registrations/linked_nodes_list.yaml'
+
+  # /registrations/{node_id}/node_links:
+  #   $ref: 'registrations/node_links_list.yaml'
+
+  # /registrations/{node_id}/node_links/{node_link_id}:
+  #   $ref: 'registrations/node_link_detail.yaml'
+
+  /registrations/{node_id}/view_only_links/:
+    $ref: 'registrations/view_only_links_list.yaml'
+
+  /registrations/{node_id}/view_only_links/{link_id}/:
+    $ref: 'registrations/view_only_link_detail.yaml'
+
+  /registrations/{node_id}/wikis/:
+    $ref: 'registrations/wikis_list.yaml'
+
+
   ##################
   #   TAXONOMIES   #
   ##################
