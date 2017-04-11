@@ -1,0 +1,103 @@
+#/registrations/{node_id}/contributors/{user_id}
+get:
+  summary: Retrieve a contributor
+  description: >-
+    Retrieves the details of a contributor for a registration.
+
+
+    Contributors are users who can make changes to the node or, in the case of private nodes, have read access to the node.
+
+
+    Contributors are categorized as either "bibliographic" or "non-bibliographic".
+    From a permissions standpoint, both are the same, but bibliographic contributors are included in citations and are listed on the project overview page on the OSF, while non-bibliographic contributors are not.
+
+
+    Contributors can be viewed, removed, and have their permissions and bibliographic status changed via this endpoint.
+
+    #### Returns
+
+    Returns a JSON object with a `data` key containing the representation of the requested
+    contributor, if the request is successful.
+
+
+    If the request is unsuccessful, an `errors` key containing
+    information about the failure will be returned. Refer to the [list of error codes](#Introduction_error_codes)
+    to understand why this request may have failed.
+
+  parameters:
+  - in: path
+    type: string
+    name: node_id
+    required: true
+    description: 'The unique identifier of the node.'
+  - in: path
+    type: string
+    name: user_id
+    required: true
+    description: 'The unique identifier of the user.'
+  tags:
+    - Registrations
+  operationId: registrations_contributors_read
+  x-response-schema: Contributor
+  responses:
+    '200':
+      description: 'OK'
+      schema:
+        type: array
+        items:
+          $ref: '../nodes/contributor_definition.yaml'
+      examples:
+        application/json:
+          data:
+            relationships:
+              node:
+                links:
+                  related:
+                    href: https://api.osf.io/v2/nodes/wu3a4/
+                    meta: {}
+              users:
+                links:
+                  related:
+                    href: https://api.osf.io/v2/users/npx7w/
+                    meta: {}
+            links:
+              self: https://api.osf.io/v2/registrations/wu3a4/contributors/npx7w/
+            embeds:
+              users:
+                data:
+                  relationships:
+                    nodes:
+                      links:
+                        related:
+                          href: https://api.osf.io/v2/users/npx7w/nodes/
+                          meta: {}
+                    institutions:
+                      links:
+                        self:
+                          href: https://api.osf.io/v2/users/npx7w/relationships/institutions/
+                          meta: {}
+                        related:
+                          href: https://api.osf.io/v2/users/npx7w/institutions/
+                          meta: {}
+                  links:
+                    html: https://osf.io/npx7w/
+                    profile_image: https://secure.gravatar.com/avatar/8affc7010e57e2bced58cad8bb2d2b7c?d=identicon
+                  attributes:
+                    family_name: van Renswoude
+                    suffix: ''
+                    locale: en_US
+                    date_registered: '2013-12-06T10:15:03.055000'
+                    middle_names: ''
+                    given_name: Daan
+                    full_name: Daan van Renswoude
+                    active: true
+                    timezone: Etc/UTC
+                  type: users
+                  id: npx7w
+            attributes:
+              index: 2
+              unregistered_contributor:
+              bibliographic: false
+              permission: admin
+            type: contributors
+            id: wu3a4-npx7w

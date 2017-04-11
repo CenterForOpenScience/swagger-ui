@@ -1,0 +1,221 @@
+#/registrations/{node_id}/contributors/
+get:
+  summary: List all contributors
+  description: >-
+    A paginated list of the registration's contributors, sorted by their index.
+
+
+    Contributors are users who can make changes to the node or, in the case of private nodes, have read access to the node.
+
+
+    Contributors are categorized as either "bibliographic" or "non-bibliographic".
+    From a permissions standpoint, both are the same, but bibliographic contributors are included in citations and are listed on the project overview page on the OSF, while non-bibliographic contributors are not.
+
+
+    Note that if an anonymous view_only key is being used to view the list of contributors, the user relationship will not be exposed and the contributor ID will be an empty string.
+
+
+    #### Returns
+
+    Returns a JSON object containing `data` and `links` keys.
+
+
+    The `data` key contains an array of up to 10 contributors.
+    Each resource in the array contains the full representation of the contributor, meaning additional requests to a contributor's detail view are not necessary.
+    Additionally, the full representation of the user this contributor represents is automatically embedded within the `data` key of the response.
+
+
+    The `links` key contains a dictionary of links that can be used for [pagination](#Introduction_pagination).
+
+    #### Filtering
+
+    You can optionally request that the response only include contributors that match your filters by utilizing the `filter` query parameter, e.g.
+    https://api.osf.io/v2/registrations/wu3a4/contributors/?filter[bibliographic]=true.
+
+
+    Contributors may be filtered by their `bibliographic` and `permission` attributes.
+
+  parameters:
+    - in: path
+      type: string
+      name: node_id
+      required: true
+      description: 'The unique identifier of the node.'
+  tags:
+    - Registrations
+  operationId: registrations_contributors_list
+  x-response-schema: Contributor
+  responses:
+    '200':
+      description: 'OK'
+      schema:
+        type: array
+        items:
+          $ref: '../nodes/contributor_definition.yaml'
+      examples:
+        application/json:
+          data:
+          - relationships:
+              node:
+                links:
+                  related:
+                    href: https://api.osf.io/v2/nodes/wu3a4/
+                    meta: {}
+              users:
+                links:
+                  related:
+                    href: https://api.osf.io/v2/users/edb8y/
+                    meta: {}
+            links:
+              self: https://api.osf.io/v2/registrations/wu3a4/contributors/edb8y/
+            embeds:
+              users:
+                data:
+                  relationships:
+                    nodes:
+                      links:
+                        related:
+                          href: https://api.osf.io/v2/users/edb8y/nodes/
+                          meta: {}
+                    institutions:
+                      links:
+                        self:
+                          href: https://api.osf.io/v2/users/edb8y/relationships/institutions/
+                          meta: {}
+                        related:
+                          href: https://api.osf.io/v2/users/edb8y/institutions/
+                          meta: {}
+                  links:
+                    html: https://osf.io/edb8y/
+                    profile_image: https://secure.gravatar.com/avatar/a5aa8c1f84985c038f9f1e6197580fe4?d=identicon
+                  attributes:
+                    family_name: Cohoon
+                    suffix: ''
+                    locale: en_us
+                    date_registered: '2013-04-22T21:14:00.581000'
+                    middle_names: ''
+                    given_name: Johanna
+                    full_name: Johanna Cohoon
+                    active: true
+                    timezone: America/New_York
+                  type: users
+                  id: edb8y
+            attributes:
+              index: 0
+              unregistered_contributor:
+              bibliographic: false
+              permission: admin
+            type: contributors
+            id: wu3a4-edb8y
+          - relationships:
+              node:
+                links:
+                  related:
+                    href: https://api.osf.io/v2/nodes/wu3a4/
+                    meta: {}
+              users:
+                links:
+                  related:
+                    href: https://api.osf.io/v2/users/fqs92/
+                    meta: {}
+            links:
+              self: https://api.osf.io/v2/registrations/wu3a4/contributors/fqs92/
+            embeds:
+              users:
+                data:
+                  relationships:
+                    nodes:
+                      links:
+                        related:
+                          href: https://api.osf.io/v2/users/fqs92/nodes/
+                          meta: {}
+                    institutions:
+                      links:
+                        self:
+                          href: https://api.osf.io/v2/users/fqs92/relationships/institutions/
+                          meta: {}
+                        related:
+                          href: https://api.osf.io/v2/users/fqs92/institutions/
+                          meta: {}
+                  links:
+                    html: https://osf.io/fqs92/
+                    profile_image: https://secure.gravatar.com/avatar/8faaa170eb120e9010fb27f1b0d55765?d=identicon
+                  attributes:
+                    family_name: van Renswoude
+                    suffix: ''
+                    locale: nl_NL
+                    date_registered: '2014-03-13T13:24:37.866000'
+                    middle_names: Roelof
+                    given_name: Daan
+                    full_name: Daan van Renswoude
+                    active: true
+                    timezone: Europe/Berlin
+                  type: users
+                  id: fqs92
+            attributes:
+              index: 1
+              unregistered_contributor:
+              bibliographic: true
+              permission: admin
+            type: contributors
+            id: wu3a4-fqs92
+          links:
+            first:
+            last:
+            prev:
+            next:
+            meta:
+            total: 2
+            per_page: 10
+
+post:
+  summary: Create a contributor
+  description: >-
+    Adds a contributor to a node, effectively creating a relationship between the node and a user.
+
+
+    Contributors are users who can make changes to the node or, in the case of private nodes, have read access to the node.
+
+
+    Contributors are categorized as either "bibliographic" or "non-bibliographic" contributors.
+    From a permissions standpoint, both are the same, but bibliographic contributors are included in citations and are listed on the project overview page on the OSF, while non-bibliographic contributors are not.
+
+    #### Permissions
+
+    Only project administrators can add contributors to a node.
+
+    #### Required
+
+    A relationship object with a `data` key, containing the `users` type and valid user ID is required.
+
+
+    All attributes describing the relationship between the node and the user are optional.
+
+    #### Returns
+
+    Returns a JSON object with a `data` key containing the representation of the new contributor, if the request is successful.
+
+
+    If the request is unsuccessful, an `errors` key containing information about the failure will be returned.
+    Refer to the [list of error codes](#Introduction_error_codes) to understand why this request may have failed.
+
+  parameters:
+    - in: path
+      type: string
+      name: node_id
+      required: true
+      description: 'The unique identifier of the node.'
+    - in: body
+      name: body
+      required: true
+      schema:
+        $ref: '../nodes/contributor_definition.yaml'
+  tags:
+    - Registrations
+  operationId: registrations_contributors_create
+  x-response-schema: Contributor
+  consumes:
+    - application/json
+  responses:
+    '201':
+      description: 'Success'
