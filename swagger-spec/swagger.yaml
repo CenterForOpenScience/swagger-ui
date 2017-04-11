@@ -279,6 +279,21 @@ paths:
   /registrations/{registration_id}/:
     $ref: 'registrations/detail.yaml'
 
+  /registrations/{node_id}/contributors:
+    $ref: 'registrations/contributors_list.yaml'
+
+  /registrations/{node_id}/contributors/{user_id}:
+    $ref: 'registrations/contributor_detail.yaml'
+
+  /registrations/{node_id}/comments:
+    $ref: 'registrations/comments_list.yaml'
+
+  /registrations/{node_id}/institutions:
+    $ref: 'registrations/institutions_list.yaml'
+
+  /registrations/{node_id}/identifiers:
+    $ref: 'registrations/identifiers_list.yaml'
+
   ##################
   #   TAXONOMIES   #
   ##################
@@ -319,7 +334,7 @@ paths:
     $ref: 'view_only_links/detail.yaml'
   /view_only_links/{link_id}/nodes/:
     $ref: 'view_only_links/nodes.yaml'
-    
+
   #############
   #   WIKIS   #
   #############
