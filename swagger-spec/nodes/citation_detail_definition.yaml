@@ -22,7 +22,7 @@ properties:
       doi:
         type: string
         readOnly: true
-        description: 'The [DOI](https://www.doi.org/) for the entity being cited, if one exists.'
+        description: 'The DOI for the entity being cited, if one exists.'
       publisher:
         type: string
         readOnly: true

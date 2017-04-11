@@ -63,6 +63,13 @@ paths:
   /versioning/:
     $ref: 'introduction/versioning.yaml'
 
+  ##############
+  #   ADDONS   #
+  ##############
+
+  /addons/:
+    $ref: 'addons/list.yaml'
+
   ############
   #   BASE   #
   ############
@@ -177,6 +184,15 @@ paths:
   # /institutions/{institution_id}/relationships/nodes/:
   #   $ref: 'institutions/nodes_relationships.yaml'
 
+  ###################
+  #   METASCHEMAS   #
+  ###################
+
+  /metaschemas/:
+    $ref: 'metaschemas/list.yaml'
+  /metaschemas/{metaschema_id}:
+    $ref: 'metaschemas/detail.yaml'
+
   #############
   #   NODES   #
   #############
@@ -263,6 +279,16 @@ paths:
   /registrations/{registration_id}/:
     $ref: 'registrations/detail.yaml'
 
+  ##################
+  #   TAXONOMIES   #
+  ##################
+
+  /taxonomies/:
+    $ref: 'taxonomies/list.yaml'
+
+  /taxonomies/{taxonomy_id}/:
+    $ref: 'taxonomies/detail.yaml'
+
   #############
   #   USERS   #
   #############
@@ -285,6 +311,15 @@ paths:
   /users/{user_id}/registrations/:
     $ref: 'users/registrations_list.yaml'
 
+  ######################
+  #   View Only Links  #
+  ######################
+
+  /view_only_links/{link_id}/:
+    $ref: 'view_only_links/detail.yaml'
+  /view_only_links/{link_id}/nodes/:
+    $ref: 'view_only_links/nodes.yaml'
+    
   #############
   #   WIKIS   #
   #############
