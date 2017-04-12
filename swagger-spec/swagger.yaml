@@ -311,6 +311,19 @@ paths:
   /users/{user_id}/registrations/:
     $ref: 'users/registrations_list.yaml'
 
+  /users/{user_id}/addons/:
+    $ref: 'users/addons_list.yaml'
+
+  /users/{user_id}/addons/{provider}:
+    $ref: 'users/addon_detail.yaml'
+
+  /users/{user_id}/addons/{provider}/accounts/:
+    $ref: 'users/addon_accounts_list.yaml'
+
+  /users/{user_id}/addons/{provider}/accounts/{account_id}/:
+    $ref: 'users/addon_account_detail.yaml'
+
+
   ######################
   #   View Only Links  #
   ######################
@@ -319,7 +332,7 @@ paths:
     $ref: 'view_only_links/detail.yaml'
   /view_only_links/{link_id}/nodes/:
     $ref: 'view_only_links/nodes.yaml'
-    
+
   #############
   #   WIKIS   #
   #############
