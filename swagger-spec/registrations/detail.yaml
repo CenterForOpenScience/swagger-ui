@@ -6,7 +6,7 @@ get:
     #### Permissions
 
     Only project contributors may retrieve the details of a registration that is embargoed, or has not yet been made public.
-    Attempting to retreive a private registration for which you are not a contributor will result in a **403 Forbidden** response.
+    Attempting to retrieve a private registration for which you are not a contributor will result in a **403 Forbidden** response.
 
 
     Authentication is not required to view the details of a public registration, as public registrations give read-only access to everyone.

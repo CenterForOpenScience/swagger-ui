@@ -1,10 +1,10 @@
 # /registrations/{node_id}/files/{provider}/
 
 get:
-  summary: List all registration files
+  summary: List all files
   description: >-
     List of all the registration's files/folders
-    for a specified storage provider.
+    for a given storage provider.
 
 
     ####Returns
@@ -27,7 +27,7 @@ get:
     https://api.osf.io/v2/registrations/wucr8/files/osfstorage/?filter[kind]=file
 
 
-    Registrations files may be filtered by `id`, `name`, `node`, `kind`, `path`, `provider`, `size`, and `last_touched`.
+    Files may be filtered by `id`, `name`, `node`, `kind`, `path`, `provider`, `size`, and `last_touched`.
 
 
   parameters:

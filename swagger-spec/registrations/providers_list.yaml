@@ -3,7 +3,7 @@
 get:
   summary: List all storage providers
   description: >-
-    List of all storage providers for a registration
+    List of all storage providers enabled on the given registration
 
 
     Users of the OSF may access their data on a [number of cloud-storage services](https://api.osf.io/v2/#storage-providers) that have integrations with the OSF.

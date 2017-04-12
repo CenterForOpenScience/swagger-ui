@@ -3,7 +3,7 @@
 get:
   summary: List all view only links
   description: >-
-    List of view only links on a registration.
+    List of view only links for a registration.
 
     ####Returns
 
@@ -20,7 +20,7 @@ get:
     ####Permissions
 
 
-    View only links on a node, public or private, are readable and writeable only by users that are administrators on the node.
+    View only links on a registration, public or private, are readable and writeable only by users that are administrators on the node.
 
 
     ####Filtering
@@ -105,5 +105,5 @@ get:
             prev:
             next:
             meta:
-            total: 2
-            per_page: 10
+              total: 2
+              per_page: 10

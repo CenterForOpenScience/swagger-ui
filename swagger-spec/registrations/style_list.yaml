@@ -3,7 +3,7 @@ get:
   summary: List all citation styles
   description: >-
 
-    A paginated list of all alternative citation styles for a registration
+    A paginated list of all alternative citation styles of a registration
 
 
     #### Returns

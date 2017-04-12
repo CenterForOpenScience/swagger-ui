@@ -3,7 +3,7 @@ get:
   summary: List all node links
   description: >-
 
-    List of all node's links to other nodes.
+    List of all registration's links to other nodes.
 
     ####Returns
 
@@ -311,7 +311,7 @@ get:
 post:
   summary: Create a node link
   description: >-
-    Links the given node to a target node, effectively creating a relationship between the node and a target node.
+    Links the given registration to a target node, effectively creating a relationship between the registration and a target node.
 
 
     #### Required

@@ -2,7 +2,7 @@
 get:
   summary: List all wikis
   description: >-
-    List of wiki pages on a registration.
+    List of wiki pages of a registration.
 
     ####Returns
 

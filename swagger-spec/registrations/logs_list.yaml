@@ -2,15 +2,11 @@
 get:
   summary: List all logs
   description: >-
-    A paginated list of all logs associated for a registration.
+    A paginated list of all logs of a node's registration.
 
 
     The returned logs are sorted by their `date`, with the most recents logs appearing
     first.
-
-
-    This list includes the logs of the specified node as well as
-    the logs of that node's children to which the current user has read-only access.
 
 
     ####Returns
@@ -30,7 +26,7 @@ get:
     https://api.osf.io/v2/registrations/wucr8/logs/?filter[action]=made_private.
 
 
-    Nodes may be filtered by their `action`, and `date`.
+    Logs may be filtered by their `action`, and `date`.
 
   parameters:
     - in: path

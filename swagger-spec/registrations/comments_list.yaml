@@ -3,7 +3,7 @@ get:
   summary: List all comments
   description: >-
 
-    A paginated list of comments for a registration.
+    A paginated list of comments of a node's registration.
 
 
     The returned comments are sorted by their creation date, with the most recent
@@ -11,16 +11,16 @@ get:
 
     ####Permissions
 
-    Comments on public nodes are given read-only access to everyone.
+    Comments of public registrations are given read-only access to everyone.
 
 
-    If the node comment-level is `private`, only contributors have permission to comment.
+    If the comment-level is `private`, only registration contributors have permission to comment.
 
 
     If the comment-level is `public`, any logged-in OSF user can comment.
 
 
-    Comments on private nodes are only visible to contributors and administrators on the parent node.
+    Comments of private registrations are only visible to contributors and administrators on the parent node.
 
     ####Returns
 
@@ -39,7 +39,7 @@ get:
     https://api.osf.io/v2/registrations/ezcuj/comments/?filter[target_id]=jg7sezmdnt93
 
 
-    Nodes may be filtered by their `deleted`, `target_id`, `date_created`, `date_modified`.
+    Comments may be filtered by their `deleted`, `target_id`, `date_created`, `date_modified`.
 
 
     Most fields are string fields and will be filtered using simple substring matching.
@@ -170,5 +170,5 @@ get:
             prev:
             next:
             meta:
-            total: 2
-            per_page: 10
+              total: 2
+              per_page: 10

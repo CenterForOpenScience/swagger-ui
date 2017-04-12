@@ -3,7 +3,7 @@
 get:
   summary: List all institutions
   description: >-
-    List of all institutions affiliated with a registration.
+    List of all institutions on a registration.
 
     ####Returns
 

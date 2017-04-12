@@ -2,7 +2,7 @@
 get:
   summary: List all identifiers
   description: >-
-    List all identifiers for a specified node.
+    List all identifiers of a registration.
 
     ####Returns
 
