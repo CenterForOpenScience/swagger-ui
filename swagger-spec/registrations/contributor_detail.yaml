@@ -1,4 +1,4 @@
-#/registrations/{node_id}/contributors/{user_id}
+#/registrations/{registration_id}/contributors/{user_id}
 get:
   summary: Retrieve a contributor
   description: >-
@@ -18,9 +18,9 @@ get:
   parameters:
   - in: path
     type: string
-    name: node_id
+    name: registration_id
     required: true
-    description: 'The unique identifier of the node.'
+    description: 'The unique identifier of the registration.'
   - in: path
     type: string
     name: user_id
@@ -44,15 +44,15 @@ get:
               node:
                 links:
                   related:
-                    href: https://api.osf.io/v2/nodes/wu3a4/
+                    href: https://api.osf.io/v2/nodes/wucr8/
                     meta: {}
               users:
                 links:
                   related:
-                    href: https://api.osf.io/v2/users/npx7w/
+                    href: https://api.osf.io/v2/users/7xea5/
                     meta: {}
             links:
-              self: https://api.osf.io/v2/registrations/wu3a4/contributors/npx7w/
+              self: https://api.osf.io/v2/registrations/wucr8/contributors/7xea5/
             embeds:
               users:
                 data:
@@ -60,35 +60,35 @@ get:
                     nodes:
                       links:
                         related:
-                          href: https://api.osf.io/v2/users/npx7w/nodes/
+                          href: https://api.osf.io/v2/users/7xea5/nodes/
                           meta: {}
                     institutions:
                       links:
                         self:
-                          href: https://api.osf.io/v2/users/npx7w/relationships/institutions/
+                          href: https://api.osf.io/v2/users/7xea5/relationships/institutions/
                           meta: {}
                         related:
-                          href: https://api.osf.io/v2/users/npx7w/institutions/
+                          href: https://api.osf.io/v2/users/7xea5/institutions/
                           meta: {}
                   links:
-                    html: https://osf.io/npx7w/
-                    profile_image: https://secure.gravatar.com/avatar/8affc7010e57e2bced58cad8bb2d2b7c?d=identicon
+                    html: https://osf.io/7xea5/
+                    profile_image: https://secure.gravatar.com/avatar/0ddf92ef0f0a7011c21cd07d7940bc32?d=identicon
                   attributes:
-                    family_name: van Renswoude
+                    family_name: Anderl
                     suffix: ''
-                    locale: en_US
-                    date_registered: '2013-12-06T10:15:03.055000'
+                    locale: de
+                    date_registered: '2014-10-22T13:48:22.652000'
                     middle_names: ''
-                    given_name: Daan
-                    full_name: Daan van Renswoude
+                    given_name: Christine
+                    full_name: Christine Anderl
                     active: true
-                    timezone: Etc/UTC
+                    timezone: America/Los_Angeles
                   type: users
-                  id: npx7w
+                  id: 7xea5
             attributes:
-              index: 2
+              index: 0
               unregistered_contributor:
-              bibliographic: false
+              bibliographic: true
               permission: admin
             type: contributors
-            id: wu3a4-npx7w
+            id: wucr8-7xea5

@@ -1,4 +1,4 @@
-# /registrations/{node_id}/citations/{citation_id}/
+# /registrations/{registration_id}/citations/{citation_id}/
 get:
   summary: Retrieve a citation
   description: >-
@@ -12,9 +12,9 @@ get:
   parameters:
     - in: path
       type: string
-      name: node_id
+      name: registration_id
       required: true
-      description: 'The unique identifier of the node.'
+      description: 'The unique identifier of the registration.'
     - in: path
       type: string
       name: citation_id

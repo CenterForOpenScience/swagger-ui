@@ -1,4 +1,4 @@
-# /registrations/{node_id}/files/{provider}/{path}
+# /registrations/{registration_id}/files/{provider}/{path}
 get:
   summary: Retrieve a file
   description: >-
@@ -19,9 +19,9 @@ get:
 
     - in: path
       type: string
-      name: node_id
+      name: registration_id
       required: true
-      description: 'The unique identifier of the node.'
+      description: 'The unique identifier of the registration.'
 
     - in: path
       type: string

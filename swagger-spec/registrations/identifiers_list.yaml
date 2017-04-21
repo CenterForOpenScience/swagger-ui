@@ -1,8 +1,8 @@
-# /registrations/{node_id}/identifiers
+# /registrations/{registration_id}/identifiers
 get:
   summary: List all identifiers
   description: >-
-    List all identifiers of a registration.
+    A paginated list of the registration's identifiers.
 
     ####Returns
 
@@ -18,8 +18,8 @@ get:
     ####Filtering
 
 
-    You can optionally request that the response only include nodes that match your filters by utilizing the `filter` query parameter, e.g.
-    https://api.osf.io/v2/registrations/ezcuj/identifiers/?filter[category]=ark
+    You can optionally request that the response only include registrations that match your filters by utilizing the `filter` query parameter, e.g.
+    https://api.osf.io/v2/registrations/wucr8/identifiers/?filter[category]=ark
 
 
     Identifiers may be filtered by their `category` e.g `ark` or `doi`.
@@ -27,10 +27,10 @@ get:
   parameters:
 
     - in: path
-      name: node_id
+      name: registration_id
       type: string
       required: true
-      description: 'The unique identifier of the node.'
+      description: 'The unique identifier of the registration.'
 
   tags:
     - Registrations

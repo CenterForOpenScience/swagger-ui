@@ -1,9 +1,9 @@
-# /registrations/{node_id}/citations/
+# /registrations/{registration_id}/citations/
 get:
   summary: List all citation styles
   description: >-
 
-    A paginated list of all alternative citation styles of a registration
+    A paginated list of the registration's alternative styles
 
 
     #### Returns
@@ -11,8 +11,8 @@ get:
     Returns a JSON object containing `data` and `links` keys.
 
 
-    The `data` key contains an array of up to 10 citations.
-    Each resource in the array is a separate citation object.
+    The `data` key contains an array of up to 10 citation styles.
+    Each resource in the array is a separate citation styles object.
 
 
     The `links` key contains a dictionary of links that can be used for [pagination](#Introduction_pagination).
@@ -27,9 +27,9 @@ get:
   parameters:
     - in: path
       type: string
-      name: node_id
+      name: registration_id
       required: true
-      description: 'The unique identifier of the node.'
+      description: 'The unique identifier of the registration.'
   tags:
     - Registrations
   operationId: registrations_citations_list

@@ -1,16 +1,16 @@
-#/registrations/{node_id}/institutions
+#/registrations/{registration_id}/institutions
 
 get:
   summary: List all institutions
   description: >-
-    List of all institutions on a registration.
+    A paginated list of institutions affiliated with the registration.
 
     ####Returns
 
     Returns a JSON object containing `data` and `links` keys.
 
 
-    The `data` key contains an array of up to 10 affilited institutions.
+    The `data` key contains an array of up to 10 affiliated institutions.
     Each resource in the array is a separate institution object.
 
 
@@ -18,10 +18,10 @@ get:
 
   parameters:
     - in: path
-      name: node_id
+      name: registration_id
       type: string
       required: true
-      description: 'The unique identifier of the node.'
+      description: 'The unique identifier of the registration.'
 
   tags:
     - Registrations

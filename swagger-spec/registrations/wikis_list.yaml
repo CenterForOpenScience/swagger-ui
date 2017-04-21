@@ -1,12 +1,12 @@
-# /registrations/{node_id}/wikis/
+# /registrations/{registration_id}/wikis/
 get:
   summary: List all wikis
   description: >-
-    List of wiki pages of a registration.
+    A paginated list of the registration's wiki pages
 
     ####Returns
 
-    Paginated list of the registration's current wiki page versions ordered by their date_modified.
+    A list of all registration's current wiki page versions ordered by their date_modified.
     Each resource contains the full representation of the wiki, meaning additional requests
     to an individual wiki's detail view are not necessary.
 
@@ -32,9 +32,9 @@ get:
   parameters:
     - in: path
       type: string
-      name: node_id
+      name: registration_id
       required: true
-      description: 'The unique identifier of the node.'
+      description: 'The unique identifier of the registration.'
   tags:
     - Registrations
   operationId: registrations_wikis_list

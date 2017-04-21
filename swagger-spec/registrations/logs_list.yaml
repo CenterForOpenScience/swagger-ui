@@ -1,8 +1,8 @@
-# /registrations/{node_id}/logs
+# /registrations/{registration_id}/logs
 get:
   summary: List all logs
   description: >-
-    A paginated list of all logs of a node's registration.
+    A paginated list of the registration's logs.
 
 
     The returned logs are sorted by their `date`, with the most recents logs appearing
@@ -30,10 +30,10 @@ get:
 
   parameters:
     - in: path
-      name: node_id
+      name: registration_id
       type: string
       required: true
-      description: 'The unique identifier of the node.'
+      description: 'The unique identifier of the registration.'
 
   tags:
     - Registrations

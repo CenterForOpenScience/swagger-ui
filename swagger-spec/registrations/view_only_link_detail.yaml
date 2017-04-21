@@ -1,8 +1,8 @@
-# /registrations/{node_id}/view_only_links/{link_id}/
+# /registrations/{registration_id}/view_only_links/{link_id}/
 get:
   summary: Retrieve a view only link
   description: >-
-    Retrieves the details of a view only link on a registration.
+    Retrieves the details of a view only link of the registration.
 
     ####Returns
 
@@ -18,9 +18,9 @@ get:
 
     - in: path
       type: string
-      name: node_id
+      name: registration_id
       required: true
-      description: 'The unique identifier of the node.'
+      description: 'The unique identifier of the registration.'
 
     - in: path
       type: string
@@ -40,4 +40,25 @@ get:
         $ref: '../view_only_links/definition.yaml'
       examples:
         application/json:
-          
+          data:
+            relationships:
+              nodes:
+                links:
+                  self:
+                    href: http://api.osf.io/v2/view_only_links/<link_id>/relationships/nodes/
+                    meta: {}
+                  related:
+                    href: http://api.osf.io/v2/view_only_links/<link_id>/nodes/
+                    meta: {}
+              creator:
+                links:
+                  related:
+                    href: http://api.osf.io/v2/users/<user_id>/
+                    meta: {}
+            attributes:
+              date_created: '2017-03-20T20:11:01.603851'
+              anonymous: false
+              key: <view_only_link_key>
+              name: Test View Only Link
+            type: view-only-links
+            id: <link_id>

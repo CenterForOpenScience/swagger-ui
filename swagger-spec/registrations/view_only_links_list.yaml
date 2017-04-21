@@ -1,9 +1,9 @@
-# /registrations/{node_id}/view_only_links/
+# /registrations/{registration_id}/view_only_links/
 
 get:
   summary: List all view only links
   description: >-
-    List of view only links for a registration.
+    A paginated list of view only links of the registration.
 
     ####Returns
 
@@ -20,14 +20,14 @@ get:
     ####Permissions
 
 
-    View only links on a registration, public or private, are readable and writeable only by users that are administrators on the node.
+    View only links on a registration, public or private, are readable and writeable only by users that are administrators on the registration.
 
 
     ####Filtering
 
 
     You can optionally request that the response only include view only links that match your filters by utilizing the `filter` query parameter, e.g.
-    https://api.osf.io/v2/registrations/ezcuj/view_only_links/?filter[anonymous]=true.
+    https://api.osf.io/v2/registrations/wu3a4/view_only_links/?filter[anonymous]=true.
 
 
     View Only Links may be filtered based on their `name`, `anonymous` and `date_created` fields.
@@ -36,9 +36,9 @@ get:
   parameters:
     - in: path
       type: string
-      name: node_id
+      name: registration_id
       required: true
-      description: 'The unique identifier of the node.'
+      description: 'The unique identifier of the registration.'
   tags:
     - Registrations
   operationId: registrations_view_only_links_list

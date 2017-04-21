@@ -1,4 +1,4 @@
-#/registrations/{node_id}/contributors/
+#/registrations/{registration_id}/contributors/
 get:
   summary: List all contributors
   description: >-
@@ -7,7 +7,7 @@ get:
     The returned contributors are sorted by their index.
 
 
-    Contributors are users who can make changes to the node or, in the case of private nodes, have read access to the node.
+    Contributors are users who can make changes to the registration or, in the case of private registration, have read access to the registration.
 
 
     Contributors are categorized as either "bibliographic" or "non-bibliographic".
@@ -40,7 +40,7 @@ get:
   parameters:
     - in: path
       type: string
-      name: node_id
+      name: registration_id
       required: true
       description: 'The unique identifier of the node.'
   tags:
@@ -61,15 +61,15 @@ get:
               node:
                 links:
                   related:
-                    href: https://api.osf.io/v2/nodes/wu3a4/
+                    href: https://api.osf.io/v2/nodes/wucr8/
                     meta: {}
               users:
                 links:
                   related:
-                    href: https://api.osf.io/v2/users/edb8y/
+                    href: https://api.osf.io/v2/users/7xea5/
                     meta: {}
             links:
-              self: https://api.osf.io/v2/registrations/wu3a4/contributors/edb8y/
+              self: https://api.osf.io/v2/registrations/wucr8/contributors/7xea5/
             embeds:
               users:
                 data:
@@ -77,108 +77,56 @@ get:
                     nodes:
                       links:
                         related:
-                          href: https://api.osf.io/v2/users/edb8y/nodes/
+                          href: https://api.osf.io/v2/users/7xea5/nodes/
                           meta: {}
                     institutions:
                       links:
                         self:
-                          href: https://api.osf.io/v2/users/edb8y/relationships/institutions/
+                          href: https://api.osf.io/v2/users/7xea5/relationships/institutions/
                           meta: {}
                         related:
-                          href: https://api.osf.io/v2/users/edb8y/institutions/
+                          href: https://api.osf.io/v2/users/7xea5/institutions/
                           meta: {}
                   links:
-                    html: https://osf.io/edb8y/
-                    profile_image: https://secure.gravatar.com/avatar/a5aa8c1f84985c038f9f1e6197580fe4?d=identicon
+                    html: https://osf.io/7xea5/
+                    profile_image: https://secure.gravatar.com/avatar/0ddf92ef0f0a7011c21cd07d7940bc32?d=identicon
                   attributes:
-                    family_name: Cohoon
+                    family_name: Anderl
                     suffix: ''
-                    locale: en_us
-                    date_registered: '2013-04-22T21:14:00.581000'
+                    locale: de
+                    date_registered: '2014-10-22T13:48:22.652000'
                     middle_names: ''
-                    given_name: Johanna
-                    full_name: Johanna Cohoon
+                    given_name: Christine
+                    full_name: Christine Anderl
                     active: true
-                    timezone: America/New_York
+                    timezone: America/Los_Angeles
                   type: users
-                  id: edb8y
+                  id: 7xea5
             attributes:
               index: 0
-              unregistered_contributor:
-              bibliographic: false
-              permission: admin
-            type: contributors
-            id: wu3a4-edb8y
-          - relationships:
-              node:
-                links:
-                  related:
-                    href: https://api.osf.io/v2/nodes/wu3a4/
-                    meta: {}
-              users:
-                links:
-                  related:
-                    href: https://api.osf.io/v2/users/fqs92/
-                    meta: {}
-            links:
-              self: https://api.osf.io/v2/registrations/wu3a4/contributors/fqs92/
-            embeds:
-              users:
-                data:
-                  relationships:
-                    nodes:
-                      links:
-                        related:
-                          href: https://api.osf.io/v2/users/fqs92/nodes/
-                          meta: {}
-                    institutions:
-                      links:
-                        self:
-                          href: https://api.osf.io/v2/users/fqs92/relationships/institutions/
-                          meta: {}
-                        related:
-                          href: https://api.osf.io/v2/users/fqs92/institutions/
-                          meta: {}
-                  links:
-                    html: https://osf.io/fqs92/
-                    profile_image: https://secure.gravatar.com/avatar/8faaa170eb120e9010fb27f1b0d55765?d=identicon
-                  attributes:
-                    family_name: van Renswoude
-                    suffix: ''
-                    locale: nl_NL
-                    date_registered: '2014-03-13T13:24:37.866000'
-                    middle_names: Roelof
-                    given_name: Daan
-                    full_name: Daan van Renswoude
-                    active: true
-                    timezone: Europe/Berlin
-                  type: users
-                  id: fqs92
-            attributes:
-              index: 1
               unregistered_contributor:
               bibliographic: true
               permission: admin
             type: contributors
-            id: wu3a4-fqs92
+            id: wucr8-7xea5
           links:
             first:
             last:
             prev:
             next:
             meta:
-              total: 2
+              total: 1
               per_page: 10
 
 post:
   summary: Create a contributor
   description: >-
-    Adds a contributor to the node, effectively creating a relationship between the registration and a user.
+    Adds a contributor to the registration, effectively creating a relationship between the registration and a user.
 
 
     #### Permissions
 
-    Only project administrators can add contributors to a node.
+    Only project administrators can add contributors to a registration.
 
     #### Required
 
@@ -198,9 +146,9 @@ post:
   parameters:
     - in: path
       type: string
-      name: node_id
+      name: registration_id
       required: true
-      description: 'The unique identifier of the node.'
+      description: 'The unique identifier of the registration.'
     - in: body
       name: body
       required: true
