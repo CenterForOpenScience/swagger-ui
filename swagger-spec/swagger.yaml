@@ -279,63 +279,56 @@ paths:
   /registrations/{registration_id}/:
     $ref: 'registrations/detail.yaml'
 
-  /registrations/{node_id}/contributors:
-    $ref: 'registrations/contributors_list.yaml'
-
-  /registrations/{node_id}/contributors/{user_id}:
-    $ref: 'registrations/contributor_detail.yaml'
-
-  /registrations/{node_id}/comments:
-    $ref: 'registrations/comments_list.yaml'
-
-  /registrations/{node_id}/institutions:
-    $ref: 'registrations/institutions_list.yaml'
-
-  /registrations/{node_id}/identifiers:
-    $ref: 'registrations/identifiers_list.yaml'
-
-  /registrations/{node_id}/logs:
-    $ref: 'registrations/logs_list.yaml'
-
-  /registrations/{node_id}/children:
-    $ref: 'registrations/children_list.yaml'
-
-  /registrations/{node_id}/citations:
+  /registrations/{registration_id}/citations:
     $ref: 'registrations/style_list.yaml'
 
-  /registrations/{node_id}/citations/{citation_id}/:
+  /registrations/{registration_id}/citations/{citation_id}/:
     $ref: 'registrations/style_detail.yaml'
 
-  /registrations/{node_id}/files:
+  /registrations/{registration_id}/children:
+    $ref: 'registrations/children_list.yaml'
+
+  /registrations/{registration_id}/comments:
+    $ref: 'registrations/comments_list.yaml'
+
+  /registrations/{registration_id}/contributors:
+    $ref: 'registrations/contributors_list.yaml'
+
+  /registrations/{registration_id}/contributors/{user_id}:
+    $ref: 'registrations/contributor_detail.yaml'
+
+  /registrations/{registration_id}/files:
     $ref: 'registrations/providers_list.yaml'
 
-  /registrations/{node_id}/files/{provider}:
+  /registrations/{registration_id}/files/{provider}:
     $ref: 'registrations/files_list.yaml'
 
-  /registrations/{node_id}/files/{provider}/{path}:
+  /registrations/{registration_id}/files/{provider}/{path}:
     $ref: 'registrations/file_detail.yaml'
 
-  /registrations/{node_id}/forks:
+  /registrations/{registration_id}/forks:
     $ref: 'registrations/forks_list.yaml'
 
-  /registrations/{node_id}/linked_nodes:
+  /registrations/{registration_id}/identifiers:
+    $ref: 'registrations/identifiers_list.yaml'
+
+  /registrations/{registration_id}/institutions:
+    $ref: 'registrations/institutions_list.yaml'
+
+  /registrations/{registration_id}/linked_nodes:
     $ref: 'registrations/linked_nodes_list.yaml'
 
-  # /registrations/{node_id}/node_links:
-  #   $ref: 'registrations/node_links_list.yaml'
+  /registrations/{registration_id}/logs:
+    $ref: 'registrations/logs_list.yaml'
 
-  # /registrations/{node_id}/node_links/{node_link_id}:
-  #   $ref: 'registrations/node_link_detail.yaml'
-
-  /registrations/{node_id}/view_only_links/:
+  /registrations/{registration_id}/view_only_links/:
     $ref: 'registrations/view_only_links_list.yaml'
 
-  /registrations/{node_id}/view_only_links/{link_id}/:
+  /registrations/{registration_id}/view_only_links/{link_id}/:
     $ref: 'registrations/view_only_link_detail.yaml'
 
-  /registrations/{node_id}/wikis/:
+  /registrations/{registration_id}/wikis/:
     $ref: 'registrations/wikis_list.yaml'
-
 
   ##################
   #   TAXONOMIES   #
