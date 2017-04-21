@@ -3,13 +3,13 @@ get:
   summary: List all addon accounts
   description: >-
 
-    A paginated list of external (addon) accounts authorized by this user.
+    A paginated list of addon accounts authorized by this user.
 
 
     #### Permissions
 
 
-    External accounts are visible only to the user that has ownership of them.
+    Addon accounts are visible only to the user that has ownership of them.
 
 
     #### Returns
@@ -17,9 +17,9 @@ get:
     Returns a JSON object containing `data` and `links` keys.
 
 
-    The `data` key contains an array of at most 10 external account objects.
-    Each resource in the array is a separate  external account object and
-    contains the full representation of the external account.
+    The `data` key contains an array of at most 10 addon account objects.
+    Each resource in the array is a separate  addon account object and
+    contains the full representation of the addon account.
 
 
     The `links` key contains a dictionary of links that can be used for [pagination](#Introduction_pagination).
@@ -39,7 +39,7 @@ get:
   tags:
     - Users
   operationId: Users_addon_accounts_list
-  x-response-schema: External Account
+  x-response-schema: Addon Account
   responses:
     '200':
       description: OK

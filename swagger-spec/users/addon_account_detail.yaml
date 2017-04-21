@@ -2,19 +2,19 @@
 get:
   summary: Retrieve an addon account
   description: >-
-    Retrieves the details of an external (addon) account
+    Retrieves the details of an addon account
 
 
     #### Permissions
 
 
-    External accounts are visible only to the user that has ownership of them.
+    Addon accounts are visible only to the user that has ownership of them.
 
 
     ####Returns
 
     Returns a JSON object with a `data` key containing the representation of the requested
-    external account, if the request was successful.
+    addon account, if the request was successful.
 
 
     If the request is unsuccessful, an `errors` key containing
@@ -36,13 +36,13 @@ get:
       name: account_id
       type: string
       required: true
-      description: 'The unique identifier of the external account.'
+      description: 'The unique identifier of the addon account.'
 
 
   tags:
     - Users
   operationId: Users_addon_accounts_read
-  x-response-schema: External Account
+  x-response-schema: Addon Account
   responses:
     '200':
       description: 'OK'

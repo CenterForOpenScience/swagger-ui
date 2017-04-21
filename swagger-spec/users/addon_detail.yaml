@@ -1,13 +1,20 @@
 # /users/{user_id}/addons/{provider}/
 get:
-  summary: Retrieve an addon
+  summary: Retrieve a user addon
   description: >-
-    Retrieves the details of a user addon
+    Retrieves the details of an authorized user addon
+
+
+    #### Permissions
+
+
+    User addons are visible only to the user that has ownership of them.
+
 
     ####Returns
 
     Returns a JSON object with a `data` key containing the representation of the requested
-    addon, if the request was successful.
+    user addon, if the request was successful.
 
 
     If the request is unsuccessful, an `errors` key containing
@@ -26,16 +33,15 @@ get:
       required: true
       description: 'The unique identifier of the addon provider.'
 
-
   tags:
     - Users
   operationId: users_addons_read
-  x-response-schema: Addon
+  x-response-schema: User Addon
   responses:
     '200':
       description: 'OK'
       schema:
-        $ref: '../addons/definition.yaml'
+        $ref: 'user_addon_definition.yaml'
       examples:
         application/json:
           data:

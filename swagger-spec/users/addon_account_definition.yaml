@@ -1,5 +1,5 @@
 type: object
-title: External Account
+title: Addon Account
 required:
   - id
   - type
@@ -9,18 +9,18 @@ properties:
   id:
     type: string
     readOnly: true
-    description: 'The unique identifier of the external (addon) account entity.'
+    description: 'The unique identifier of the addon account entity.'
 
   type:
     type: string
     readOnly: true
-    description: 'The type identifier of the external (addon) account entity (`external_accounts`).'
+    description: 'The type identifier of the addon account entity (`external_accounts`).'
 
   attributes:
     type: object
     title: Attributes
     readOnly: true
-    description: 'The properties of the external (addon) account entity.'
+    description: 'The properties of the addon account entity.'
     required:
       - display_name
       - provider
@@ -42,10 +42,10 @@ properties:
     type: object
     title: Links
     readOnly: true
-    description: 'URLs to alternative representations of the external (addon) account entity.'
+    description: 'URLs to alternative representations of the addon account entity.'
     properties:
       self:
         type: string
         format: URL
         readOnly: true
-        description: 'The canonical api endpoint of this external (addon) account'
+        description: 'The canonical api endpoint of this addon account'
