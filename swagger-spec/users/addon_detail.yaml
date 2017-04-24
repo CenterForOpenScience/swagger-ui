@@ -8,7 +8,7 @@ get:
     #### Permissions
 
 
-    User addons are visible only to the user that has ownership of them.
+    User addons are visible only to the user that authorized the addon.
 
 
     ####Returns
@@ -21,6 +21,8 @@ get:
     information about the failure will be returned. Refer to the [list of error codes](#Introduction_error_codes)
     to understand why this request may have failed.
 
+
+    Attempting to request the accounts for an addon that is not enabled will result in a **404 Not Found** response.
   parameters:
     - in: path
       type: string

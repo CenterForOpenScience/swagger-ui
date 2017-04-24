@@ -9,7 +9,7 @@ get:
     #### Permissions
 
 
-    Addon accounts are visible only to the user that has ownership of them.
+    Addon accounts are visible only to the user that authorized the account.
 
 
     #### Returns

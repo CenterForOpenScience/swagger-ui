@@ -314,7 +314,7 @@ paths:
   /users/{user_id}/addons/:
     $ref: 'users/addons_list.yaml'
 
-  /users/{user_id}/addons/{provider}:
+  /users/{user_id}/addons/{provider}/:
     $ref: 'users/addon_detail.yaml'
 
   /users/{user_id}/addons/{provider}/accounts/:
