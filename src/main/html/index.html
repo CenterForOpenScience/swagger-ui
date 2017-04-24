@@ -66,12 +66,16 @@
 
                     }
                     // Scroll to the anchor specified in the URL and open section on sidebar
-                    setTimeout(function() {
-                        if (window.location.hash) {
-                            $('.item[data-endpoint="' + window.location.hash.replace('#', '') + '"]').click();
-                            $(document).scrollTop($(window.location.hash).offset().top);
-                        }
-                    }, 700);
+                    $('.anchor-link').click(function(e) {
+                        e.preventDefault();
+                        var hash = e.currentTarget.hash;
+                        setTimeout(function() {
+                            if (window.location.hash) {
+                                $('.item[data-endpoint="' + hash.replace('#', '') + '"]').click();
+                                $(window).scrollTop($(hash).offset().top);
+                            }
+                        }, 10);
+                    });
 
                     $('pre code').each(function (i, e) {
                         hljs.highlightBlock(e)
@@ -103,6 +107,9 @@
                             .tooltip('fixTitle')
                             .tooltip('show');
 
+                            setTimeout(function() {
+                                $('.anchor-link').tooltip('hide');
+                            }, 1500);
                             $(e.trigger).attr('title', 'Copy URL to clipboard')
                             .tooltip('fixTitle');
                         });
@@ -246,4 +253,3 @@
 </section>
 </body>
 </html>
-
