@@ -279,46 +279,46 @@ paths:
   /registrations/{registration_id}/:
     $ref: 'registrations/detail.yaml'
 
-  /registrations/{registration_id}/citations:
+  /registrations/{registration_id}/citations/:
     $ref: 'registrations/style_list.yaml'
 
   /registrations/{registration_id}/citations/{citation_id}/:
     $ref: 'registrations/style_detail.yaml'
 
-  /registrations/{registration_id}/children:
+  /registrations/{registration_id}/children/:
     $ref: 'registrations/children_list.yaml'
 
-  /registrations/{registration_id}/comments:
+  /registrations/{registration_id}/comments/:
     $ref: 'registrations/comments_list.yaml'
 
-  /registrations/{registration_id}/contributors:
+  /registrations/{registration_id}/contributors/:
     $ref: 'registrations/contributors_list.yaml'
 
-  /registrations/{registration_id}/contributors/{user_id}:
+  /registrations/{registration_id}/contributors/{user_id}/:
     $ref: 'registrations/contributor_detail.yaml'
 
-  /registrations/{registration_id}/files:
+  /registrations/{registration_id}/files/:
     $ref: 'registrations/providers_list.yaml'
 
-  /registrations/{registration_id}/files/{provider}:
+  /registrations/{registration_id}/files/{provider}/:
     $ref: 'registrations/files_list.yaml'
 
-  /registrations/{registration_id}/files/{provider}/{path}:
+  /registrations/{registration_id}/files/{provider}/{path}/:
     $ref: 'registrations/file_detail.yaml'
 
-  /registrations/{registration_id}/forks:
+  /registrations/{registration_id}/forks/:
     $ref: 'registrations/forks_list.yaml'
 
-  /registrations/{registration_id}/identifiers:
+  /registrations/{registration_id}/identifiers/:
     $ref: 'registrations/identifiers_list.yaml'
 
-  /registrations/{registration_id}/institutions:
+  /registrations/{registration_id}/institutions/:
     $ref: 'registrations/institutions_list.yaml'
 
-  /registrations/{registration_id}/linked_nodes:
+  /registrations/{registration_id}/linked_nodes/:
     $ref: 'registrations/linked_nodes_list.yaml'
 
-  /registrations/{registration_id}/logs:
+  /registrations/{registration_id}/logs/:
     $ref: 'registrations/logs_list.yaml'
 
   /registrations/{registration_id}/view_only_links/:

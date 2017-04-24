@@ -3,7 +3,7 @@
 get:
   summary: List all view only links
   description: >-
-    A paginated list of view only links of the registration.
+    A paginated list of view only links created for this registration.
 
     ####Returns
 

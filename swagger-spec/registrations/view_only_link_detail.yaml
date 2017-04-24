@@ -2,7 +2,7 @@
 get:
   summary: Retrieve a view only link
   description: >-
-    Retrieves the details of a view only link of the registration.
+    Retrieves the details of a view only link created from this registration.
 
     ####Returns
 
@@ -14,6 +14,10 @@ get:
     information about the failure will be returned. Refer to the [list of error codes](#Introduction_error_codes)
     to understand why this request may have failed.
 
+    ####Permissions
+
+
+    View only links on a registration, public or private, are readable and writeable only by users that are administrators on the registration.
   parameters:
 
     - in: path

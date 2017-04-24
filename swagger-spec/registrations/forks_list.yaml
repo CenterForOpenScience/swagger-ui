@@ -6,7 +6,7 @@ get:
     A paginated list of the registration’s forks
 
 
-    The returned forks are sorted by their `forked_date`, with the most recently forked registrations appearing first.
+    The returned forks are sorted by their `forked_date`, with the most recent forks appearing first.
 
 
     Forking a registration creates a copy of an existing registration and all of its contents.

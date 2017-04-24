@@ -11,7 +11,7 @@ get:
 
 
     Contributors are categorized as either "bibliographic" or "non-bibliographic".
-    From a permissions standpoint, both are the same, but bibliographic contributors are included in citations and are listed on the project overview page on the OSF, while non-bibliographic contributors are not.
+    From a permissions standpoint, both are the same, but bibliographic contributors are included in citations and are listed in the contributors list on the OSF, while non-bibliographic contributors are not.
 
 
     Note that if an anonymous view_only key is being used to view the list of contributors, the user relationship will not be exposed and the contributor ID will be an empty string.
@@ -42,7 +42,7 @@ get:
       type: string
       name: registration_id
       required: true
-      description: 'The unique identifier of the node.'
+      description: 'The unique identifier of the registration.'
   tags:
     - Registrations
   operationId: registrations_contributors_list
@@ -117,49 +117,3 @@ get:
             meta:
               total: 1
               per_page: 10
-
-post:
-  summary: Create a contributor
-  description: >-
-    Adds a contributor to the registration, effectively creating a relationship between the registration and a user.
-
-
-    #### Permissions
-
-    Only project administrators can add contributors to a registration.
-
-    #### Required
-
-    A relationship object with a `data` key, containing the `users` type and valid user ID is required.
-
-
-    All attributes describing the relationship between the registration and the user are optional.
-
-    #### Returns
-
-    Returns a JSON object with a `data` key containing the representation of the new contributor, if the request is successful.
-
-
-    If the request is unsuccessful, an `errors` key containing information about the failure will be returned.
-    Refer to the [list of error codes](#Introduction_error_codes) to understand why this request may have failed.
-
-  parameters:
-    - in: path
-      type: string
-      name: registration_id
-      required: true
-      description: 'The unique identifier of the registration.'
-    - in: body
-      name: body
-      required: true
-      schema:
-        $ref: '../nodes/contributor_definition.yaml'
-  tags:
-    - Registrations
-  operationId: registrations_contributors_create
-  x-response-schema: Contributor
-  consumes:
-    - application/json
-  responses:
-    '201':
-      description: 'Success'
