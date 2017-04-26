@@ -2,13 +2,13 @@
 The Open API specification and source code for the documenting the Open Science Framework API lives here.
 
 #### For development:
-- `npm install`
-- `npm run build` (to build a new distribution under the dist/ folder)
-- `npm run serve` (to serve the built result at localhost:8090)
+- `yarn install`
+- `yarn run build` (to build a new distribution under the dist/ folder)
+- `yarn run serve` (to serve the built result at localhost:8090)
 *note*: to change the port, update the `connect` gulp task in `gulpfile.js`
 
 #### Spec Validation
-- `npm install -g swagger-cli`
+- `yarn global add swagger-cli`
 - `swagger validate swagger.yaml` (bundles and validates the given specification against the OpenAPI 2.0 schema and spec)
 - `swagger bundle -o <output_file_name> swagger.yaml` (bundles a multi-file specification into a single JSON file)
 

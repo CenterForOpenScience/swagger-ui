@@ -31,55 +31,6 @@ get:
 
     Preprint Providers may be filtered by their `id`, `name`,  and `description`
 
-
-    #### Acceptable Subjects Structure
-
-    Each preprint provider specifies acceptable subjects.
-
-    `subjects_acceptable` is an array found in `attribtues`.
-
-    Subjects consist of general parent subjects (e.g., Engineering),
-    more specific child subjects (e.g., Aerospace Engineering),
-    and even more specific grandchild subjects (e.g., Aerodynamics and Fluid Mechanics).
-    Subjects can only be nested 3 deep.
-
-
-        "subjects_acceptable": [
-            [
-                [
-                    # Parent Subject:
-                    # Architecture
-                    "584240d954be81056ceca9e5",
-
-                    # Child Subject:
-                    # Architectural Engineering
-                    "584240da54be81056cecac87"
-                ],
-                # Include all Architectural Engineering's children:
-                true
-            ],
-            [
-                [
-                    # Parent Subject:
-                    # Engineering
-                    "584240da54be81056cecaca9",
-
-                    # Child Subject:
-                    # Aerospace Engineering
-                    "584240db54be81056cecacd6",
-
-                    # Grandchild Subject:
-                    # Aerodynamics and Fluid Mechanics
-                    "584240da54be81056cecaa74"
-                ],
-                # All nestings 3 deep must be false
-                false
-            ]
-        ]
-
-    The above structure would allow Architecture, Architectural Engineering, all of Architectural Engineering's children,
-    Engineering, Aerospace Engineering, and Aerodynamics and Fluid Mechanics.
-
   tags:
     - Preprint Providers
   operationId: preprint_provider_list

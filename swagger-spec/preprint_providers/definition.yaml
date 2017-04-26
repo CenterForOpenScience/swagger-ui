@@ -18,11 +18,11 @@ properties:
       social_instagram:
         type: string
         readOnly: true
-        description: 'Preprint provider''s Instagram account ID.'
+        description: 'The preprint provider''s Instagram account ID.'
       advisory_board:
         type: string
         readOnly: true
-        description: 'HTML representation of the preprint provider''s advisory board.'
+        description: 'The HTML representation of the preprint provider''s advisory board.'
       email_support:
         type: string
         readOnly: true
@@ -30,23 +30,23 @@ properties:
       banner_path:
         type: string
         readOnly: true
-        description: 'Static path to the preprint provider''s banner image.'
+        description: 'A static path to the preprint provider''s banner image.'
       logo_path:
         type: string
         readOnly: true
-        description: 'Static path to the preprint provider''s logo image.'
+        description: 'A static path to the preprint provider''s logo image.'
       subjects_acceptable:
         type: string
         readOnly: true
-        description: 'Nested array structure defining allowed subjects.'
+        description: 'A nested array structure defining allowed subjects for this preprint provider, in the BePress taxonomy.'
       description:
         type: string
         readOnly: true
-        description: 'Description of the preprint provider.'
+        description: 'The description of the preprint provider.'
       social_facebook:
         type: string
         readOnly: true
-        description: 'Preprint provider''s Facebook account ID.'
+        description: 'The preprint provider''s Facebook account ID.'
       email_contact:
         type: string
         readOnly: true
@@ -54,11 +54,11 @@ properties:
       example:
         type: string
         readOnly: true
-        description: 'GUID for an example preprint from this preprint provider.'
+        description: 'The GUID for an example preprint from this preprint provider.'
       name:
         type: string
         readOnly: true
-        description: 'Name of the preprint provider.'
+        description: 'The name of the preprint provider.'
       domain:
         type: string
         readOnly: true

@@ -229,7 +229,8 @@ properties:
 
 example:
   data:
-    id: '{registration_id}'
-    type: 'registrations'
+    type: registrations
     attributes:
-      public: true
+      draft_registration: '{draft_registration_id}'
+      registration_choice: embargo
+      lift_embargo: '2017-05-10T20:44:03.185000'

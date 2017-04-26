@@ -235,9 +235,13 @@ SwaggerUi.Views.MainView = Backbone.View.extend({
         var distance = top - $(this).offset().top;
         var hash = $(this).attr('href');
         if (distance < padding && distance > -padding && currentHash !== hash) {
-            window.location.hash = hash;
+            if(history.pushState) {
+              history.pushState(null, null, hash);
+            } else {
+              location.hash = hash;
+            }
             currentHash = hash;
-        }
+       }
     });
 
   }

@@ -63,6 +63,13 @@ paths:
   /versioning/:
     $ref: 'introduction/versioning.yaml'
 
+  ##############
+  #   ADDONS   #
+  ##############
+
+  /addons/:
+    $ref: 'addons/list.yaml'
+
   ############
   #   BASE   #
   ############
@@ -177,6 +184,15 @@ paths:
   # /institutions/{institution_id}/relationships/nodes/:
   #   $ref: 'institutions/nodes_relationships.yaml'
 
+  ###################
+  #   METASCHEMAS   #
+  ###################
+
+  /metaschemas/:
+    $ref: 'metaschemas/list.yaml'
+  /metaschemas/{metaschema_id}:
+    $ref: 'metaschemas/detail.yaml'
+
   #############
   #   NODES   #
   #############
@@ -263,6 +279,67 @@ paths:
   /registrations/{registration_id}/:
     $ref: 'registrations/detail.yaml'
 
+  /registrations/{registration_id}/citations/:
+    $ref: 'registrations/style_list.yaml'
+
+  /registrations/{registration_id}/citations/{citation_id}/:
+    $ref: 'registrations/style_detail.yaml'
+
+  /registrations/{registration_id}/children/:
+    $ref: 'registrations/children_list.yaml'
+
+  /registrations/{registration_id}/comments/:
+    $ref: 'registrations/comments_list.yaml'
+
+  /registrations/{registration_id}/contributors/:
+    $ref: 'registrations/contributors_list.yaml'
+
+  /registrations/{registration_id}/contributors/{user_id}/:
+    $ref: 'registrations/contributor_detail.yaml'
+
+  /registrations/{registration_id}/files/:
+    $ref: 'registrations/providers_list.yaml'
+
+  /registrations/{registration_id}/files/{provider}/:
+    $ref: 'registrations/files_list.yaml'
+
+  /registrations/{registration_id}/files/{provider}/{path}/:
+    $ref: 'registrations/file_detail.yaml'
+
+  /registrations/{registration_id}/forks/:
+    $ref: 'registrations/forks_list.yaml'
+
+  /registrations/{registration_id}/identifiers/:
+    $ref: 'registrations/identifiers_list.yaml'
+
+  /registrations/{registration_id}/institutions/:
+    $ref: 'registrations/institutions_list.yaml'
+
+  /registrations/{registration_id}/linked_nodes/:
+    $ref: 'registrations/linked_nodes_list.yaml'
+
+  /registrations/{registration_id}/logs/:
+    $ref: 'registrations/logs_list.yaml'
+
+  /registrations/{registration_id}/view_only_links/:
+    $ref: 'registrations/view_only_links_list.yaml'
+
+  /registrations/{registration_id}/view_only_links/{link_id}/:
+    $ref: 'registrations/view_only_link_detail.yaml'
+
+  /registrations/{registration_id}/wikis/:
+    $ref: 'registrations/wikis_list.yaml'
+
+  ##################
+  #   TAXONOMIES   #
+  ##################
+
+  /taxonomies/:
+    $ref: 'taxonomies/list.yaml'
+
+  /taxonomies/{taxonomy_id}/:
+    $ref: 'taxonomies/detail.yaml'
+
   #############
   #   USERS   #
   #############
@@ -284,6 +361,28 @@ paths:
 
   /users/{user_id}/registrations/:
     $ref: 'users/registrations_list.yaml'
+
+  /users/{user_id}/addons/:
+    $ref: 'users/addons_list.yaml'
+
+  /users/{user_id}/addons/{provider}/:
+    $ref: 'users/addon_detail.yaml'
+
+  /users/{user_id}/addons/{provider}/accounts/:
+    $ref: 'users/addon_accounts_list.yaml'
+
+  /users/{user_id}/addons/{provider}/accounts/{account_id}/:
+    $ref: 'users/addon_account_detail.yaml'
+
+
+  ######################
+  #   View Only Links  #
+  ######################
+
+  /view_only_links/{link_id}/:
+    $ref: 'view_only_links/detail.yaml'
+  /view_only_links/{link_id}/nodes/:
+    $ref: 'view_only_links/nodes.yaml'
 
   #############
   #   WIKIS   #

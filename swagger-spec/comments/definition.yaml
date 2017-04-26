@@ -13,7 +13,7 @@ properties:
     description: 'The type identifier of the comment entity (`comments`).'
   attributes:
     type: object
-    title: Attibutes
+    title: Attributes
     readOnly: false
     description: 'The properties of the comment entity.'
     properties:
@@ -105,3 +105,13 @@ properties:
         format: URL
         readOnly: true
         description: 'A link to the detail page for the comment.'
+example:
+  data:
+    type: comments
+    attributes:
+      content: 'comment content'
+    relationships:
+      target:
+        data:
+          type: '{target_type}'
+          id: '{target_id}'

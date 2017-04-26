@@ -10,7 +10,7 @@
     "serve": "gulp serve",
     "prejshint": "gulp",
     "jshint": "jshint .",
-    "pretest": "npm run jshint",
+    "pretest": "yarn run jshint",
     "test": ""
   },
   "repository": {

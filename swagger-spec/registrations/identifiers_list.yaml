@@ -1,8 +1,8 @@
-# /identifiers/{node_id}/identifiers/
+# /registrations/{registration_id}/identifiers
 get:
   summary: List all identifiers
   description: >-
-    List of all identifiers for a given node.
+    A paginated list of the registration's identifiers.
 
     ####Returns
 
@@ -17,22 +17,24 @@ get:
 
     ####Filtering
 
-    You can optionally request that the response only include identifiers that match your filters by utilizing the `filter` query parameter, e.g.
-    https://api.osf.io/v2/identifiers/73pnd/identifiers/?filter[category]=doi.
+
+    You can optionally request that the response only include registrations that match your filters by utilizing the `filter` query parameter, e.g.
+    https://api.osf.io/v2/registrations/wucr8/identifiers/?filter[category]=ark
+
 
     Identifiers may be filtered by their `category` e.g `ark` or `doi`.
 
   parameters:
 
     - in: path
-      name: node_id
+      name: registration_id
       type: string
       required: true
-      description: 'The unique identifier of the node.'
+      description: 'The unique identifier of the registration.'
 
   tags:
-    - Identifiers
-  operationId: identifiers_list
+    - Registrations
+  operationId: registrations_identifiers_list
   x-response-schema: Identifier
   responses:
     '200':
@@ -40,7 +42,7 @@ get:
       schema:
         type: array
         items:
-          $ref: definition.yaml
+          $ref: '../identifiers/definition.yaml'
       examples:
         application/json:
           data:
@@ -76,5 +78,5 @@ get:
             prev:
             next:
             meta:
-            total: 2
-            per_page: 10
+              total: 2
+              per_page: 10
