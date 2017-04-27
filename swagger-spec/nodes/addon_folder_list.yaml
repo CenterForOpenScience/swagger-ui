@@ -7,7 +7,7 @@ get:
 
     #### Permissions
 
-    Folders are visible only to the addon authorizer.
+    Folders are visible only to the user that authorized the addon.
 
     #### Returns
 
@@ -31,7 +31,7 @@ get:
       type: string
       name: provider
       required: true
-      description: 'The unique identifier/name of the provider'
+      description: 'The unique identifier of the provider'
 
   tags:
     - Nodes
