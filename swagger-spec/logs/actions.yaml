@@ -44,6 +44,10 @@ get:
     * `external_ids_added`: An external identifier is added to a Node (e.g.
     DOI, ARK)
 
+    * `view_only_link_added`: A view-only link was added to a Node
+
+    * `view_only_link_removed`:  A view-only link was removed from a Node
+
     ---
 
     * `contributor_added`: A Contributor is added to a Node
