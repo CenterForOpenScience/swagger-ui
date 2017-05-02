@@ -43,6 +43,10 @@ properties:
             type: string
             readOnly: true
             description: 'The addon associated with the connected node.'
+          anonymous_link:
+            type: boolean
+            readOnly: true
+            description: 'The link added to the node was anonymous.'
           bucket:
             type: string
             readOnly: true
