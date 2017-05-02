@@ -239,11 +239,14 @@ paths:
   /nodes/{node_id}/files/:
     $ref: 'nodes/providers_list.yaml'
 
-  /nodes/{node_id}/files/{provider}/{path}/:
-    $ref: 'nodes/file_detail.yaml'
+  /nodes/{node_id}/files/providers/{provider}/:
+    $ref: 'nodes/provider_detail.yaml'
 
   /nodes/{node_id}/files/{provider}/:
     $ref: 'nodes/files_list.yaml'
+
+  /nodes/{node_id}/files/{provider}/{path}/:
+    $ref: 'nodes/file_detail.yaml'
 
   /nodes/{node_id}/identifiers/:
     $ref: 'nodes/identifiers_list.yaml'
