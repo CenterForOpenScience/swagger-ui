@@ -65,6 +65,10 @@ properties:
         type: string
         readOnly: true
         description: 'A relationship to the citation of the preprint.'
+      identifiers:
+        type: string
+        readOnly: true
+        description: 'A relationship to the identifiers associated with the preprint.'
       license:
         type: string
         readOnly: false
@@ -97,6 +101,11 @@ properties:
         format: URL
         readOnly: true
         description: 'A link to the project on the OSF that was created for the preprint, or from which the preprint was created.'
+      preprint_doi:
+        type: string
+        format: URL
+        readOnly: true
+        description: 'The URL representation of the OSF assigned DOI for the preprint.'
       self:
         type: string
         format: URL
