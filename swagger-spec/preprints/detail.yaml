@@ -42,6 +42,11 @@ get:
                   related:
                     href: https://api.osf.io/v2/preprints/khbvy/citation/
                     meta: {}
+              identifiers:
+                links:
+                  related:
+                    href: https://api.osf.io/v2/preprints/khbvy/identifiers/
+                    meta: {}
               primary_file:
                 links:
                   related:
@@ -56,6 +61,7 @@ get:
               self: https://api.osf.io/v2/preprints/khbvy/
               html: https://osf.io/khbvy/
               doi: https://dx.doi.org/10.1371/journal.pbio.1002456
+              preprint_doi: https://dx.doi.org/10.5072/FK2OSF.IO/KHBVY
             attributes:
               doi: 10.1371/journal.pbio.1002456
               license_record:

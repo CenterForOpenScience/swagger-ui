@@ -55,6 +55,11 @@ get:
                     related:
                       href: 'https://api.osf.io/v2/preprints/hqb2p/citation/'
                       meta: {}
+                identifiers:
+                  links:
+                    related:
+                      href: 'https://api.osf.io/v2/preprints/hqb2p/identifiers/'
+                      meta: {}
                 primary_file:
                   links:
                     related:
@@ -73,6 +78,7 @@ get:
               links:
                 self: 'https://api.osf.io/v2/preprints/hqb2p/'
                 html: 'https://osf.io/preprints/socarxiv/hqb2p/'
+                preprint_doi: 'https://dx.doi.org/10.5072/FK2OSF.IO/HQB2P'
               attributes:
                 doi: null
                 license_record:
