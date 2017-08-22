@@ -63,6 +63,17 @@ get:
                   related:
                     href: https://api.osf.io/v2/users/q7fts/institutions/
                     meta: {}
+              quickfiles:
+                links:
+                  download:
+                    href: http://localhost:7777/v1/resources/rwc4ua7tez/providers/osfstorage/?zip=
+                    meta: {}
+                  upload:
+                    href: http://localhost:7777/v1/resources/rwc4ua7tez/providers/osfstorage/
+                    meta: {}
+                  related:
+                    href: https://api.osf.io/v2/users/q7fts/quickfiles/
+                    meta: {}
             links:
               self: https://api.osf.io/v2/users/q7fts/
               html: https://osf.io/q7fts/

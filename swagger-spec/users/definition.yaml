@@ -79,6 +79,10 @@ properties:
         type: string
         readOnly: true
         description: 'A link to the list of nodes the user is a contributor to.'
+      quickfiles:
+        type: string
+        readOnly: true
+        description: "Links related to a user's quickfiles. Includes upload, download, and list of files on the quickfiles node."
 
   links:
     type: object
