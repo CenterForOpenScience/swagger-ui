@@ -67,6 +67,18 @@ properties:
         type: boolean
         readOnly: true
         description: 'Whether or not redirects are enabled for the provider''s domain.'
+      reviews_workflow:
+        type: string
+        readOnly: false
+        description: 'The workflow used for reviewing/moderating preprints, if any. Valid values: "pre-moderation", "post-moderation"'
+      reviews_comments_anonymous:
+        type: boolean
+        readOnly: false
+        description: 'Whether comments on submissions made by moderators are visible to preprint authors.'
+      reviews_workflow:
+        type: string
+        readOnly: false
+        description: 'If comments are not private, whether the commenting moderator''s name is visible to preprint authors.'
   relationships:
     type: object
     title: Relationships
