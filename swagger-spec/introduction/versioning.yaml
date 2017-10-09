@@ -89,6 +89,11 @@ get:
         + `banner_path`, `logo_path`, and `header_text`
         + `email_contact`
 
+    `v2.5`
+
+    + Deprecate the following field in the **Preprint Provider** serializer:
+        + `subjects_acceptable`
+
 
   operationId: versioning
   tags:
