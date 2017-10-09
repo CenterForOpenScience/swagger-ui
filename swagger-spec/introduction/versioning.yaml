@@ -1,6 +1,16 @@
 get:
   summary: Versioning
   description: >-
+
+    For any additions to the API (new fields, routes, methods, and
+    relationships), those will be added simultaneously to all versions. For any
+    breaking changes and deletions, we will create a new version for those.
+    Requesting the base API takes the most compatible version of the API, not
+    the one with the latest changes. Note that, in the case of the OSF model
+    changing, we may have to break API functionality. We try very hard not to do
+    that, but sometimes it is unavoidable.
+
+
     Versioning can be specified in three different ways:
 
 
