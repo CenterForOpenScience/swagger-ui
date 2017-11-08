@@ -2,11 +2,11 @@ get:
   summary: Versioning
   description: >-
 
-    For any additions to the API (new fields, routes, methods, and
-    relationships), those will be added simultaneously to all versions. For any
-    breaking changes and deletions, we will create a new version for those.
+    Any additions to the API (new fields, routes, methods, and
+    relationships) will be added simultaneously to all versions. For any
+    breaking changes and deletions, we will create a new version.
     Requesting the base API takes to the most compatible version of the API, not
-    the one with the latest changes. The browsable API defaults to the latest
+    the one with the latest changes. However, the browsable API defaults to the latest
     API version. Note that, in the case of the OSF model changing, we may have to
     break API functionality. We try very hard not to do that, but sometimes it is unavoidable.
 
