@@ -419,6 +419,9 @@ paths:
   /users/{user_id}/preprints/:
     $ref: 'users/preprints_list.yaml'
 
+  /users/{user_id}/quickfiles/:
+    $ref: 'users/quickfiles_list.yaml'
+
   /users/{user_id}/registrations/:
     $ref: 'users/registrations_list.yaml'
 

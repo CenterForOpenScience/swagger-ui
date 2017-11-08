@@ -95,6 +95,11 @@ properties:
         format: URL
         readOnly: true
         description: A link to the node the file is on.
+      user:
+        type: string
+        format: URL
+        readOnly: true
+        description: A link to the user the file belongs to. Used when the file is on a QuickFiles Node.
       checkout:
         type: string
         format: URL
