@@ -5,10 +5,10 @@ get:
     For any additions to the API (new fields, routes, methods, and
     relationships), those will be added simultaneously to all versions. For any
     breaking changes and deletions, we will create a new version for those.
-    Requesting the base API takes the most compatible version of the API, not
-    the one with the latest changes. Note that, in the case of the OSF model
-    changing, we may have to break API functionality. We try very hard not to do
-    that, but sometimes it is unavoidable.
+    Requesting the base API takes to the most compatible version of the API, not
+    the one with the latest changes. The browsable API defaults to the latest
+    API version. Note that, in the case of the OSF model changing, we may have to
+    break API functionality. We try very hard not to do that, but sometimes it is unavoidable.
 
 
     Versioning can be specified in three different ways:
@@ -45,6 +45,10 @@ get:
     be specified via the `version` query parameter, as long as it is an
     allowed version.
 
+    + Use `version=latest` as a query parameter to request the latest allowed version
+    within a major version. For instance, specifying `/v2/nodes/?version=latest` will
+    return the latest `v2` minor or patch version.
+
     + If the version specified in the query parameter does not fall within
     the same major version specified in the URL path, i.e
     `/v2/nodes/?version=3.1.4` a 409 Conflict response will be returned.
@@ -59,6 +63,10 @@ get:
     + A specific version (major, minor, or patch) for a single request can
     be specified via the `Accept Header` of the request, as long as it is an
     allowed version.
+
+    + Use `version=latest` in the header to request the latest allowed version
+    within a major version. For instance, specifying `Accept-Header=application/vnd.api+json;version=latest`
+    will return the latest minor or patch version of the major version specified in the request url.
 
     + If the version specified in the header does not fall within the same
     major version specified in the URL path a 409 Conflict response will be
@@ -103,6 +111,10 @@ get:
 
     + Deprecate the following field in the **Preprint Provider** serializer:
         + `subjects_acceptable`
+
+    `v2.6`
+
+    + Deprecate the `TaxonomyList` endpoint.
 
 
   operationId: versioning
