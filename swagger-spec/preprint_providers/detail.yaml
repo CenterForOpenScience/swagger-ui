@@ -115,6 +115,9 @@ get:
               example: khbvy
               name: Open Science Framework
               domain: 'osf.io'
+              reviews_workflow: null
+              reviews_comments_private: true
+              reviews_comments_anonymous: true
             type: preprint_providers
             id: osf
           links:
@@ -125,3 +128,58 @@ get:
             meta:
               total: 5
               per_page: 10
+
+patch:
+  summary: Update a preprint provider
+  description: >-
+    Updates the specified preprint provider by setting the values of the parameters passed.
+    Any parameters not provided will be left unchanged.
+
+
+    Currently, the only parameters which may be set are `reviews_workflow`, 
+    `reviews_comments_private`, and `reviews_comments_anonymous`. These parameters may be set
+    only once, after which they may be updated only by an OSF Admin.
+
+    #### Returns
+
+    Returns a JSON object with a `data` key containing the new representation of the updated
+    provider, if the request is successful.
+
+
+    If the request is unsuccessful, an `errors` key containing
+    information about the failure will be returned. Refer to the [list of error codes]()
+    to understand why this request may have failed.
+
+
+    If `reviews_workflow` is already non-null, attempting to update the provider will return
+    a `409` Conflict error. If you need to change your provider's moderation settings, contact
+    [support@osf.io](mailto:support@osf.io) for help.
+
+  parameters:
+    - in: path
+      type: string
+      required: true
+      name: preprint_provider_id
+      description: 'The unique identifier of the provider.'
+    - in: body
+      required: true
+      name: data
+      schema:
+        type: object
+        example:
+          data:
+            id: '{preprint_provider_id}'
+            attributes:
+              reviews_workflow: 'pre-moderation'
+              reviews_comments_private: false
+              reviews_comments_anonymous: true
+
+  tags:
+    - Preprint Providers
+  operationId: preprint_provider_partial_update
+  consumes:
+    - application/json
+  x-response-schema: 'Preprint Provider'
+  responses:
+    '200':
+      description: 'OK'
